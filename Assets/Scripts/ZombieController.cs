@@ -8,7 +8,7 @@ public class ZombieController : MonoBehaviour
 
     public float randomMovementDestinationRadius = 1.0f;
 
-    public float destinationResetRadius = 0.1f;
+    public float destinationResetRadius = 0.01f;
 
     public float movementSpeed = 1.0f;
 
@@ -21,7 +21,14 @@ public class ZombieController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // TODO: Move to destination if possible.
+        if (IsAtDestination())
+        {
+            UpdateDestination();
+        }
+
+        var directionToDestination = (destination - rigidBody.position).normalized;
+        var desiredPositionInFrame = rigidBody.position + movementSpeed * Time.fixedDeltaTime * directionToDestination;
+        rigidBody.MovePosition(desiredPositionInFrame);
     }
 
     private bool IsAtDestination()
@@ -34,5 +41,10 @@ public class ZombieController : MonoBehaviour
     {
         var destinationDelta = randomMovementDestinationRadius * Random.insideUnitCircle;
         destination = rigidBody.position + destinationDelta;
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        UpdateDestination();
     }
 }
