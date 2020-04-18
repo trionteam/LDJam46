@@ -23,6 +23,9 @@ TextureImporter:
   - first:
       213: 2016774126744611315
     second: Selection
+  - first:
+      213: 7652382187886420479
+    second: Destination
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -268,7 +271,7 @@ TextureImporter:
         width: 146
         height: 74
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -276,6 +279,27 @@ TextureImporter:
       bones: []
       spriteID: 3f9afc802650dfb10800000000000000
       internalID: 2016774126744611315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Destination
+      rect:
+        serializedVersion: 2
+        x: 2855
+        y: 1720
+        width: 161
+        height: 73
+      alignment: 9
+      pivot: {x: 0.49802262, y: 0.65713793}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff12f7a4e09b23a60800000000000000
+      internalID: 7652382187886420479
       vertices: []
       indices: 
       edges: []

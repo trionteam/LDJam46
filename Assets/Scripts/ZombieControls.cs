@@ -44,7 +44,8 @@ public class ZombieControls : MonoBehaviour
                 // Clicked somewhere in the space. Tell selected zombies to go there.
                 foreach(var zombie in selectedZombies)
                 {
-                    zombie.destination = clickPosition;
+                    zombie.AssignDestination(clickPosition);
+                    // zombie.destination = clickPosition;
                 }
             }
         }
