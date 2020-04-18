@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 /// <summary>
 /// Switches between different behaviours of the object depending on its health state. The
@@ -99,6 +101,7 @@ public class Zombifiable : MonoBehaviour
     }
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(Zombifiable))]
 public class ZombifiableEditor : Editor
 {
@@ -109,3 +112,4 @@ public class ZombifiableEditor : Editor
         zombifiable.CurrentState = (Zombifiable.State)EditorGUILayout.EnumPopup("Current State", zombifiable.CurrentState);
     }
 }
+#endif
