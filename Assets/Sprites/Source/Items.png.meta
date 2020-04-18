@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: 7652382187886420479
     second: Destination
+  - first:
+      213: -7508219444803873844
+    second: ZombiesKeepOut
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -300,6 +303,27 @@ TextureImporter:
       bones: []
       spriteID: ff12f7a4e09b23a60800000000000000
       internalID: 7652382187886420479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZombiesKeepOut
+      rect:
+        serializedVersion: 2
+        x: 3340
+        y: 399
+        width: 263
+        height: 237
+      alignment: 9
+      pivot: {x: 0.39668489, y: 0.07388447}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc3d8c8f1327dc790800000000000000
+      internalID: -7508219444803873844
       vertices: []
       indices: 
       edges: []
