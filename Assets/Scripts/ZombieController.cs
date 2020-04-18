@@ -133,7 +133,10 @@ public class ZombieController : MonoBehaviour
 				Vector2 rndDir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized * 0.1f;
 				cough.GetComponent<CloudScript>().SetVelocity(rndDir);
 			}
-			
+
+			// TODO - wildcards to play a random sound of the selected kind
+			SoundMgr.Play($"cough_{Random.Range(0, 4)}");
+
 			coughLeft = coughTimeout + Random.Range(-0.1f, 1.0f);
 		}
 	}
