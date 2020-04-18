@@ -371,6 +371,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2742108568675436941, guid: a6aaf5ba9425b0f42b5fe6ff07e70734, type: 3}
+      propertyPath: CloudPrefab
+      value: 
+      objectReference: {fileID: 301755780573216639, guid: 6dc5e91c84f624948a3296cc9e2d8309, type: 3}
     - target: {fileID: 2742108568675436942, guid: a6aaf5ba9425b0f42b5fe6ff07e70734, type: 3}
       propertyPath: m_Name
       value: Spray
