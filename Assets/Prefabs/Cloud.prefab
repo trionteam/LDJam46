@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1162770025069958498}
   - component: {fileID: 6852870183298863812}
   - component: {fileID: 2353509659429529250}
+  - component: {fileID: 7718585214473376149}
   m_Layer: 12
   m_Name: Cloud
   m_TagString: Untagged
@@ -98,3 +99,19 @@ MonoBehaviour:
   LifeTime: 3
   LifeLengthRandomness: 0.25
   FadeLastSeconds: 0.5
+--- !u!58 &7718585214473376149
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301755780573216639}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.08

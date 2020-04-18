@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CloudScript : MonoBehaviour
 {
+    public Zombifiable.State CausedState = Zombifiable.State.Zombie;
+    private GameObject source;
+
 	public float LifeTime = 5;  // seconds
 	public float LifeLengthRandomness = 0.25f;
 	public float FadeLastSeconds = 0.5f;    // number of seconds to fade after it dies
@@ -18,6 +21,11 @@ public class CloudScript : MonoBehaviour
 		velocity = vel;
 		rot = Random.Range(0, 2) == 0 ? -1.0f : 1.0f;
 	}
+
+    public void SetSourceZombie(GameObject source)
+    {
+        this.source = source;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +61,19 @@ public class CloudScript : MonoBehaviour
 			c.a = Mathf.Clamp(c.a + Time.deltaTime * FadeLastSeconds, 0, 1);
 		}
 		spriteRenderer.color = c;
-
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        var zombifiable = collision.GetComponentInChildren<Zombifiable>() ?? collision.GetComponentInParent<Zombifiable>();
+        if (zombifiable != null && zombifiable.gameObject != source)
+        {
+            if (zombifiable.CurrentState != CausedState)
+            {
+                zombifiable.CurrentState = CausedState;
+            }
+            // Remove itself on collision with a person.
+            Destroy(gameObject);
+        }
+    }
 }
