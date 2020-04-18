@@ -29,6 +29,10 @@ public class Score : MonoBehaviour
 
 	public void UpdateUI()
 	{
+		if (null == NumZombiesText)
+		{
+			return;
+		}
 		int numZ = 0;
 		int numN = 0;
 		int numI = 0;

@@ -69,7 +69,6 @@ public class Zombifiable : MonoBehaviour
     {
 		Score.Instance.UpdateUI();
 
-
 		if (Application.isPlaying)
         {
             normalBehaviour.enabled = false;
