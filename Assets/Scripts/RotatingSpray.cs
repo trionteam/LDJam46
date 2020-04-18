@@ -68,5 +68,4 @@ public class RotatingSpray : MonoBehaviour
 			Cone.transform.Rotate(Vector3.forward, Speed * Time.deltaTime);
 		}
 	}
-
 }
