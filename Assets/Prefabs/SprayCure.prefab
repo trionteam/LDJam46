@@ -98,10 +98,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cone: {fileID: 2742108570499925743}
   CloudPrefab: {fileID: 301755780573216639, guid: 6dc5e91c84f624948a3296cc9e2d8309, type: 3}
-  Speed: 10
+  RotationSpeed: 100
+  SpraySpeed: 2
   Radius: 3
   BurstSize: 10
-  SprayColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   BurstSpreadDegrees: 45
   SprayCooldownTime: 1
 --- !u!1 &2742108570499925743
@@ -202,7 +202,7 @@ PolygonCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.125, y: 0.453125, z: 0.109375, w: 0.046875}
+    border: {x: 0.015625, y: 0.056640625, z: 0.013671875, w: 0.005859375}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 0.64, y: 0.64}
@@ -212,9 +212,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.2034333, y: 0.4047832}
-      - {x: 0.002909176, y: 0.45699862}
-      - {x: -0.19397731, y: 0.40105549}
-      - {x: -0.34174466, y: 0.2941672}
-      - {x: 0.0070955753, y: -0.057249308}
-      - {x: 0.35817182, y: 0.29687673}
+    - - {x: 0.1878284, y: 0.44223496}
+      - {x: -0.0017723143, y: 0.47884548}
+      - {x: -0.17525145, y: 0.44943067}
+      - {x: -0.34018418, y: 0.34098184}
+      - {x: -0.00070687756, y: 0.0004887581}
+      - {x: 0.33632502, y: 0.33744946}

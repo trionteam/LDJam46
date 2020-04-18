@@ -98,9 +98,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cone: {fileID: 2742108570499925743}
   CloudPrefab: {fileID: 301755780573216639, guid: 26275f6a16014e943843173f08302937, type: 3}
-  Speed: 10
-  Radius: 3
-  SprayCooldownTime: 1
+  RotationSpeed: 50
+  SpraySpeed: 2
+  Radius: 4
+  BurstSize: 10
+  BurstSpreadDegrees: 45
+  SprayCooldownTime: 2
 --- !u!1 &2742108570499925743
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +177,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fddc21c4b22421e49bb48d6b5e2afcc7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6392157}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -199,7 +202,7 @@ PolygonCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.125, y: 0.453125, z: 0.109375, w: 0.046875}
+    border: {x: 0.015625, y: 0.056640625, z: 0.013671875, w: 0.005859375}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 0.64, y: 0.64}
@@ -209,9 +212,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.2034333, y: 0.4047832}
-      - {x: 0.002909176, y: 0.45699862}
-      - {x: -0.19397731, y: 0.40105549}
-      - {x: -0.34174466, y: 0.2941672}
-      - {x: 0.0070955753, y: -0.057249308}
-      - {x: 0.35817182, y: 0.29687673}
+    - - {x: 0.18493167, y: 0.4375169}
+      - {x: 0.00006278418, y: 0.47976992}
+      - {x: -0.19113089, y: 0.44232842}
+      - {x: -0.33462864, y: 0.33686337}
+      - {x: -0.000020459294, y: 0.0025252998}
+      - {x: 0.33682376, y: 0.33814967}

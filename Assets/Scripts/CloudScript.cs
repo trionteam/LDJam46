@@ -10,6 +10,7 @@ public class CloudScript : MonoBehaviour
 	public float LifeTime = 5;  // seconds
 	public float LifeLengthRandomness = 0.25f;
 	public float FadeLastSeconds = 0.5f;    // number of seconds to fade after it dies
+	public float RotationSpeed = 100;
 	private Vector3 velocity = Vector3.zero;
 
 	private float lifeLeft = 0;
@@ -20,7 +21,7 @@ public class CloudScript : MonoBehaviour
 	{
 		velocity = vel;
 		rot = Random.Range(0, 2) == 0 ? -1.0f : 1.0f;
-		rot *= Random.Range(0.8f, 1.2f);
+		rot *= Random.Range(0.5f, 2.5f) * RotationSpeed;
 	}
 
     public void SetSourceZombie(GameObject source)
