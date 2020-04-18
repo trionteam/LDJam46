@@ -57,17 +57,17 @@ public class Zombifiable : MonoBehaviour
         currentStateTimestamp = Time.time;
         UpdateBehavioursFromState();
 
-		Score.Instance.RegisterActor(this);
+		Score.Instance?.RegisterActor(this);
 	}
 
 	private void OnDestroy()
 	{
-		Score.Instance.UnregisterActor(this);
+		Score.Instance?.UnregisterActor(this);
 	}
 
 	private void UpdateBehavioursFromState()
     {
-		Score.Instance.UpdateUI();
+		Score.Instance?.UpdateUI();	
 
 		if (Application.isPlaying)
         {

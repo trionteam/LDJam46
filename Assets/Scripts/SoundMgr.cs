@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SoundMgr : MonoBehaviour
 {
-	public SoundMgr Instance;
+	public static SoundMgr Instance;
 	private class CachedAudio
 	{
 		public AudioSource audio;
@@ -50,7 +50,7 @@ public class SoundMgr : MonoBehaviour
 		}
 	}
 
-	public static void Play(string name)
+	public void Play(string name)
 	{
 		if (!ENABLED)
 		{
