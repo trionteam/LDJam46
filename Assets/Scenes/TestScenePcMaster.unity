@@ -229,6 +229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie
       objectReference: {fileID: 0}
+    - target: {fileID: 8292648429311309811, guid: abee3ac441bc07b42af57857875963b6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8292648429311309815, guid: abee3ac441bc07b42af57857875963b6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.57
@@ -286,7 +290,7 @@ GameObject:
   - component: {fileID: 992678644}
   - component: {fileID: 992678643}
   - component: {fileID: 992678642}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,8 +310,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cone: {fileID: 1215077776}
-  Speed: 100
-  Radius: 10
+  Speed: 10
+  Radius: 3
+  layerMask: 268435455
 --- !u!212 &992678643
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -367,7 +372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992678641}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.796, y: -0.16, z: -0.22041735}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1215077778}
@@ -384,7 +389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1215077778}
   - component: {fileID: 1215077777}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
