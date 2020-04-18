@@ -9,6 +9,7 @@ public class RotatingSpray : MonoBehaviour
 	public float Speed = 100;   // degrees per second
 	public float Radius = 3;    // radius in units
 	public int BurstSize = 10;
+	public Color SprayColor = Color.yellow;
 
 	public float SprayCooldownTime = 1;
 	private float sprayCooldown = 1;

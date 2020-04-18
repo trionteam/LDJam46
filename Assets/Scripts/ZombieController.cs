@@ -30,11 +30,16 @@ public class ZombieController : MonoBehaviour
 
     public float movementSpeed = 1.0f;
 
-    /// <summary>
-    /// True if the zombie is selected for control. When true, the selection marker is
-    /// displayed. Setting this property shows or hides the selection marker.
-    /// </summary>
-    public bool IsSelected
+	public GameObject CloudPrefab;
+	public int numCoughs = 5;
+	public float coughTimeout = 1.0f;
+	private float coughLeft = 0;
+
+	/// <summary>
+	/// True if the zombie is selected for control. When true, the selection marker is
+	/// displayed. Setting this property shows or hides the selection marker.
+	/// </summary>
+	public bool IsSelected
     {
         get => _isSelected;
         set
@@ -66,6 +71,7 @@ public class ZombieController : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         Debug.Assert(rigidBody != null);
+		Debug.Assert(CloudPrefab != null);
 
         // Asserts are not needed - this will raise an exception if the objects
         // are not found.
@@ -81,7 +87,10 @@ public class ZombieController : MonoBehaviour
             // with the zombie object.
             destinationMarker.transform.position = destination;
         }
-    }
+
+		Cough();
+
+	}
 
     void FixedUpdate()
     {
@@ -112,4 +121,20 @@ public class ZombieController : MonoBehaviour
     {
         UpdateDestination();
     }
+
+	private void Cough()
+	{
+		coughLeft -= Time.deltaTime;
+		if (coughLeft <= 0)
+		{
+			for (int i = 0; i < numCoughs; ++i)
+			{
+				GameObject cough = GameObject.Instantiate(CloudPrefab, transform.position, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.forward));
+				Vector2 rndDir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized * 0.1f;
+				cough.GetComponent<CloudScript>().SetVelocity(rndDir);
+			}
+			
+			coughLeft = coughTimeout + Random.Range(-0.1f, 1.0f);
+		}
+	}
 }
