@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2647151755833813141}
   - component: {fileID: 8817371073380221898}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: InfectionCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,8 +286,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 683363979
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 2016774126744611315, guid: ea4a486a789c7774d97b6e358a1f3ce8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

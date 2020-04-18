@@ -66,9 +66,4 @@ public class ZombieController : MonoBehaviour
     {
         UpdateDestination();
     }
-
-    private void OnMouseDown()
-    {
-        IsSelected = !IsSelected;
-    }
 }
