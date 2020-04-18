@@ -8,6 +8,15 @@ public class ZombieControls : MonoBehaviour
 
     public List<ZombieController> selectedZombies = new List<ZombieController>();
 
+    private void Awake()
+    {
+        if (mainCamera == null)
+        {
+            mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        }
+        Debug.Assert(mainCamera != null);
+    }
+
     // Update is called once per frame
     void Update()
     {
