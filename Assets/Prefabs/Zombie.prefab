@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 1213966104932174698}
   - component: {fileID: 8292648429311309801}
   - component: {fileID: 8292648429311309814}
+  - component: {fileID: 7910750625208280116}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -302,6 +303,28 @@ MonoBehaviour:
   randomMovementDestinationRadius: 0.5
   destinationResetRadius: 0.1
   movementSpeed: 0.3
+--- !u!114 &7910750625208280116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8292648429311309811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8fb4080cd6013441a666b1faf168001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentState: 0
+  currentStateTimestamp: 0
+  normalBehaviour: {fileID: 8292648429311309814}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  zombieBehaviour: {fileID: 8292648429311309814}
+  zombieColor: {r: 0, g: 1, b: 0, a: 1}
+  immuneBehaviour: {fileID: 8292648429311309814}
+  immuneColor: {r: 0, g: 0, b: 1, a: 1}
+  coloredSprites:
+  - {fileID: 1213966104932174698}
 --- !u!1 &8549864639980755791
 GameObject:
   m_ObjectHideFlags: 0
