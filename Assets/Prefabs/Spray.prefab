@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2742108568675436940}
   - component: {fileID: 2742108568675436941}
   m_Layer: 9
-  m_Name: spray
+  m_Name: Spray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2742108568675436942}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -97,9 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cone: {fileID: 2742108570499925743}
+  CloudPrefab: {fileID: 301755780573216639, guid: 26275f6a16014e943843173f08302937, type: 3}
   Speed: 10
   Radius: 3
-  layerMask: 268435455
+  SprayCooldownTime: 1
 --- !u!1 &2742108570499925743
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,6 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2742108570499925741}
   - component: {fileID: 2742108570499925742}
+  - component: {fileID: 2096441702}
   m_Layer: 9
   m_Name: cone
   m_TagString: Untagged
@@ -182,3 +184,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &2096441702
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2742108570499925743}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.125, y: 0.453125, z: 0.109375, w: 0.046875}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.2034333, y: 0.4047832}
+      - {x: 0.002909176, y: 0.45699862}
+      - {x: -0.19397731, y: 0.40105549}
+      - {x: -0.34174466, y: 0.2941672}
+      - {x: 0.0070955753, y: -0.057249308}
+      - {x: 0.35817182, y: 0.29687673}
