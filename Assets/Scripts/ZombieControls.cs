@@ -9,6 +9,19 @@ public class ZombieControls : MonoBehaviour
     public HashSet<ZombieController> selectedZombies = new HashSet<ZombieController>();
     private bool selectedZombiesUpdating = false;
 
+    public Transform dragDropMask;
+    private bool isDragging = false;
+    private Vector2 dragStartPosition;
+
+    private Vector2 MousePosition2d
+    {
+        get
+        {
+            var mousePosition3d = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            return new Vector2(mousePosition3d.x, mousePosition3d.y);
+        }
+    }
+
     private void Awake()
     {
         if (mainCamera == null)
@@ -16,6 +29,12 @@ public class ZombieControls : MonoBehaviour
             mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         }
         Debug.Assert(mainCamera != null);
+
+        if (dragDropMask == null)
+        {
+            dragDropMask = transform.Find("Selector");
+        }
+        Debug.Assert(dragDropMask != null);
     }
 
     public void SelectedZombie(ZombieController zombie, bool selected)
@@ -38,39 +57,51 @@ public class ZombieControls : MonoBehaviour
             Application.Quit();
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonDown(0) && !Input.GetMouseButtonUp(0))
         {
-            var clickPosition3d = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            var clickPosition = new Vector2(clickPosition3d.x, clickPosition3d.y);
-            Collider2D[] objectsAtPosition = Physics2D.OverlapCircleAll(clickPosition, 0.01f);
-            ZombieController selectedZombie = null;
+            isDragging = true;
+            dragStartPosition = MousePosition2d;
+        }
+        else if (isDragging && Input.GetMouseButtonUp(0))
+        {
+            isDragging = false;
+            ClearSelectedZombies();
+
+            Collider2D[] objectsAtPosition = Physics2D.OverlapAreaAll(dragStartPosition, MousePosition2d);
             foreach (var possibleZombie in objectsAtPosition)
             {
                 var zombie = possibleZombie.GetComponentInParent<ZombieController>();
-                if (zombie != null && zombie.isActiveAndEnabled) selectedZombie = zombie;
+                if (zombie != null && zombie.isActiveAndEnabled) zombie.IsSelected = true;
             }
+        }
+        else if (!isDragging && Input.GetMouseButtonUp(1))
+        {
+            // Clicked somewhere in the space. Tell selected zombies to go there.
+            foreach (var zombie in selectedZombies)
+            {
+                zombie.AssignDestination(MousePosition2d);
+            }
+        }
 
-            if (selectedZombie != null)
-            {
-                // Selected a zombie, change our selection and move on.
-                ClearSelectedZombies();
-                selectedZombie.IsSelected = true;                
-            }
-            else
-            {
-                // Clicked somewhere in the space. Tell selected zombies to go there.
-                foreach(var zombie in selectedZombies)
-                {
-                    zombie.AssignDestination(clickPosition);
-                }
-            }
+        dragDropMask.gameObject.SetActive(isDragging);
+        if (isDragging)
+        {
+            var currentPosition = MousePosition2d;
+            var center = new Vector3(0.5f * (currentPosition.x + dragStartPosition.x),
+                                     0.5f * (currentPosition.y + dragStartPosition.y),
+                                     9.0f);
+            var size = new Vector3(Mathf.Abs(currentPosition.x - dragStartPosition.x),
+                                   Mathf.Abs(currentPosition.y - dragStartPosition.y),
+                                   1.0f);
+            dragDropMask.position = center;
+            dragDropMask.localScale = size;
         }
     }
 
     public void ClearSelectedZombies()
     {
         selectedZombiesUpdating = true;
-        foreach(var zombie in selectedZombies)
+        foreach (var zombie in selectedZombies)
         {
             zombie.IsSelected = false;
         }
