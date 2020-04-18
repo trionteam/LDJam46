@@ -1126,11 +1126,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1213966104932174698, guid: abee3ac441bc07b42af57857875963b6, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1213966104932174698, guid: abee3ac441bc07b42af57857875963b6, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213966104932174698, guid: abee3ac441bc07b42af57857875963b6, type: 3}
+      propertyPath: m_Color.g
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8292648429311309811, guid: abee3ac441bc07b42af57857875963b6, type: 3}
       propertyPath: m_Name
@@ -1858,6 +1862,10 @@ PrefabInstance:
     - target: {fileID: 266983535250394761, guid: 8e2b6a9e49fb40d418390ea06f3351b6, type: 3}
       propertyPath: m_Name
       value: House
+      objectReference: {fileID: 0}
+    - target: {fileID: 266983535250394761, guid: 8e2b6a9e49fb40d418390ea06f3351b6, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e2b6a9e49fb40d418390ea06f3351b6, type: 3}
