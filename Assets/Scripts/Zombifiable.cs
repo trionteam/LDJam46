@@ -56,11 +56,21 @@ public class Zombifiable : MonoBehaviour
     {
         currentStateTimestamp = Time.time;
         UpdateBehavioursFromState();
-    }
 
-    private void UpdateBehavioursFromState()
+		Score.Instance.RegisterActor(this);
+	}
+
+	private void OnDestroy()
+	{
+		Score.Instance.UnregisterActor(this);
+	}
+
+	private void UpdateBehavioursFromState()
     {
-        if (Application.isPlaying)
+		Score.Instance.UpdateUI();
+
+
+		if (Application.isPlaying)
         {
             normalBehaviour.enabled = false;
             zombieBehaviour.enabled = false;
