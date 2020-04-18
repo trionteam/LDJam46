@@ -19,7 +19,7 @@ public class ZombieController : MonoBehaviour
         set
         {
             _assignedDestination = value;
-            destinationMarker.SetActive(HasAssignedDestination);
+            UpdateMarkers();
         }
     }
     public bool _assignedDestination;
@@ -46,13 +46,8 @@ public class ZombieController : MonoBehaviour
         set
         {
             _isSelected = value;
-            selectionMarker.SetActive(value);
-
-            // Update transparency of the destination marker sprite.
-            var destinationMarkerSprite = destinationMarker.GetComponent<SpriteRenderer>();
-            var destinationMarkerColor = destinationMarkerSprite.color;
-            destinationMarkerColor.a = value ? 1.0f : 0.5f;
-            destinationMarkerSprite.color = destinationMarkerColor;
+            UpdateMarkers();
+            zombieControls.SelectedZombie(this, value);
         }
     }
     private bool _isSelected = false;
@@ -62,10 +57,37 @@ public class ZombieController : MonoBehaviour
 
     private Rigidbody2D rigidBody;
 
+    private ZombieControls zombieControls;
+
     public void AssignDestination(Vector2 destination)
     {
         HasAssignedDestination = true;
         this.destination = destination;
+    }
+
+    private void OnEnable()
+    {
+        UpdateMarkers();
+        UpdateDestination();
+    }
+
+    private void OnDisable()
+    {
+        UpdateMarkers();
+        // Deselect & revert to random movement when it stops being a zombie.
+        IsSelected = false;
+        UpdateDestination();
+    }
+
+    private void UpdateMarkers()
+    {
+        selectionMarker.SetActive(enabled && IsSelected);
+        destinationMarker.SetActive(enabled && HasAssignedDestination);
+
+        var destinationMarkerSprite = destinationMarker.GetComponent<SpriteRenderer>();
+        var destinationMarkerColor = destinationMarkerSprite.color;
+        destinationMarkerColor.a = destinationMarker.activeSelf ? 1.0f : 0.5f;
+        destinationMarkerSprite.color = destinationMarkerColor;
     }
 
     private void Awake()
@@ -73,6 +95,9 @@ public class ZombieController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         Debug.Assert(rigidBody != null);
 		Debug.Assert(CloudPrefab != null);
+
+        zombieControls = GameObject.FindObjectOfType<ZombieControls>();
+        Debug.Assert(zombieControls != null);
 
         // Asserts are not needed - this will raise an exception if the objects
         // are not found.

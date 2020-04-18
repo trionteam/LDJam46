@@ -6,7 +6,8 @@ public class ZombieControls : MonoBehaviour
 {
     public Camera mainCamera;
 
-    public List<ZombieController> selectedZombies = new List<ZombieController>();
+    public HashSet<ZombieController> selectedZombies = new HashSet<ZombieController>();
+    private bool selectedZombiesUpdating = false;
 
     private void Awake()
     {
@@ -15,6 +16,19 @@ public class ZombieControls : MonoBehaviour
             mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         }
         Debug.Assert(mainCamera != null);
+    }
+
+    public void SelectedZombie(ZombieController zombie, bool selected)
+    {
+        if (selectedZombiesUpdating) return;
+        if (selected)
+        {
+            selectedZombies.Add(zombie);
+        }
+        else
+        {
+            selectedZombies.Remove(zombie);
+        }
     }
 
     void Update()
@@ -33,15 +47,14 @@ public class ZombieControls : MonoBehaviour
             foreach (var possibleZombie in objectsAtPosition)
             {
                 var zombie = possibleZombie.GetComponentInParent<ZombieController>();
-                if (zombie != null) selectedZombie = zombie;
+                if (zombie != null && zombie.isActiveAndEnabled) selectedZombie = zombie;
             }
 
             if (selectedZombie != null)
             {
                 // Selected a zombie, change our selection and move on.
                 ClearSelectedZombies();
-                selectedZombie.IsSelected = true;
-                selectedZombies.Add(selectedZombie);
+                selectedZombie.IsSelected = true;                
             }
             else
             {
@@ -49,7 +62,6 @@ public class ZombieControls : MonoBehaviour
                 foreach(var zombie in selectedZombies)
                 {
                     zombie.AssignDestination(clickPosition);
-                    // zombie.destination = clickPosition;
                 }
             }
         }
@@ -57,10 +69,12 @@ public class ZombieControls : MonoBehaviour
 
     public void ClearSelectedZombies()
     {
+        selectedZombiesUpdating = true;
         foreach(var zombie in selectedZombies)
         {
             zombie.IsSelected = false;
         }
         selectedZombies.Clear();
+        selectedZombiesUpdating = false;
     }
 }
