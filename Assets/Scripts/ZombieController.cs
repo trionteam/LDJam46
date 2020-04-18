@@ -86,7 +86,7 @@ public class ZombieController : MonoBehaviour
 
         var destinationMarkerSprite = destinationMarker.GetComponent<SpriteRenderer>();
         var destinationMarkerColor = destinationMarkerSprite.color;
-        destinationMarkerColor.a = destinationMarker.activeSelf ? 1.0f : 0.5f;
+        destinationMarkerColor.a = destinationMarker.activeSelf && IsSelected ? 1.0f : 0.5f;
         destinationMarkerSprite.color = destinationMarkerColor;
     }
 
