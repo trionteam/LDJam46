@@ -304,6 +304,7 @@ MonoBehaviour:
   destinationResetRadius: 0.1
   movementSpeed: 0.3
   CloudPrefab: {fileID: 301755780573216639, guid: 26275f6a16014e943843173f08302937, type: 3}
+  numCoughs: 5
   coughTimeout: 1
 --- !u!114 &7910750625208280116
 MonoBehaviour:
@@ -321,9 +322,9 @@ MonoBehaviour:
   normalBehaviour: {fileID: 8292648429311309814}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   zombieBehaviour: {fileID: 8292648429311309814}
-  zombieColor: {r: 0, g: 1, b: 0, a: 1}
+  zombieColor: {r: 0.40744036, g: 0.7924528, b: 0.40744036, a: 1}
   immuneBehaviour: {fileID: 8292648429311309814}
-  immuneColor: {r: 0, g: 0, b: 1, a: 1}
+  immuneColor: {r: 0.38812745, g: 0.82710993, b: 0.9245283, a: 1}
   coloredSprites:
   - {fileID: 1213966104932174698}
 --- !u!1 &8549864639980755791
