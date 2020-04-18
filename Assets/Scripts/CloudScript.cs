@@ -16,10 +16,11 @@ public class CloudScript : MonoBehaviour
 	private SpriteRenderer spriteRenderer;
 	private float rot = 1;
 
-	public void SetVelocity(Vector2 vel)
+	public void Init(Vector2 vel)
 	{
 		velocity = vel;
 		rot = Random.Range(0, 2) == 0 ? -1.0f : 1.0f;
+		rot *= Random.Range(0.8f, 1.2f);
 	}
 
     public void SetSourceZombie(GameObject source)
@@ -33,10 +34,14 @@ public class CloudScript : MonoBehaviour
 		lifeLeft = LifeTime + Random.Range(-1.0f, 1.0f) * LifeLengthRandomness;
 		spriteRenderer = GetComponent<SpriteRenderer>();
 
+		// add a bit of variation
+		float H, S, V;
+		Color.RGBToHSV(spriteRenderer.color, out H, out S, out V);
+		H += Random.Range(-0.1f, 0.1f);
+		spriteRenderer.color = Color.HSVToRGB(H, S, V);
 
-		Color c = spriteRenderer.color;
-		c.a = 0;
-		spriteRenderer.color = c;
+		transform.localScale *= Random.Range(0.8f, 1.2f);
+		transform.localRotation = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.forward);
 	}
 
     // Update is called once per frame

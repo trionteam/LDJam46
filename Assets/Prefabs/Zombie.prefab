@@ -304,7 +304,8 @@ MonoBehaviour:
   destinationResetRadius: 0.1
   movementSpeed: 0.3
   CloudPrefab: {fileID: 301755780573216639, guid: 26275f6a16014e943843173f08302937, type: 3}
-  coughTimeout: 1
+  numCoughs: 4
+  coughTimeout: 5
 --- !u!114 &7910750625208280116
 MonoBehaviour:
   m_ObjectHideFlags: 0

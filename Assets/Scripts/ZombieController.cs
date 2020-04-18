@@ -31,8 +31,8 @@ public class ZombieController : MonoBehaviour
     public float movementSpeed = 1.0f;
 
 	public GameObject CloudPrefab;
-	public int numCoughs = 5;
-	public float coughTimeout = 1.0f;
+	public int numCoughs = 4;
+	public float coughTimeout = 5.0f;
 	private float coughLeft = 0;
 
 	/// <summary>
@@ -129,10 +129,10 @@ public class ZombieController : MonoBehaviour
 		{
 			for (int i = 0; i < numCoughs; ++i)
 			{
-				GameObject cough = GameObject.Instantiate(CloudPrefab, transform.position, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.forward));
+				GameObject cough = GameObject.Instantiate(CloudPrefab, transform.position, Quaternion.identity);
 				Vector2 rndDir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized * 0.1f;
                 var cloud = cough.GetComponent<CloudScript>();
-                cloud.SetVelocity(rndDir);
+                cloud.Init(rndDir);
                 cloud.SetSourceZombie(gameObject);
 			}
 

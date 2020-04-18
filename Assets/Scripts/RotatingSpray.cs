@@ -9,7 +9,6 @@ public class RotatingSpray : MonoBehaviour
 	public float Speed = 100;   // degrees per second
 	public float Radius = 3;    // radius in units
 	public int BurstSize = 10;
-	public Color SprayColor = Color.yellow;
 
     public float BurstSpreadDegrees = 45.0f;
 
@@ -62,7 +61,7 @@ public class RotatingSpray : MonoBehaviour
                     var spreadAngle = Random.Range(-BurstSpreadDegrees / 2.0f, BurstSpreadDegrees / 2.0f);
                     Vector3 toColliderNorm = Quaternion.Euler(0.0f, 0.0f, spreadAngle) * (colPos - pos).normalized;
 					GameObject g = GameObject.Instantiate(CloudPrefab, pos, Quaternion.identity);
-					g.GetComponent<CloudScript>().SetVelocity(toColliderNorm);
+					g.GetComponent<CloudScript>().Init(toColliderNorm);
 					pos += (new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized * 0.05f + toColliderNorm * 0.1f);
 				}
 			}
