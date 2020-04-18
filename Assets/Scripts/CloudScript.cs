@@ -5,6 +5,8 @@ using UnityEngine;
 public class CloudScript : MonoBehaviour
 {
     public Zombifiable.State CausedState = Zombifiable.State.Zombie;
+    public List<Zombifiable.State> AcceptedStates = null;
+
     private GameObject source;
 
 	public float LifeTime = 5;  // seconds
@@ -74,7 +76,7 @@ public class CloudScript : MonoBehaviour
         var zombifiable = collision.GetComponentInChildren<Zombifiable>() ?? collision.GetComponentInParent<Zombifiable>();
         if (zombifiable != null && zombifiable.gameObject != source)
         {
-            if (zombifiable.CurrentState != CausedState)
+            if (AcceptedStates.Contains(zombifiable.CurrentState))
             {
                 zombifiable.CurrentState = CausedState;
             }

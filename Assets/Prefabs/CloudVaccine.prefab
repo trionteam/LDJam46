@@ -97,9 +97,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CausedState: 2
+  AcceptedStates: 00000000
   LifeTime: 3
   LifeLengthRandomness: 0.25
   FadeLastSeconds: 0.5
+  RotationSpeed: 100
 --- !u!58 &7718585214473376149
 CircleCollider2D:
   m_ObjectHideFlags: 0

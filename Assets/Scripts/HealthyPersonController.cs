@@ -23,6 +23,11 @@ public class HealthyPersonController : MonoBehaviour
         Debug.Assert(rigidBody != null);
     }
 
+    private void Start()
+    {
+        UpdateDestination();
+    }
+
     private void FixedUpdate()
     {
         if (IsAtDestination())
