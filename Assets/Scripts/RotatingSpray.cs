@@ -6,7 +6,8 @@ public class RotatingSpray : MonoBehaviour
 {
 	public GameObject Cone;
 	public GameObject CloudPrefab;
-	public float Speed = 100;   // degrees per second
+	public float RotationSpeed = 100;   // rotation speed in degrees per second
+	public float SpraySpeed = 2;
 	public float Radius = 3;    // radius in units
 	public int BurstSize = 10;
 
@@ -61,14 +62,14 @@ public class RotatingSpray : MonoBehaviour
                     var spreadAngle = Random.Range(-BurstSpreadDegrees / 2.0f, BurstSpreadDegrees / 2.0f);
                     Vector3 toColliderNorm = Quaternion.Euler(0.0f, 0.0f, spreadAngle) * (colPos - pos).normalized;
 					GameObject g = GameObject.Instantiate(CloudPrefab, pos, Quaternion.identity);
-					g.GetComponent<CloudScript>().Init(toColliderNorm);
+					g.GetComponent<CloudScript>().Init(toColliderNorm * SpraySpeed);
 					pos += (new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized * 0.05f + toColliderNorm * 0.1f);
 				}
 			}
 		}
 		else
 		{
-			Cone.transform.Rotate(Vector3.forward, Speed * Time.deltaTime);
+			Cone.transform.Rotate(Vector3.forward, RotationSpeed * Time.deltaTime);
 		}
 	}
 }
