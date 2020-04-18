@@ -10,22 +10,19 @@ public class Score : MonoBehaviour
 
 	private HashSet<Zombifiable> zombifiables = new HashSet<Zombifiable>();
 
-    // Start is called before the first frame update
-    void Start()
+	private void Awake()
+	{
+		Instance = this;
+	}
+
+	void Start()
     {
 		if (null == NumZombiesText)
 		{
 			NumZombiesText = GameObject.Find("TextNumZombies").GetComponent<Text>();
 		}
 		Debug.Assert(NumZombiesText != null);
-		Instance = this;
 	}
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 	public void UpdateUI()
 	{
