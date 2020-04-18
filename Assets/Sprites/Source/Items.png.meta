@@ -17,6 +17,9 @@ TextureImporter:
   - first:
       213: 160392798892558373
     second: House
+  - first:
+      213: -1740157615657646003
+    second: Batman
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -228,6 +231,27 @@ TextureImporter:
       bones: []
       spriteID: 528858a9664d93200800000000000000
       internalID: 160392798892558373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman
+      rect:
+        serializedVersion: 2
+        x: 3060
+        y: 1607
+        width: 94
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4809894ed7b9d7e0800000000000000
+      internalID: -1740157615657646003
       vertices: []
       indices: 
       edges: []
