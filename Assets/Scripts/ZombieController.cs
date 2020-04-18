@@ -131,7 +131,9 @@ public class ZombieController : MonoBehaviour
 			{
 				GameObject cough = GameObject.Instantiate(CloudPrefab, transform.position, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.forward));
 				Vector2 rndDir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized * 0.1f;
-				cough.GetComponent<CloudScript>().SetVelocity(rndDir);
+                var cloud = cough.GetComponent<CloudScript>();
+                cloud.SetVelocity(rndDir);
+                cloud.SetSourceZombie(gameObject);
 			}
 
 			// TODO - wildcards to play a random sound of the selected kind
