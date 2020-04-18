@@ -41,9 +41,11 @@ public class Zombifiable : MonoBehaviour
 
     public MonoBehaviour zombieBehaviour;
     public Color zombieColor = Color.green;
+    public float zombieStateDuration = 5.0f;
 
     public MonoBehaviour immuneBehaviour;
     public Color immuneColor = Color.blue;
+    public float immuneStateDuration = 5.0f;
 
     public SpriteRenderer[] coloredSprites;
 
@@ -62,7 +64,26 @@ public class Zombifiable : MonoBehaviour
 		Score.Instance?.RegisterActor(this);
 	}
 
-	private void OnDestroy()
+    private void Update()
+    {
+        switch (CurrentState)
+        {
+            case State.Immune:
+                if (Time.time > currentStateTimestamp + immuneStateDuration)
+                {
+                    CurrentState = State.Normal;
+                }
+                break;
+            case State.Zombie:
+                if (Time.time > currentStateTimestamp + zombieStateDuration)
+                {
+                    CurrentState = State.Normal;
+                }
+                break;
+        }
+    }
+
+    private void OnDestroy()
 	{
 		Score.Instance?.UnregisterActor(this);
 	}
