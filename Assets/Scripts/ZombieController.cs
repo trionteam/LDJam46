@@ -47,4 +47,9 @@ public class ZombieController : MonoBehaviour
     {
         UpdateDestination();
     }
+
+    private void OnMouseDown()
+    {
+        Debug.Log("Clicked on me!");
+    }
 }
