@@ -12,11 +12,30 @@ public class ZombieController : MonoBehaviour
 
     public float movementSpeed = 1.0f;
 
+    /// <summary>
+    /// True if the zombie is selected for control.
+    /// </summary>
+    public bool IsSelected
+    {
+        get => _isSelected;
+        set
+        {
+            _isSelected = value;
+            selectionMarker.SetActive(value);
+        }
+    }
+    private bool _isSelected = false;
+
+    private GameObject selectionMarker;
+
     private Rigidbody2D rigidBody;
 
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        Debug.Assert(rigidBody != null);
+
+        selectionMarker = transform.Find("SelectionMarker").gameObject;
     }
 
     void FixedUpdate()
@@ -50,6 +69,6 @@ public class ZombieController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("Clicked on me!");
+        IsSelected = !IsSelected;
     }
 }

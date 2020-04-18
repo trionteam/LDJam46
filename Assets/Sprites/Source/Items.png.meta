@@ -20,6 +20,9 @@ TextureImporter:
   - first:
       213: -1740157615657646003
     second: Batman
+  - first:
+      213: 2016774126744611315
+    second: Selection
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -244,7 +247,7 @@ TextureImporter:
         width: 94
         height: 126
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,6 +255,27 @@ TextureImporter:
       bones: []
       spriteID: d4809894ed7b9d7e0800000000000000
       internalID: -1740157615657646003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Selection
+      rect:
+        serializedVersion: 2
+        x: 2885
+        y: 1576
+        width: 146
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9afc802650dfb10800000000000000
+      internalID: 2016774126744611315
       vertices: []
       indices: 
       edges: []
