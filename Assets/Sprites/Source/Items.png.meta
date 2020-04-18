@@ -14,6 +14,9 @@ TextureImporter:
   - first:
       213: -7573354855677281409
     second: WayOut
+  - first:
+      213: 160392798892558373
+    second: House
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -204,6 +207,27 @@ TextureImporter:
       bones: []
       spriteID: f7b306552e906e690800000000000000
       internalID: -7573354855677281409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: House
+      rect:
+        serializedVersion: 2
+        x: 2556
+        y: 981
+        width: 767
+        height: 353
+      alignment: 9
+      pivot: {x: 0.48924327, y: 0.25981104}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 528858a9664d93200800000000000000
+      internalID: 160392798892558373
       vertices: []
       indices: 
       edges: []
