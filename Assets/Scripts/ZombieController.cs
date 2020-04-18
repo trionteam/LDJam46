@@ -30,6 +30,7 @@ public class ZombieController : MonoBehaviour
 
     public float movementSpeed = 1.0f;
 
+    public bool coughEnabled = true;
 	public GameObject CloudPrefab;
 	public int numCoughs = 4;
 	public float coughTimeout = 5.0f;
@@ -124,6 +125,8 @@ public class ZombieController : MonoBehaviour
 
 	private void Cough()
 	{
+        if (!coughEnabled) return;
+
 		coughLeft -= Time.deltaTime;
 		if (coughLeft <= 0)
 		{
