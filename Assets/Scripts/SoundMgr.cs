@@ -39,9 +39,15 @@ public class SoundMgr : MonoBehaviour
 		//music.Play();
 	}
 
-	public void Toggle()
+	public void Toggle(UnityEngine.UI.Button button = null)
 	{
 		ENABLED = !ENABLED;
+		Debug.Log($"Sounds {(ENABLED ? "ON" : "OFF")}");
+
+		if (button)
+		{
+			button.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = $"Toggle sounds\n(now {(ENABLED ? "ON" : "OFF")})";
+		}
 	}
 
 	public static void Play(string name)
