@@ -44,9 +44,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0026982427, y: 0.0026984215}
-  m_Size: {x: 0.7428405, y: 1.3183918}
-  m_Direction: 0
+  m_Offset: {x: -0.02843267, y: 0.016321307}
+  m_Size: {x: 1.1700463, y: 0.73409086}
+  m_Direction: 1
 --- !u!1 &797481261404726753
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,9 +173,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.017018318, y: -0.32658216}
-  m_Size: {x: 0.5121803, y: 0.6568356}
-  m_Direction: 0
+  m_Offset: {x: -0.010985465, y: -0.24710882}
+  m_Size: {x: 1.1609278, y: 0.45551354}
+  m_Direction: 1
 --- !u!1 &8292648429311309811
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,9 +190,9 @@ GameObject:
   - component: {fileID: 8292648429311309814}
   - component: {fileID: -2036268742105978513}
   - component: {fileID: 7910750625208280116}
-  - component: {fileID: -4425926623520026851}
+  - component: {fileID: 6759690940330066067}
   m_Layer: 0
-  m_Name: Zombie
+  m_Name: Oink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,7 +256,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4337684191699249041, guid: ea4a486a789c7774d97b6e358a1f3ce8, type: 3}
+  m_Sprite: {fileID: -3961242704617201528, guid: ea4a486a789c7774d97b6e358a1f3ce8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -348,7 +348,7 @@ MonoBehaviour:
   immuneStateDuration: 5
   coloredSprites:
   - {fileID: 1213966104932174698}
---- !u!114 &-4425926623520026851
+--- !u!114 &6759690940330066067
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -29,6 +29,30 @@ TextureImporter:
   - first:
       213: -7508219444803873844
     second: ZombiesKeepOut
+  - first:
+      213: -3961242704617201528
+    second: Oink1
+  - first:
+      213: 2614719038445677065
+    second: FenceHorizontal1
+  - first:
+      213: -1369248715783372719
+    second: FenceVertical1
+  - first:
+      213: 5589875621261886454
+    second: FenceVertical2
+  - first:
+      213: 1801263428120863714
+    second: FenceHorizontal3
+  - first:
+      213: -523499840304018727
+    second: FenceVertical1
+  - first:
+      213: 6092393605317432390
+    second: FenceHorizontal1
+  - first:
+      213: 1564707360604866923
+    second: FreedomSign
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -324,6 +348,174 @@ TextureImporter:
       bones: []
       spriteID: cc3d8c8f1327dc790800000000000000
       internalID: -7508219444803873844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oink1
+      rect:
+        serializedVersion: 2
+        x: 3152
+        y: 1753
+        width: 127
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8802f2a6fb6d609c0800000000000000
+      internalID: -3961242704617201528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FenceHorizontal1
+      rect:
+        serializedVersion: 2
+        x: 2517
+        y: 318
+        width: 167
+        height: 133
+      alignment: 9
+      pivot: {x: 0.5, y: 0.116712295}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90a6102bc19594420800000000000000
+      internalID: 2614719038445677065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oink2
+      rect:
+        serializedVersion: 2
+        x: 3188
+        y: 1606
+        width: 101
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 150829e2c837ffce0800000000000000
+      internalID: -1369248715783372719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FenceVertical2
+      rect:
+        serializedVersion: 2
+        x: 2434
+        y: 382
+        width: 47
+        height: 268
+      alignment: 9
+      pivot: {x: 0.6574447, y: 0.052077223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f34ee7d24a339d40800000000000000
+      internalID: 5589875621261886454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FenceHorizontal3
+      rect:
+        serializedVersion: 2
+        x: 2976
+        y: 320
+        width: 166
+        height: 138
+      alignment: 9
+      pivot: {x: 0.4950466, y: 0.09485106}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e3eb0c5b8f5ff810800000000000000
+      internalID: 1801263428120863714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FenceVertical1
+      rect:
+        serializedVersion: 2
+        x: 2378
+        y: 386
+        width: 34
+        height: 289
+      alignment: 9
+      pivot: {x: 0.5483686, y: 0.056174837}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da84ba3ba72cb8f0800000000000000
+      internalID: -523499840304018727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FenceHorizontal2
+      rect:
+        serializedVersion: 2
+        x: 2742
+        y: 322
+        width: 165
+        height: 134
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08889292}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6449ec484b78c8450800000000000000
+      internalID: 6092393605317432390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FreedomSign
+      rect:
+        serializedVersion: 2
+        x: 3006
+        y: 698
+        width: 323
+        height: 176
+      alignment: 9
+      pivot: {x: 0.49999925, y: 0.102986425}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69ca46ed05f6b510800000000000000
+      internalID: 1564707360604866923
       vertices: []
       indices: 
       edges: []

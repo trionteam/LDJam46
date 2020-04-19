@@ -44,8 +44,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0026982427, y: 0.0026984215}
-  m_Size: {x: 0.7428405, y: 1.3183918}
+  m_Offset: {x: -0.036001146, y: -0.0048702955}
+  m_Size: {x: 0.80944633, y: 1.2124279}
   m_Direction: 0
 --- !u!1 &797481261404726753
 GameObject:
@@ -173,9 +173,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.017018318, y: -0.32658216}
-  m_Size: {x: 0.5121803, y: 0.6568356}
-  m_Direction: 0
+  m_Offset: {x: -0.0019041175, y: -0.39318842}
+  m_Size: {x: 0.8527794, y: 0.457686}
+  m_Direction: 1
 --- !u!1 &8292648429311309811
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,11 +188,9 @@ GameObject:
   - component: {fileID: 1213966104932174698}
   - component: {fileID: 8292648429311309801}
   - component: {fileID: 8292648429311309814}
-  - component: {fileID: -2036268742105978513}
-  - component: {fileID: 7910750625208280116}
-  - component: {fileID: -4425926623520026851}
+  - component: {fileID: 5350987272952145632}
   m_Layer: 0
-  m_Name: Zombie
+  m_Name: Batman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,8 +254,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4337684191699249041, guid: ea4a486a789c7774d97b6e358a1f3ce8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -1740157615657646003, guid: ea4a486a789c7774d97b6e358a1f3ce8, type: 3}
+  m_Color: {r: 0.40784314, g: 0.7921569, b: 0.40784314, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -295,7 +293,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8292648429311309811}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab757e3d03720674daae4b5d8b7afa26, type: 3}
   m_Name: 
@@ -309,46 +307,7 @@ MonoBehaviour:
   CloudPrefab: {fileID: 301755780573216639, guid: 26275f6a16014e943843173f08302937, type: 3}
   numCoughs: 4
   coughTimeout: 5
---- !u!114 &-2036268742105978513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8292648429311309811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8809097d42ed8d84994a0d0214873a6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destination: {x: 0, y: 0}
-  randomMovementDestinationRadius: 1
-  movementSpeed: 0.3
-  destinationResetRadius: 0.01
---- !u!114 &7910750625208280116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8292648429311309811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8fb4080cd6013441a666b1faf168001, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentState: 0
-  normalBehaviour: {fileID: -2036268742105978513}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  zombieBehaviour: {fileID: 8292648429311309814}
-  zombieColor: {r: 0.40744036, g: 0.7924528, b: 0.40744036, a: 1}
-  zombieStateDuration: 20
-  immuneBehaviour: {fileID: -2036268742105978513}
-  immuneColor: {r: 0.38812745, g: 0.82710993, b: 0.9245283, a: 1}
-  immuneStateDuration: 5
-  coloredSprites:
-  - {fileID: 1213966104932174698}
---- !u!114 &-4425926623520026851
+--- !u!114 &5350987272952145632
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -360,8 +319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f8849d5307aa43831735253d2ef08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &8549864639980755791
 GameObject:
   m_ObjectHideFlags: 0
