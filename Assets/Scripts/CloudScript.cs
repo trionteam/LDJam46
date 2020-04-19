@@ -16,8 +16,10 @@ public class CloudScript : MonoBehaviour
 	private Vector3 velocity = Vector3.zero;
 
 	private float lifeLeft = 0;
+	private float actualLifeTime = 0;
 	private SpriteRenderer spriteRenderer;
 	private float rot = 1;
+	private float scale = 1;
 
 	public void Init(Vector2 vel)
 	{
@@ -34,7 +36,7 @@ public class CloudScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		lifeLeft = LifeTime + Random.Range(-1.0f, 1.0f) * LifeLengthRandomness;
+		actualLifeTime = lifeLeft = LifeTime + Random.Range(-1.0f, 1.0f) * LifeLengthRandomness;
 		spriteRenderer = GetComponent<SpriteRenderer>();
 
 		// add a bit of variation
@@ -43,32 +45,34 @@ public class CloudScript : MonoBehaviour
 		H += Random.Range(-0.1f, 0.1f);
 		spriteRenderer.color = Color.HSVToRGB(H, S, V);
 
-		transform.localScale *= Random.Range(0.8f, 1.2f);
+		scale = Random.Range(0.8f, 1.2f);
 		transform.localRotation = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.forward);
+		transform.localScale = Vector3.zero;
 	}
 
     // Update is called once per frame
     void Update()
     {
+		lifeLeft -= Time.deltaTime;
+
 		transform.position += velocity * Time.deltaTime;
 		transform.Rotate(Vector3.forward, rot * Time.deltaTime);
 
+		float normalizedLifeTime = (actualLifeTime - lifeLeft) / actualLifeTime;
+
 		Color c = spriteRenderer.color;
-		lifeLeft -= Time.deltaTime;
+		
 		if (lifeLeft <= 0)
 		{
-			c.a = (FadeLastSeconds + lifeLeft) / FadeLastSeconds;
-			if (lifeLeft <= -FadeLastSeconds)
-			{
-				Destroy(gameObject);
-				return;
-			}
+			Destroy(gameObject);
+			return;
 		}
-		else
-		{
-			c.a = Mathf.Clamp(c.a + Time.deltaTime * FadeLastSeconds, 0, 1);
-		}
+
+		c.a = Curves.Instance?.CloudCurveAlpha.Evaluate(normalizedLifeTime) ?? 1.0f;
 		spriteRenderer.color = c;
+
+		float s = scale * (Curves.Instance?.CloudCurveSize.Evaluate(normalizedLifeTime) ?? 1.0f);
+		transform.localScale = Vector3.one * s;
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -80,8 +84,8 @@ public class CloudScript : MonoBehaviour
             {
                 zombifiable.CurrentState = CausedState;
             }
-            // Remove itself on collision with a person.
-            Destroy(gameObject);
+			// Remove itself on collision with a person.
+			Destroy(gameObject);
         }
     }
 }

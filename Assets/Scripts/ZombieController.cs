@@ -115,7 +115,6 @@ public class ZombieController : MonoBehaviour
         }
 
 		Cough();
-
 	}
 
     void FixedUpdate()
@@ -158,8 +157,12 @@ public class ZombieController : MonoBehaviour
 			for (int i = 0; i < numCoughs; ++i)
 			{
 				GameObject cough = GameObject.Instantiate(CloudPrefab, transform.position, Quaternion.identity);
-				Vector2 rndDir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized * 0.1f;
-                var cloud = cough.GetComponent<CloudScript>();
+				// cough direction is in the general movement direction
+				Vector2 directionToDestination = (destination - rigidBody.position).normalized;
+				Vector2 rndDir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized * 0.1f + directionToDestination;
+				rndDir = rndDir.normalized * Random.Range(0.8f, 1.2f);
+				Debug.DrawLine(rigidBody.position, rigidBody.position + rndDir);
+				var cloud = cough.GetComponent<CloudScript>();
                 cloud.Init(rndDir);
                 cloud.SetSourceZombie(gameObject);
 			}
