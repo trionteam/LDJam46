@@ -53,6 +53,9 @@ TextureImporter:
   - first:
       213: 1564707360604866923
     second: FreedomSign
+  - first:
+      213: 6518131303427758132
+    second: VictorySign
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -516,6 +519,27 @@ TextureImporter:
       bones: []
       spriteID: b69ca46ed05f6b510800000000000000
       internalID: 1564707360604866923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VictorySign
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1370
+        width: 1307
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4385a2cc2ed057a50800000000000000
+      internalID: 6518131303427758132
       vertices: []
       indices: 
       edges: []
