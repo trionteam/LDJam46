@@ -51,4 +51,9 @@ public class HealthyPersonController : MonoBehaviour
         var destinationDelta = randomMovementDestinationRadius * Random.insideUnitCircle;
         destination = rigidBody.position + destinationDelta;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        UpdateDestination();
+    }
 }
