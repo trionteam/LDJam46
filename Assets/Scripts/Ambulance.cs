@@ -48,8 +48,8 @@ public class Ambulance : MonoBehaviour
 				float side = (i < BurstSize / 2) ? 1 : -1;
 				Vector2 dir = Quaternion.Euler(0.0f, 0.0f, rigidBody.rotation + 90 * side + spreadAngle) * Vector2.up;
 
-				GameObject g = GameObject.Instantiate(CloudPrefab, pos + fwd * 0.1f, Quaternion.identity);
-				g.GetComponent<CloudScript>().Init((rigidBody.velocity + dir) * SpraySpeed);
+				GameObject g = GameObject.Instantiate(CloudPrefab, pos + fwd * 0.2f, Quaternion.identity);
+				g.GetComponent<CloudScript>().Init((fwd * 0.2f + dir) * SpraySpeed);
 				//pos += (new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized * 0.05f + dir * 0.1f);
 			}
 
