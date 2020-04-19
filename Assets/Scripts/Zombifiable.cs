@@ -113,6 +113,7 @@ public class Zombifiable : MonoBehaviour
             case State.Zombie:
                 zombieBehaviour.enabled = true;
                 newColor = zombieColor;
+				ShakeMgr.Instance?.Shake();
                 break;
         }
         foreach(var sprite in coloredSprites)
