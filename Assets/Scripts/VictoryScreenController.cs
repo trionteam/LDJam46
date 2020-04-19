@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoalAreaController : MonoBehaviour
+public class VictoryScreenController : MonoBehaviour
 {
     public LevelController levelController;
 
@@ -15,12 +15,8 @@ public class GoalAreaController : MonoBehaviour
         Debug.Assert(levelController != null);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnNextLevelClicked()
     {
-        var zombie = collision.GetComponentInParent<ZombieController>();
-        if (zombie != null && zombie.isActiveAndEnabled)
-        {
-            levelController.GoalAreaReached();
-        }
+        levelController.LoadNextLevel();
     }
 }

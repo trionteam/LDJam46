@@ -2590,6 +2590,10 @@ PrefabInstance:
       propertyPath: NumZombiesText
       value: 
       objectReference: {fileID: 1890019352}
+    - target: {fileID: 2246343891152739744, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}
+      propertyPath: nextLevelSceneName
+      value: Scenes/Level01
+      objectReference: {fileID: 0}
     - target: {fileID: 2373268666580808032, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3912,8 +3916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd1f04ec3a864d47b955b2665e0fb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victoryScreen: {fileID: 0}
-  isVictory: 0
+  levelController: {fileID: 0}
 --- !u!4 &1380394472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 266983535250394760, guid: 05cc3ab9c640ec44089e5f7a4e0b2142, type: 3}

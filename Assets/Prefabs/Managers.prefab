@@ -160,9 +160,10 @@ GameObject:
   - component: {fileID: 1634026503214446515}
   - component: {fileID: 1992639761133854245}
   - component: {fileID: 8102971791556110295}
+  - component: {fileID: 2246343891152739744}
   m_Layer: 0
   m_Name: Managers
-  m_TagString: Untagged
+  m_TagString: Managers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -318,3 +319,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
   dragDropMask: {fileID: 5682313127573469217}
+--- !u!114 &2246343891152739744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5071193386858520844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5cf3bbf41b914341a0f5ae50681f1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  victoryScreen: {fileID: 0}
+  nextLevelSceneName: 
