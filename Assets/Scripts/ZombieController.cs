@@ -145,7 +145,10 @@ public class ZombieController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        UpdateDestination();
+        if (!HasAssignedDestination)
+        {
+            UpdateDestination();
+        }
     }
 
 	private void Cough()
