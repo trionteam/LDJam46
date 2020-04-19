@@ -63,8 +63,8 @@
 				fixed2 pixSize = 1.0 / _ScreenParams.xy;
 				
 				// border
-				fixed2 b = 5 * pixSize;
-				if (i.uv.x < b.x || i.uv.x > 1.0 - b.x || i.uv.y < b.y || i.uv.y > 1.0 - b.y)
+				fixed2 b = 4 * pixSize;
+				if (i.uv.x <= b.x || i.uv.x >= 0.999 - b.x || i.uv.y <= b.y || i.uv.y > 0.999 - b.y)
 				{
 					col = fixed4((1 - uv2) * _Color1.xyz, 1);
 				}
