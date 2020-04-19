@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ZombieControls
+  - VictoryScreen
   layers:
   - Default
   - TransparentFX
