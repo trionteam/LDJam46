@@ -65,6 +65,9 @@ public class RotatingSpray : MonoBehaviour
 					g.GetComponent<CloudScript>().Init(toColliderNorm * SpraySpeed);
 					pos += (new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized * 0.05f + toColliderNorm * 0.1f);
 				}
+
+				// TODO - sound wildcards
+				SoundMgr.Instance?.Play($"spray_{Random.Range(0, 2)}");
 			}
 		}
 		else

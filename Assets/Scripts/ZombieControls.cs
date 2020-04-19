@@ -83,7 +83,7 @@ public class ZombieControls : MonoBehaviour
             }
 			if (selectedZombies.Count > 0)
 			{
-				// TODO - number of barks
+				// TODO - sound wildcards
 				SoundMgr.Instance?.Play($"lungs_{Random.Range(0, 2)}");
 			}
         }

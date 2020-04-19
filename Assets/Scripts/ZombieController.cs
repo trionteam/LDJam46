@@ -170,7 +170,7 @@ public class ZombieController : MonoBehaviour
                 cloud.SetSourceZombie(gameObject);
 			}
 
-			// TODO - wildcards to play a random sound of the selected kind
+			// TODO - sound wildcards
 			SoundMgr.Instance?.Play($"cough_{Random.Range(0, 4)}");
 
 			coughLeft = coughTimeout + Random.Range(-0.1f, 1.0f);
