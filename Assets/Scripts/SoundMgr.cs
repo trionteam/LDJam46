@@ -13,10 +13,12 @@ public class SoundMgr : MonoBehaviour
 		public float lastPlayed;
 	};
 	private static Dictionary<string, CachedAudio> Clips = new Dictionary<string, CachedAudio>();
-	//AudioSource music = null;
+	private static AudioSource music = null;
 	public static bool ENABLED = true;
+	public static bool MUSIC = true;
 	public static string SoundsRoot = "Sounds";
-	//public static string MusicRoot = "Music";
+	public static string MusicClip = "Plague_of_Zombies";
+	public float MusicVolume = 0.2f;
 
 	private void Awake()
 	{
@@ -27,16 +29,18 @@ public class SoundMgr : MonoBehaviour
 	{
 		Clips.Clear();
 
-		//AudioClip ac = Resources.Load<AudioClip>(MusicRoot + "/" + "abc");
-		//if (ac)
-		//{
-		//	music = new GameObject().AddComponent<AudioSource>();
-		//	music.clip = ac;
-		//	music.loop = true;
-		//}
+		AudioClip ac = Resources.Load<AudioClip>(SoundsRoot + "/" + MusicClip);
+		if (ac)
+		{
+			music = new GameObject().AddComponent<AudioSource>();
+			music.clip = ac;
+			music.loop = true;
+			music.volume = MusicVolume;
+		}
 
 		ENABLED = true;
-		//music.Play();
+		MUSIC = true;
+		music?.Play();
 	}
 
 	public void Toggle(UnityEngine.UI.Button button = null)
@@ -49,6 +53,21 @@ public class SoundMgr : MonoBehaviour
 			// TODO - hardcoded color
 			button.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().color = ENABLED ? new Color(0, 0.5f, 0): Color.red;
 		}
+	}
+
+	public void ToggleMusic(UnityEngine.UI.Button button = null)
+	{
+		MUSIC = !MUSIC;
+		Debug.Log($"Music {(MUSIC ? "ON" : "OFF")}");
+
+		if (button)
+		{
+			// TODO - hardcoded color
+			button.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().color = MUSIC ? new Color(0, 0.5f, 0) : Color.red;
+		}
+
+		if (!MUSIC) music?.Stop();
+		else music?.Play();
 	}
 
 	public void Play(string name)
