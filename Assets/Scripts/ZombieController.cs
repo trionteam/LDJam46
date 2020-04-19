@@ -171,7 +171,7 @@ public class ZombieController : MonoBehaviour
 			}
 
 			// TODO - sound wildcards
-			SoundMgr.Instance?.Play($"cough_{Random.Range(0, 4)}");
+			SoundMgr.Instance?.Play($"cough_{Random.Range(0, 5)}");
 
 			coughLeft = coughTimeout + Random.Range(-0.1f, 1.0f);
 		}
