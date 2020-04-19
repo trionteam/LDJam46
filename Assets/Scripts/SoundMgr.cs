@@ -46,7 +46,8 @@ public class SoundMgr : MonoBehaviour
 
 		if (button)
 		{
-			button.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = $"Toggle sounds\n(now {(ENABLED ? "ON" : "OFF")})";
+			// TODO - hardcoded color
+			button.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().color = ENABLED ? new Color(0, 0.5f, 0): Color.red;
 		}
 	}
 
