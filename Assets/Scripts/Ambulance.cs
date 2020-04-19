@@ -8,7 +8,6 @@ public class Ambulance : MonoBehaviour
 	public float Speed = 1;
 	public GameObject CloudPrefab;
 
-	private float next = 0;
 	private int n = 0;
 	private Rigidbody2D rigidBody;
 
@@ -54,7 +53,7 @@ public class Ambulance : MonoBehaviour
 			}
 
 			// TODO - sound wildcards
-			SoundMgr.Instance?.Play($"spray_{Random.Range(0, 2)}");
+			SoundMgr.Instance?.Play($"spray_{Random.Range(0, 3)}");
 		}
 
 		if (null == waypoints) return;
@@ -64,8 +63,6 @@ public class Ambulance : MonoBehaviour
 			n = (n + 1) % waypoints.Transforms.Length;
 		}
 
-
-		next += Time.deltaTime;
 		Vector2 target = waypoints.GetPos(n);
 		Vector2 toTarget = (target - rigidBody.position).normalized;
 		float a = Vector2.SignedAngle(Vector2.up, toTarget);
