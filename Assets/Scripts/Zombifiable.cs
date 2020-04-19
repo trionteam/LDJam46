@@ -131,7 +131,12 @@ public class ZombifiableEditor : Editor
     {
         DrawDefaultInspector();
         var zombifiable = serializedObject.targetObject as Zombifiable;
-        zombifiable.CurrentState = (Zombifiable.State)EditorGUILayout.EnumPopup("Current State", zombifiable.CurrentState);
+        var newState = (Zombifiable.State)EditorGUILayout.EnumPopup("Current State", zombifiable.CurrentState);
+        if (newState != zombifiable.CurrentState)
+        {
+            zombifiable.CurrentState = newState;
+            EditorUtility.SetDirty(zombifiable);
+        }
     }
 }
 #endif

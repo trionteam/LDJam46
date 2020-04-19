@@ -15,6 +15,8 @@ public class HealthyPersonController : MonoBehaviour
 
     public float destinationResetRadius = 0.01f;
 
+    public ZombieDetection zombieDetection;
+
     private Rigidbody2D rigidBody;
 
     private void Awake()
@@ -30,12 +32,23 @@ public class HealthyPersonController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (IsAtDestination())
+        Vector2 directionToDestination;
+        if (zombieDetection != null && zombieDetection.zombiesInSight.Count > 0)
         {
+            directionToDestination = zombieDetection.EscapeDirection();
+            // Reset destination, so that the person starts moving randomly when they
+            // lose sight of the zombies.
             UpdateDestination();
         }
+        else
+        {
+            if (IsAtDestination())
+            {
+                UpdateDestination();
+            }
+            directionToDestination = (destination - rigidBody.position).normalized;
+        }
 
-        var directionToDestination = (destination - rigidBody.position).normalized;
         var desiredPositionInFrame = rigidBody.position + movementSpeed * Time.fixedDeltaTime * directionToDestination;
         rigidBody.MovePosition(desiredPositionInFrame);
     }

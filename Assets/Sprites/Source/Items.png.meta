@@ -62,6 +62,27 @@ TextureImporter:
   - first:
       213: 5092225387653060742
     second: EscapeHere2
+  - first:
+      213: 4132001008690382820
+    second: RamisCow
+  - first:
+      213: -4949288023075769614
+    second: Tree1
+  - first:
+      213: 9171152094540569313
+    second: Tree2
+  - first:
+      213: -2512933605798214623
+    second: Bush1
+  - first:
+      213: 5962186343483416654
+    second: Grass1
+  - first:
+      213: -7783226958395758601
+    second: Grass2
+  - first:
+      213: -223192039535903245
+    second: SprayTank
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -588,6 +609,153 @@ TextureImporter:
       bones: []
       spriteID: 6885943a2083ba640800000000000000
       internalID: 5092225387653060742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RamisCow
+      rect:
+        serializedVersion: 2
+        x: 3174
+        y: 1395
+        width: 197
+        height: 139
+      alignment: 9
+      pivot: {x: 0.48707047, y: 0.1242869}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7cb8e6601d75930800000000000000
+      internalID: 4132001008690382820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree1
+      rect:
+        serializedVersion: 2
+        x: 2529
+        y: 1531
+        width: 169
+        height: 262
+      alignment: 9
+      pivot: {x: 0.48121563, y: 0.051692117}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f23975f3c8905bb0800000000000000
+      internalID: -4949288023075769614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree2
+      rect:
+        serializedVersion: 2
+        x: 2308
+        y: 1301
+        width: 197
+        height: 373
+      alignment: 9
+      pivot: {x: 0.5161133, y: 0.048931215}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea9b283d3a764f70800000000000000
+      internalID: 9171152094540569313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bush1
+      rect:
+        serializedVersion: 2
+        x: 2761
+        y: 1384
+        width: 125
+        height: 102
+      alignment: 9
+      pivot: {x: 0.5203164, y: 0.08295635}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 124814a1334402dd0800000000000000
+      internalID: -2512933605798214623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass1
+      rect:
+        serializedVersion: 2
+        x: 2954
+        y: 1398
+        width: 49
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e40a300f3e0fdb250800000000000000
+      internalID: 5962186343483416654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass2
+      rect:
+        serializedVersion: 2
+        x: 3027
+        y: 1395
+        width: 40
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f7a392915c6cf390800000000000000
+      internalID: -7783226958395758601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayTank
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 732
+        width: 684
+        height: 346
+      alignment: 9
+      pivot: {x: 0.47794116, y: 0.09411745}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fd74c6c50017ecf0800000000000000
+      internalID: -223192039535903245
       vertices: []
       indices: 
       edges: []

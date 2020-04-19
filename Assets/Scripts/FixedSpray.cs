@@ -33,7 +33,7 @@ public class FixedSpray : MonoBehaviour
     {
         if (Time.time > LastBurstTime + SprayPeriod)
         {
-            var pos = transform.position;
+            var pos = Cone.transform.position;
             for (int i = 0; i < BurstSize; ++i)
             {
                 var spreadAngle = Random.Range(-BurstSpreadDegrees / 2.0f, BurstSpreadDegrees / 2.0f);
