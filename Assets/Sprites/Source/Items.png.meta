@@ -80,6 +80,9 @@ TextureImporter:
   - first:
       213: -7783226958395758601
     second: Grass2
+  - first:
+      213: -223192039535903245
+    second: SprayTank
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -724,7 +727,7 @@ TextureImporter:
         width: 40
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -732,6 +735,27 @@ TextureImporter:
       bones: []
       spriteID: 7f7a392915c6cf390800000000000000
       internalID: -7783226958395758601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SprayTank
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 732
+        width: 684
+        height: 346
+      alignment: 9
+      pivot: {x: 0.47794116, y: 0.09411745}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fd74c6c50017ecf0800000000000000
+      internalID: -223192039535903245
       vertices: []
       indices: 
       edges: []
