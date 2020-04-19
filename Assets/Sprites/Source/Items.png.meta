@@ -56,6 +56,12 @@ TextureImporter:
   - first:
       213: 6518131303427758132
     second: VictorySign
+  - first:
+      213: -1270487867460927878
+    second: EscapeHere1
+  - first:
+      213: 5092225387653060742
+    second: EscapeHere2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -532,7 +538,7 @@ TextureImporter:
         width: 1307
         height: 480
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -540,6 +546,48 @@ TextureImporter:
       bones: []
       spriteID: 4385a2cc2ed057a50800000000000000
       internalID: 6518131303427758132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EscapeHere1
+      rect:
+        serializedVersion: 2
+        x: 3258
+        y: 119
+        width: 305
+        height: 264
+      alignment: 9
+      pivot: {x: 0.2913102, y: 0.07405946}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e3c8014025e5ee0800000000000000
+      internalID: -1270487867460927878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EscapeHere2
+      rect:
+        serializedVersion: 2
+        x: 2827
+        y: 100
+        width: 243
+        height: 196
+      alignment: 9
+      pivot: {x: 0.7270086, y: 0.09948174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6885943a2083ba640800000000000000
+      internalID: 5092225387653060742
       vertices: []
       indices: 
       edges: []
