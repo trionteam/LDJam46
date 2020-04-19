@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class GoalAreaController : MonoBehaviour
 {
+    public GameObject victorySign;
+
     public bool isVictory = false;
+
+    private void Awake()
+    {
+        Debug.Assert(victorySign != null);
+    }
+
+    private void Start()
+    {
+        victorySign.SetActive(false);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,7 +24,7 @@ public class GoalAreaController : MonoBehaviour
         if (zombie != null && zombie.isActiveAndEnabled)
         {
             isVictory = true;
-            // TODO: Victory!
+            victorySign.SetActive(true);
         }
     }
 }
