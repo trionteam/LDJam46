@@ -62,6 +62,9 @@ TextureImporter:
   - first:
       213: 5092225387653060742
     second: EscapeHere2
+  - first:
+      213: 4132001008690382820
+    second: RamisCow
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -588,6 +591,27 @@ TextureImporter:
       bones: []
       spriteID: 6885943a2083ba640800000000000000
       internalID: 5092225387653060742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RamisCow
+      rect:
+        serializedVersion: 2
+        x: 3174
+        y: 1395
+        width: 197
+        height: 139
+      alignment: 9
+      pivot: {x: 0.48707047, y: 0.1242869}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7cb8e6601d75930800000000000000
+      internalID: 4132001008690382820
       vertices: []
       indices: 
       edges: []
