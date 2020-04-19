@@ -81,6 +81,10 @@ public class ZombieControls : MonoBehaviour
             {
                 zombie.AssignDestination(MousePosition2d);
             }
+			if (selectedZombies.Count > 0)
+			{
+				SoundMgr.Instance?.Play("lungs");
+			}
         }
 
         dragDropMask.gameObject.SetActive(isDragging);
