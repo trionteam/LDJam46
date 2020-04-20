@@ -140,10 +140,10 @@ TextureImporter:
       name: BatmanShadow
       rect:
         serializedVersion: 2
-        x: 3008
-        y: 1574
-        width: 212
-        height: 103
+        x: 3051
+        y: 1591
+        width: 103
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,7 +292,7 @@ TextureImporter:
         width: 191
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
