@@ -7,7 +7,7 @@ TextureImporter:
     second: Ambulance
   - first:
       213: 4337684191699249041
-    second: Citizen
+    second: Citizen1
   - first:
       213: -488721925442295091
     second: WHO
@@ -19,7 +19,7 @@ TextureImporter:
     second: House
   - first:
       213: -1740157615657646003
-    second: Batman
+    second: Batman1
   - first:
       213: 2016774126744611315
     second: Selection
@@ -89,6 +89,18 @@ TextureImporter:
   - first:
       213: -2948548828630180433
     second: CurePump
+  - first:
+      213: 6761164967045977113
+    second: items_0
+  - first:
+      213: 5508725064705088119
+    second: items_1
+  - first:
+      213: -68751727340038015
+    second: Batman2
+  - first:
+      213: 1353401175571350654
+    second: Citizen2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -135,7 +147,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -221,15 +233,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Citizen
+      name: Citizen1
       rect:
         serializedVersion: 2
-        x: 3509
-        y: 1057
-        width: 81
+        x: 3586
+        y: 1055
+        width: 61
         height: 131
       alignment: 9
-      pivot: {x: 0.55238175, y: 0.19227658}
+      pivot: {x: 0.5523787, y: 0.1536474}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -246,7 +258,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3603
-        y: 1195
+        y: 1197
         width: 92
         height: 137
       alignment: 9
@@ -305,15 +317,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Batman
+      name: Batman1
       rect:
         serializedVersion: 2
-        x: 2141
+        x: 2158
         y: 1832
-        width: 94
+        width: 69
         height: 126
       alignment: 9
-      pivot: {x: 0.52256745, y: 0.12954955}
+      pivot: {x: 0.5225675, y: 0.1295495}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -804,6 +816,90 @@ TextureImporter:
       bones: []
       spriteID: fad9a926676a417d0800000000000000
       internalID: -2948548828630180433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items_0
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 1832
+        width: 94
+        height: 126
+      alignment: 9
+      pivot: {x: 0.52256745, y: 0.12954955}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 914579027bb74dd50800000000000000
+      internalID: 6761164967045977113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items_1
+      rect:
+        serializedVersion: 2
+        x: 2230
+        y: 1838
+        width: 94
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77a9907824ce27c40800000000000000
+      internalID: 5508725064705088119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman2
+      rect:
+        serializedVersion: 2
+        x: 2235
+        y: 1832
+        width: 69
+        height: 126
+      alignment: 9
+      pivot: {x: 0.5225675, y: 0.1295495}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188d3321baebb0ff0800000000000000
+      internalID: -68751727340038015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Citizen2
+      rect:
+        serializedVersion: 2
+        x: 3654
+        y: 1055
+        width: 61
+        height: 131
+      alignment: 9
+      pivot: {x: 0.5523787, y: 0.1536474}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e74c684d23f38c210800000000000000
+      internalID: 1353401175571350654
       vertices: []
       indices: 
       edges: []
