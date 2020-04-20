@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: -3343945561218372046
     second: Tree2Shadow
+  - first:
+      213: -6784655684966851735
+    second: CurePumpShadow
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -300,6 +303,27 @@ TextureImporter:
       bones: []
       spriteID: 23ea553aa3be791d0800000000000000
       internalID: -3343945561218372046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CurePumpShadow
+      rect:
+        serializedVersion: 2
+        x: 1982
+        y: 1320
+        width: 118
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96b5736e99f08d1a0800000000000000
+      internalID: -6784655684966851735
       vertices: []
       indices: 
       edges: []

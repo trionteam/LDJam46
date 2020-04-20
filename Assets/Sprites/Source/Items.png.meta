@@ -86,6 +86,9 @@ TextureImporter:
   - first:
       213: -6117908334305576401
     second: MainMenuFrame
+  - first:
+      213: -2948548828630180433
+    second: CurePump
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -772,7 +775,7 @@ TextureImporter:
         width: 700
         height: 596
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -780,6 +783,27 @@ TextureImporter:
       bones: []
       spriteID: f2a7055b8c2d81ba0800000000000000
       internalID: -6117908334305576401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CurePump
+      rect:
+        serializedVersion: 2
+        x: 1948
+        y: 1246
+        width: 288
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad9a926676a417d0800000000000000
+      internalID: -2948548828630180433
       vertices: []
       indices: 
       edges: []
