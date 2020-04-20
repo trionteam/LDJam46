@@ -42,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Shadows
+    uniqueID: 2802342251
+    locked: 0
   - name: UiBelowSprites
     uniqueID: 683363979
     locked: 0
