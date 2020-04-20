@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5589875621261886454, guid: ea4a486a789c7774d97b6e358a1f3ce8, type: 3}
+  m_Sprite: {fileID: 5589875621261886454, guid: 3e5046f864be37b48b608732bbdd80ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,8 +130,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.0031370968, y: 1.707207}
-      - {x: -0.15810455, y: 1.7043291}
-      - {x: -0.11861992, y: 1.0215225}
-      - {x: -0.00904198, y: -0.05919856}
-      - {x: 0.08163735, y: -0.057134688}
+    - - {x: 0.015997287, y: 1.0241618}
+      - {x: -0.019765146, y: 1.7386978}
+      - {x: -0.138065, y: 1.7386826}
+      - {x: -0.10430613, y: 1.0215225}
+      - {x: -0.08633716, y: 0.02954799}
+      - {x: 0.01865597, y: -0.0027416348}

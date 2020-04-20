@@ -101,6 +101,9 @@ TextureImporter:
   - first:
       213: 1353401175571350654
     second: Citizen2
+  - first:
+      213: -8334572149316803978
+    second: Earth
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -900,6 +903,27 @@ TextureImporter:
       bones: []
       spriteID: e74c684d23f38c210800000000000000
       internalID: 1353401175571350654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Earth
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 27
+        width: 654
+        height: 646
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 672ab15e9c6a55c80800000000000000
+      internalID: -8334572149316803978
       vertices: []
       indices: 
       edges: []
