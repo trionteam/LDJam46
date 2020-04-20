@@ -58,11 +58,6 @@ public class ZombieControls : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-
         if (Input.GetMouseButtonDown(0) && !Input.GetMouseButtonUp(0))
         {
             isDragging = true;
