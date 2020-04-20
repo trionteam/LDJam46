@@ -5,6 +5,7 @@ using UnityEngine;
 public class ZombieControls : MonoBehaviour
 {
     public Camera mainCamera;
+    public MainMenuController mainMenu;
 
     public HashSet<ZombieController> selectedZombies = new HashSet<ZombieController>();
     private bool selectedZombiesUpdating = false;
@@ -29,6 +30,11 @@ public class ZombieControls : MonoBehaviour
             mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         }
         Debug.Assert(mainCamera != null);
+
+        if (mainMenu == null)
+        {
+            mainMenu = GameObject.FindGameObjectWithTag("MainMenu").GetComponent<MainMenuController>();
+        }
 
         if (dragDropMask == null)
         {

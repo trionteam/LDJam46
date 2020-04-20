@@ -83,6 +83,9 @@ TextureImporter:
   - first:
       213: -223192039535903245
     second: SprayTank
+  - first:
+      213: -6117908334305576401
+    second: MainMenuFrame
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -756,6 +759,27 @@ TextureImporter:
       bones: []
       spriteID: 3fd74c6c50017ecf0800000000000000
       internalID: -223192039535903245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainMenuFrame
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 258
+        width: 700
+        height: 596
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a7055b8c2d81ba0800000000000000
+      internalID: -6117908334305576401
       vertices: []
       indices: 
       edges: []

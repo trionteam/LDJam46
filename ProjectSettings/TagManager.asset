@@ -7,6 +7,7 @@ TagManager:
   - ZombieControls
   - VictoryScreen
   - Managers
+  - MainMenu
   layers:
   - Default
   - TransparentFX
