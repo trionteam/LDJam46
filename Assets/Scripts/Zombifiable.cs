@@ -49,6 +49,8 @@ public class Zombifiable : MonoBehaviour
 
     public SpriteRenderer[] coloredSprites;
 
+    public bool switchingLocked = false;
+
     private void Awake()
     {
         Debug.Assert(normalBehaviour != null);

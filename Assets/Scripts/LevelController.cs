@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelController : MonoBehaviour
 {
     public GameObject victoryScreen = null;
+    public ZombieControls zombieControls = null;
 
     public string nextLevelSceneName = null;
 
@@ -17,11 +18,19 @@ public class LevelController : MonoBehaviour
         }
         Debug.Assert(victoryScreen != null);
         victoryScreen.SetActive(false);
+
+        if (zombieControls == null)
+        {
+            zombieControls = GetComponent<ZombieControls>();
+        }
+        Debug.Assert(zombieControls != null);
     }
 
     public void GoalAreaReached()
     {
         victoryScreen.SetActive(true);
+        // Disable zombie controls.
+        zombieControls.enabled = false;
     }
 
     public void LoadNextLevel()
