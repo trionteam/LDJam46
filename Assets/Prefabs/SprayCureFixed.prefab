@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -223192039535903245, guid: ea4a486a789c7774d97b6e358a1f3ce8, type: 3}
+  m_Sprite: {fileID: -223192039535903245, guid: 3e5046f864be37b48b608732bbdd80ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudPrefab: {fileID: 301755780573216639, guid: 6dc5e91c84f624948a3296cc9e2d8309, type: 3}
   Cone: {fileID: 2742108570499925741}
+  controlArea: {fileID: 0}
   SpraySpeed: 2
   SprayPeriod: 5
   BurstSize: 10
