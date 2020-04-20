@@ -8,6 +8,8 @@ TagManager:
   - VictoryScreen
   - Managers
   - MainMenu
+  - ToggleSoundButton
+  - ToggleMusicButton
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,8 @@ public class MainMenuController : MonoBehaviour
     private GameObject container;
     private Button exitToMenuButton;
     private Button exitGameButton;
+    private Button backToGameButton;
+    private Button showMenuButton;
 
     private bool IsInMainMenu
     {
@@ -25,6 +27,12 @@ public class MainMenuController : MonoBehaviour
 
         exitGameButton = transform.Find("Container/ExitButton").GetComponent<Button>();
         Debug.Assert(exitGameButton != null);
+
+        backToGameButton = transform.Find("Container/BackToGameButton").GetComponent<Button>();
+        Debug.Assert(backToGameButton != null);
+
+        showMenuButton = transform.Find("ShowMenuButton").GetComponent<Button>();
+        Debug.Assert(showMenuButton != null);
     }
 
     private void Start()
@@ -32,6 +40,8 @@ public class MainMenuController : MonoBehaviour
         bool isInMainMenu = IsInMainMenu;
         exitToMenuButton.gameObject.SetActive(!isInMainMenu);
         exitGameButton.gameObject.SetActive(isInMainMenu);
+        backToGameButton.gameObject.SetActive(!IsInMainMenu);
+        showMenuButton.gameObject.SetActive(!IsInMainMenu);
 
         container.SetActive(isInMainMenu);
     }
@@ -40,10 +50,7 @@ public class MainMenuController : MonoBehaviour
     {
         if (!IsInMainMenu && Input.GetKeyUp(KeyCode.Escape))
         {
-            // If playing a level, escape shows/hides the menu and pauses the game.
-            bool activateMenu = !container.activeSelf;
-            Time.timeScale = activateMenu ? 0.0f : 1.0f;
-            container.SetActive(activateMenu);
+            ToggleMainMenu();
         }
     }
 
@@ -60,5 +67,13 @@ public class MainMenuController : MonoBehaviour
     public void ExitToMenu()
     {
         SceneManager.LoadScene("Scenes/MainMenu");
+    }
+
+    public void ToggleMainMenu()
+    {
+        // If playing a level, escape shows/hides the menu and pauses the game.
+        bool activateMenu = !container.activeSelf;
+        Time.timeScale = activateMenu ? 0.0f : 1.0f;
+        container.SetActive(activateMenu);
     }
 }
