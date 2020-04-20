@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1188995893710989117}
   - component: {fileID: 1188995893710989116}
   - component: {fileID: 1524150626407173720}
-  - component: {fileID: 3758884245919349902}
+  - component: {fileID: -5437023931566942055}
   m_Layer: 0
   m_Name: EscapeHere2
   m_TagString: Untagged
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7035334, y: 0.66052675}
   m_EdgeRadius: 0
---- !u!114 &3758884245919349902
+--- !u!114 &-5437023931566942055
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,9 +141,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1188995893710989118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a23da9536a0bad64e8522959d6c031ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d9a932a2d65d5242a822d39b25e0971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatDir: 45
-  FloatAmp: 0.05
-  FloatSpeed: 5
+  Amplitude: 10
+  WobbleSpeed: 3
+  SpeedRnd: 0.25

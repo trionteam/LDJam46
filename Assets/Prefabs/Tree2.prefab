@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1188995893710989117}
   - component: {fileID: 1188995893710989116}
   - component: {fileID: 1188995893710989106}
+  - component: {fileID: 7320095756878816447}
   m_Layer: 0
   m_Name: Tree2
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 9171152094540569313, guid: ea4a486a789c7774d97b6e358a1f3ce8, type: 3}
+  m_Sprite: {fileID: 9171152094540569313, guid: 3e5046f864be37b48b608732bbdd80ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,6 +123,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.04}
   serializedVersion: 2
   m_Radius: 0.27321762
+--- !u!114 &7320095756878816447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188995893710989118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9a932a2d65d5242a822d39b25e0971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Amplitude: 2
+  WobbleSpeed: 0.8
+  SpeedRnd: 0.2
 --- !u!1 &3887752330963109403
 GameObject:
   m_ObjectHideFlags: 0
