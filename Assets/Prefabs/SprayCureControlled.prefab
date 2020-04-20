@@ -243,10 +243,10 @@ MonoBehaviour:
   CloudPrefab: {fileID: 301755780573216639, guid: 6dc5e91c84f624948a3296cc9e2d8309, type: 3}
   Cone: {fileID: 6477723972633118309}
   controlArea: {fileID: 6454894039307258033}
-  SpraySpeed: 2
-  SprayPeriod: 0.5
+  SpraySpeed: 1
+  SprayPeriod: 0.2
   BurstSize: 3
-  BurstSpreadDegrees: 45
+  BurstSpreadDegrees: 30
 --- !u!50 &6477723970766620930
 Rigidbody2D:
   serializedVersion: 4
