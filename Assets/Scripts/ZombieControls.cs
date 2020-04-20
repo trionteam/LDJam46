@@ -129,7 +129,7 @@ public class ZombieControls : MonoBehaviour
         if (selectedZombies.Count > 0)
         {
             // TODO - sound wildcards
-            SoundMgr.Instance?.Play($"lungs_{Random.Range(0, 2)}");
+            SoundMgr.Instance?.Play($"go_{Random.Range(0, 3)}");
         }
     }
 
