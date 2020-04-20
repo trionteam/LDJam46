@@ -40,6 +40,10 @@ public class MainMenuController : MonoBehaviour
         bool isInMainMenu = IsInMainMenu;
         exitToMenuButton.gameObject.SetActive(!isInMainMenu);
         exitGameButton.gameObject.SetActive(isInMainMenu);
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            exitGameButton.interactable = false;
+        }
         backToGameButton.gameObject.SetActive(!IsInMainMenu);
         showMenuButton.gameObject.SetActive(!IsInMainMenu);
 
