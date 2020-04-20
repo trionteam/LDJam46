@@ -43,6 +43,7 @@ public class FixedSpray : MonoBehaviour
                 var numCandidates = controlArea.OverlapCollider(new ContactFilter2D().NoFilter(), candidates);
                 for (int i =0; i < numCandidates; ++i)
                 {
+                    if (candidates[i].gameObject.layer != Layers.Zombies) continue;
                     var candidate = candidates[i].GetComponentInParent<HealthyPersonController>();
                     if (candidate != null && candidate.isActiveAndEnabled)
                     {
