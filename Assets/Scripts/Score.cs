@@ -42,7 +42,7 @@ public class Score : MonoBehaviour
 				case Zombifiable.State.Immune: numI++; break;
 			}
 		}
-		NumZombiesText.text = $"Z: {numZ} N: {numN} I: {numI}";
+		NumZombiesText.text = $"Z: {numZ} N: {numN}";
 	}
 
 	public void RegisterActor(Zombifiable z)
