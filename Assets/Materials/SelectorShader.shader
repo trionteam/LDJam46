@@ -56,18 +56,33 @@
                 // sample the texture
                 //fixed4 col = tex2D(_MainTex, i.uv);
 				float4 sPos = i.screenPos;
-				float uv2 = step(frac((sPos.x + sPos.y) * 20 + _Time.x * 4), 0.5);
+				float uv2 = step(frac((sPos.x + sPos.y) * 25 + _Time.x * 4), 0.5);
 				float a = (_SinTime.w * 0.1 + 0.3) * uv2;
 
 				fixed4 col = fixed4(uv2.xxx * _Color1.xyz, a);
 				fixed2 pixSize = 1.0 / _ScreenParams.xy;
 				
 				// border
-				fixed2 b = 4 * pixSize;
-				if (i.uv.x <= b.x || i.uv.x >= 0.999 - b.x || i.uv.y <= b.y || i.uv.y > 0.999 - b.y)
+				fixed bw = 20;
+				fixed2 b = bw * pixSize;
+				fixed3 inv = (_Color1.yyy + 0.1) * (1 - uv2) + 0.5;
+				if (i.uv.x <= b.x && i.uv.x > 0.001)
 				{
-					col = fixed4((1 - uv2) * _Color1.xyz, 1);
+					col = fixed4(inv * i.uv.x / b.x, 1);
 				}
+				if (i.uv.x >= 0.999 - b.x)
+				{
+					col = fixed4(inv * (1 - i.uv.x) / b.x, 1);
+				}
+				if (i.uv.y <= b.y && i.uv.y > 0.001)
+				{
+					col = fixed4(inv * i.uv.y / b.y, 1);
+				}
+				if (i.uv.y >= 0.999 - b.y)
+				{
+					col = fixed4(inv * (1 - i.uv.y) / b.y, 1);
+				}
+
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 return col;
