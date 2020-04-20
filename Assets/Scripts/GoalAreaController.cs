@@ -15,7 +15,7 @@ public class GoalAreaController : MonoBehaviour
         Debug.Assert(levelController != null);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         var zombie = collision.GetComponentInParent<ZombieController>();
         if (zombie != null && zombie.isActiveAndEnabled)
