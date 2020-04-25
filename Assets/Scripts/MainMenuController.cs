@@ -60,7 +60,7 @@ public class MainMenuController : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene("Scenes/Level00");
+        SceneManager.LoadScene("Scenes/LevelTutorial");
 	}
 
 	public void RestartLevel()
