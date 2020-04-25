@@ -2,7 +2,9 @@
 
 # Credits
 
-* Code by PCMaster & OndraSej
+* Code & design by PCMaster & OndraSej
+* Graphics by Peregrine
+* Sound by PCMaster
 * Music by [Haunted Corpse](https://hauntedcorpse.bandcamp.com/releases). Thank
   you so much for letting us use it!
 
