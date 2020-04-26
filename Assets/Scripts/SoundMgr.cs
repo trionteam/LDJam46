@@ -24,13 +24,13 @@ public class SoundMgr : MonoBehaviour
 
     public static bool MusicEnabled
     {
-        get => PlayerPrefs.GetInt(MusicEnabledKey) > 0;
+        get => PlayerPrefs.GetInt(MusicEnabledKey, 1) > 0;
         set => PlayerPrefs.SetInt(MusicEnabledKey, value ? 1 : 0);
     }
 
     public static bool SoundEnabled
     {
-        get => PlayerPrefs.GetInt(SoundEnabledKey) > 0;
+        get => PlayerPrefs.GetInt(SoundEnabledKey, 1) > 0;
         set => PlayerPrefs.SetInt(SoundEnabledKey, value ? 1 : 0);
     }
 
