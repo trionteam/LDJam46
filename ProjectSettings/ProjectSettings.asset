@@ -169,6 +169,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: net.trionteam.KeepItUndead
     Standalone: net.trionteam.KeepItUndead
   buildNumber: {}
   AndroidBundleVersionCode: 1
