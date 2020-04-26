@@ -6,11 +6,12 @@ using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
-    private GameObject container;
-    private Button exitToMenuButton;
-    private Button exitGameButton;
-    private Button backToGameButton;
-    private Button showMenuButton;
+    public GameObject container;
+    public Button exitToMenuButton;
+    public Button exitGameButton;
+    public Button backToGameButton;
+    public Button showMenuButton;
+    public Button restartLevelButton;
 
     private bool IsInMainMenu
     {
@@ -19,20 +20,41 @@ public class MainMenuController : MonoBehaviour
 
     private void Awake()
     {
-        container = transform.Find("Container").gameObject;
+        if (container == null)
+        {
+            container = transform.Find("Container").gameObject;
+        }
         Debug.Assert(container != null);
 
-        exitToMenuButton = transform.Find("Container/ExitToMenuButton").GetComponent<Button>();
+        if (exitToMenuButton == null)
+        {
+            exitToMenuButton = transform.Find("Container/BackgroundImage/ExitToMenuButton").GetComponent<Button>();
+        }
         Debug.Assert(exitToMenuButton != null);
 
-        exitGameButton = transform.Find("Container/ExitButton").GetComponent<Button>();
+        if (exitGameButton == null)
+        {
+            exitGameButton = transform.Find("Container/BackgroundImage/ExitButton").GetComponent<Button>();
+        }
         Debug.Assert(exitGameButton != null);
 
-        backToGameButton = transform.Find("Container/BackToGameButton").GetComponent<Button>();
+        if (backToGameButton == null)
+        {
+            backToGameButton = transform.Find("Container/BackgroundImage/BackToGameButton").GetComponent<Button>();
+        }
         Debug.Assert(backToGameButton != null);
 
-        showMenuButton = transform.Find("ShowMenuButton").GetComponent<Button>();
+        if (showMenuButton == null)
+        {
+            showMenuButton = transform.Find("ShowMenuButton").GetComponent<Button>();
+        }
         Debug.Assert(showMenuButton != null);
+
+        if (restartLevelButton == null)
+        {
+            restartLevelButton = transform.Find("Container/BackgroundImage/RestartLevelButton").GetComponent<Button>();
+        }
+        Debug.Assert(restartLevelButton == null);
     }
 
     private void Start()
@@ -46,6 +68,7 @@ public class MainMenuController : MonoBehaviour
         }
         backToGameButton.gameObject.SetActive(!IsInMainMenu);
         showMenuButton.gameObject.SetActive(!IsInMainMenu);
+        restartLevelButton.gameObject.SetActive(!IsInMainMenu);
 
         container.SetActive(isInMainMenu);
     }
