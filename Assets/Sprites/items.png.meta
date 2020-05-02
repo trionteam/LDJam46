@@ -281,12 +281,12 @@ TextureImporter:
       name: WayOut
       rect:
         serializedVersion: 2
-        x: 3361
-        y: 689
-        width: 287
-        height: 257
+        x: 3365
+        y: 701
+        width: 269
+        height: 228
       alignment: 9
-      pivot: {x: 0.5, y: 0.08522313}
+      pivot: {x: 0.5228875, y: 0.052220393}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -387,9 +387,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3340
-        y: 399
+        y: 405
         width: 263
-        height: 237
+        height: 231
       alignment: 9
       pivot: {x: 0.39668489, y: 0.07388447}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -596,12 +596,12 @@ TextureImporter:
       name: EscapeHere1
       rect:
         serializedVersion: 2
-        x: 3258
-        y: 119
-        width: 305
-        height: 264
+        x: 3265
+        y: 112
+        width: 298
+        height: 258
       alignment: 9
-      pivot: {x: 0.2913102, y: 0.07405946}
+      pivot: {x: 0.30548316, y: 0.058109157}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -618,11 +618,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2827
-        y: 100
+        y: 92
         width: 243
-        height: 196
+        height: 204
       alignment: 9
-      pivot: {x: 0.7270086, y: 0.09948174}
+      pivot: {x: 0.73768246, y: 0.12914658}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

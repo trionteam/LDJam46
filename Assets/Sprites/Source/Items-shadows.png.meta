@@ -29,6 +29,21 @@ TextureImporter:
   - first:
       213: -6784655684966851735
     second: CurePumpShadow
+  - first:
+      213: -4596245145429222531
+    second: WayOutShadow
+  - first:
+      213: 5192737449094501740
+    second: ZombiesGoHomeShado
+  - first:
+      213: 7477227725044741591
+    second: EscapeHere1Shadow
+  - first:
+      213: -1397672254439405577
+    second: EscaeHere2Shadow
+  - first:
+      213: -6655389179418010907
+    second: FreedomShadow
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -316,7 +331,7 @@ TextureImporter:
         width: 118
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -324,6 +339,111 @@ TextureImporter:
       bones: []
       spriteID: 96b5736e99f08d1a0800000000000000
       internalID: -6784655684966851735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WayOutShadow
+      rect:
+        serializedVersion: 2
+        x: 3420
+        y: 687
+        width: 210
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7bd316646bd630c0800000000000000
+      internalID: -4596245145429222531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZombiesGoHomeShado
+      rect:
+        serializedVersion: 2
+        x: 3352
+        y: 390
+        width: 218
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c655529923f401840800000000000000
+      internalID: 5192737449094501740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EscapeHere1Shadow
+      rect:
+        serializedVersion: 2
+        x: 3254
+        y: 104
+        width: 279
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d57ef7fff274c760800000000000000
+      internalID: 7477227725044741591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EscaeHere2Shadow
+      rect:
+        serializedVersion: 2
+        x: 2851
+        y: 83
+        width: 236
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f748b16d787a9ce0800000000000000
+      internalID: -1397672254439405577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FreedomShadow
+      rect:
+        serializedVersion: 2
+        x: 3039
+        y: 698
+        width: 321
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ea9fc69dce43a3a0800000000000000
+      internalID: -6655389179418010907
       vertices: []
       indices: 
       edges: []
