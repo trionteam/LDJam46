@@ -980,6 +980,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 3719154678578128018, guid: 63a3f126709f0174285fa511a7ebb3d0, type: 3}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719154678578128018, guid: 63a3f126709f0174285fa511a7ebb3d0, type: 3}
+      propertyPath: m_AllowDynamicResolution
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719154678578128018, guid: 63a3f126709f0174285fa511a7ebb3d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719154678578128018, guid: 63a3f126709f0174285fa511a7ebb3d0, type: 3}
+      propertyPath: orthographic size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719154678578128018, guid: 63a3f126709f0174285fa511a7ebb3d0, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719154678578128018, guid: 63a3f126709f0174285fa511a7ebb3d0, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719154678578128018, guid: 63a3f126709f0174285fa511a7ebb3d0, type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719154678578128018, guid: 63a3f126709f0174285fa511a7ebb3d0, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63a3f126709f0174285fa511a7ebb3d0, type: 3}
 --- !u!1001 &106275985
@@ -9516,7 +9548,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4279073198918455902, guid: 5e4086f47bdb5044a8a496dd003e4821, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.7001953
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279073198918455902, guid: 5e4086f47bdb5044a8a496dd003e4821, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7025885786873833648, guid: 5e4086f47bdb5044a8a496dd003e4821, type: 3}
       propertyPath: m_LocalPosition.x
