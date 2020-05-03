@@ -54,7 +54,7 @@ public class MainMenuController : MonoBehaviour
         {
             restartLevelButton = transform.Find("Container/BackgroundImage/RestartLevelButton").GetComponent<Button>();
         }
-        Debug.Assert(restartLevelButton == null);
+        Debug.Assert(restartLevelButton != null);
     }
 
     private void Start()
