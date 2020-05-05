@@ -44,6 +44,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: GroundSprites
+    uniqueID: 3384602919
+    locked: 0
   - name: Shadows
     uniqueID: 2802342251
     locked: 0
