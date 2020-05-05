@@ -7,7 +7,7 @@ public class FixedSpray : MonoBehaviour
     public GameObject CloudPrefab;
     public Transform Cone;
 
-    public Collider2D controlArea;
+    public PressurePlate controlPlate;
 
     public float SpraySpeed = 2.0f;
     public float SprayPeriod = 5.0f;
@@ -35,24 +35,7 @@ public class FixedSpray : MonoBehaviour
     {
         if (Time.time > LastBurstTime + SprayPeriod)
         {
-            bool hasController = true;
-            if (controlArea != null)
-            {
-                hasController = false;
-                var candidates = new Collider2D[64];
-                var numCandidates = controlArea.OverlapCollider(new ContactFilter2D().NoFilter(), candidates);
-                for (int i =0; i < numCandidates; ++i)
-                {
-                    if (candidates[i].gameObject.layer != Layers.Zombies) continue;
-                    var candidate = candidates[i].GetComponentInParent<HealthyPersonController>();
-                    if (candidate != null && candidate.isActiveAndEnabled)
-                    {
-                        hasController = true;
-                        break;
-                    }
-                }
-            }
-            if (!hasController) return;
+            if (controlPlate != null && !controlPlate.IsPressed) return;
 
             var pos = Cone.transform.position;
             for (int i = 0; i < BurstSize; ++i)
