@@ -248,8 +248,8 @@ TextureImporter:
       name: Ambulance
       rect:
         serializedVersion: 2
-        x: 3514
-        y: 1353
+        x: 1933
+        y: 1813
         width: 203
         height: 347
       alignment: 0
@@ -311,8 +311,8 @@ TextureImporter:
       name: House
       rect:
         serializedVersion: 2
-        x: 2556
-        y: 981
+        x: 2488
+        y: 1799
         width: 767
         height: 353
       alignment: 9
@@ -353,8 +353,8 @@ TextureImporter:
       name: Selection
       rect:
         serializedVersion: 2
-        x: 2885
-        y: 1576
+        x: 3361
+        y: 1858
         width: 146
         height: 74
       alignment: 0
@@ -374,8 +374,8 @@ TextureImporter:
       name: Destination
       rect:
         serializedVersion: 2
-        x: 2855
-        y: 1720
+        x: 3361
+        y: 1951
         width: 161
         height: 73
       alignment: 9
@@ -647,12 +647,12 @@ TextureImporter:
       name: Tree1
       rect:
         serializedVersion: 2
-        x: 2529
-        y: 1533
+        x: 3099
+        y: 223
         width: 169
         height: 263
       alignment: 9
-      pivot: {x: 0.48121563, y: 0.051692117}
+      pivot: {x: 0.5603634, y: 0.05631578}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -668,12 +668,12 @@ TextureImporter:
       name: Tree2
       rect:
         serializedVersion: 2
-        x: 2308
-        y: 1301
-        width: 197
-        height: 373
+        x: 2950
+        y: 204
+        width: 148
+        height: 354
       alignment: 9
-      pivot: {x: 0.5161133, y: 0.048931215}
+      pivot: {x: 0.56541157, y: 0.042061068}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -689,8 +689,8 @@ TextureImporter:
       name: Bush1
       rect:
         serializedVersion: 2
-        x: 2761
-        y: 1384
+        x: 2908
+        y: 18
         width: 125
         height: 102
       alignment: 9
@@ -710,8 +710,8 @@ TextureImporter:
       name: SprayTank
       rect:
         serializedVersion: 2
-        x: 1699
-        y: 732
+        x: 2547
+        y: 1443
         width: 684
         height: 346
       alignment: 9
@@ -752,8 +752,8 @@ TextureImporter:
       name: CurePump
       rect:
         serializedVersion: 2
-        x: 1948
-        y: 1246
+        x: 3537
+        y: 1964
         width: 288
         height: 174
       alignment: 0
@@ -983,8 +983,8 @@ TextureImporter:
       name: ZombiePump
       rect:
         serializedVersion: 2
-        x: 2224
-        y: 1096
+        x: 3543
+        y: 1774
         width: 291
         height: 179
       alignment: 0
@@ -1004,12 +1004,12 @@ TextureImporter:
       name: ButtonDepressed
       rect:
         serializedVersion: 2
-        x: 1988
-        y: 1471
+        x: 3258
+        y: 2040
         width: 125
         height: 95
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.48407617, y: 0.8037675}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1025,12 +1025,12 @@ TextureImporter:
       name: ButtonPressed
       rect:
         serializedVersion: 2
-        x: 2121
-        y: 1471
+        x: 3391
+        y: 2048
         width: 125
         height: 95
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.49203712, y: 0.740918}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
