@@ -40,8 +40,13 @@ public class Zombifiable : MonoBehaviour
     public Color normalColor = Color.white;
 
     public MonoBehaviour zombieBehaviour;
+
     public Color zombieColor = Color.green;
     public float zombieStateDuration = 5.0f;
+    public Color zombieColorWeaker = Color.green;
+    public float zombieColorWeakerTime = 5.0f;
+    public Color zombieColorWeakest = Color.green;
+    public float zombieColorWeakestTime = 1.0f;
 
     public MonoBehaviour immuneBehaviour;
     public Color immuneColor = Color.blue;
@@ -63,65 +68,92 @@ public class Zombifiable : MonoBehaviour
         currentStateTimestamp = Time.time;
         UpdateBehavioursFromState();
 
-		Score.Instance?.RegisterActor(this);
-	}
+        Score.Instance?.RegisterActor(this);
+    }
 
     private void Update()
     {
+        float stateDuration = float.PositiveInfinity;
         switch (CurrentState)
         {
             case State.Immune:
-                if (Time.time > currentStateTimestamp + immuneStateDuration)
-                {
-                    CurrentState = State.Normal;
-                }
+                stateDuration = immuneStateDuration;
                 break;
             case State.Zombie:
-                if (Time.time > currentStateTimestamp + zombieStateDuration)
-                {
-                    CurrentState = State.Normal;
-                }
+                stateDuration = zombieStateDuration;
                 break;
         }
+        float endStateTime = currentStateTimestamp + stateDuration;
+        if (endStateTime < Time.time)
+        {
+            CurrentState = State.Normal;
+        }
+        UpdateSpriteColor();
     }
 
     private void OnDestroy()
-	{
-		Score.Instance?.UnregisterActor(this);
-	}
-
-	private void UpdateBehavioursFromState()
     {
-		Score.Instance?.UpdateUI();	
+        Score.Instance?.UnregisterActor(this);
+    }
 
-		if (Application.isPlaying)
+    private void UpdateSpriteColor()
+    {
+        Color newColor = Color.white;
+        switch (CurrentState)
+        {
+            case State.Immune:
+                newColor = immuneColor;
+                break;
+            case State.Normal:
+                newColor = normalColor;
+                break;
+            case State.Zombie:
+                float elapsedTime = Time.time - currentStateTimestamp;
+                if (elapsedTime >= zombieColorWeakestTime)
+                {
+                    newColor = zombieColorWeakest;
+                }
+                else if (elapsedTime >= zombieColorWeakerTime)
+                {
+                    newColor = zombieColorWeaker;
+                } 
+                else
+                {
+                    newColor = zombieColor;
+                }
+                break;
+        }
+        foreach (var sprite in coloredSprites)
+        {
+            sprite.color = newColor;
+        }
+
+    }
+
+    private void UpdateBehavioursFromState()
+    {
+        Score.Instance?.UpdateUI();
+
+        if (Application.isPlaying)
         {
             normalBehaviour.enabled = false;
             zombieBehaviour.enabled = false;
             immuneBehaviour.enabled = false;
         }
-
-        Color newColor = Color.white;
         switch (CurrentState)
         {
             case State.Immune:
                 immuneBehaviour.enabled = true;
-                newColor = immuneColor;
                 break;
             case State.Normal:
                 normalBehaviour.enabled = true;
-                newColor = normalColor;
                 break;
             case State.Zombie:
                 zombieBehaviour.enabled = true;
-                newColor = zombieColor;
-				ShakeMgr.Instance?.Shake();
+                ShakeMgr.Instance?.Shake();
                 break;
         }
-        foreach(var sprite in coloredSprites)
-        {
-            sprite.color = newColor;
-        }
+        UpdateSpriteColor();
     }
 }
 
