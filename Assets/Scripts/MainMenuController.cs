@@ -83,6 +83,7 @@ public class MainMenuController : MonoBehaviour
 
     public void NewGame()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("Scenes/LevelTutorial");
 	}
 
@@ -99,6 +100,7 @@ public class MainMenuController : MonoBehaviour
 
     public void ExitToMenu()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("Scenes/MainMenu");
     }
 
