@@ -52,6 +52,17 @@ public class ZombieController : MonoBehaviour
     }
     private bool _isSelected = false;
 
+    public bool IsHovered
+    {
+        get => _isHovered;
+        set
+        {
+            _isHovered = value;
+            UpdateMarkers();
+        }
+    }
+    private bool _isHovered = false;
+
     private GameObject selectionMarker;
     private GameObject destinationMarker;
 
@@ -81,13 +92,18 @@ public class ZombieController : MonoBehaviour
 
     private void UpdateMarkers()
     {
-        selectionMarker.SetActive(enabled && IsSelected);
+        selectionMarker.SetActive(enabled && (IsSelected || IsHovered));
         destinationMarker.SetActive(enabled && HasAssignedDestination);
 
         var destinationMarkerSprite = destinationMarker.GetComponent<SpriteRenderer>();
         var destinationMarkerColor = destinationMarkerSprite.color;
         destinationMarkerColor.a = destinationMarker.activeSelf && IsSelected ? 1.0f : 0.5f;
         destinationMarkerSprite.color = destinationMarkerColor;
+
+        var selectionMarkerSprite = selectionMarker.GetComponent<SpriteRenderer>();
+        var selectionMarkerColor = selectionMarkerSprite.color;
+        selectionMarkerColor.a = IsSelected ? 1.0f : 0.2f;
+        selectionMarkerSprite.color = selectionMarkerColor;
     }
 
     private void Awake()

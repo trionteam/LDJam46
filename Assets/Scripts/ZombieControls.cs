@@ -10,6 +10,8 @@ public class ZombieControls : MonoBehaviour
     public HashSet<ZombieController> selectedZombies = new HashSet<ZombieController>();
     private bool selectedZombiesUpdating = false;
 
+    private List<ZombieController> hoveredZombies = new List<ZombieController>();
+
     public Transform dragDropMask;
     private bool isDragging = false;
     private bool maybeStartedDragging = false;
@@ -117,6 +119,24 @@ public class ZombieControls : MonoBehaviour
             dragDropMask.position = center;
             dragDropMask.localScale = size;
         }
+
+        foreach (var zombie in hoveredZombies)
+        {
+            zombie.IsHovered = false;
+        }
+        hoveredZombies.Clear();
+        if (!isDragging)
+        {
+            var zombies = GetSelectedZombies(MousePosition2d, MousePosition2d);
+            foreach (var zombie in zombies)
+            {
+                if (!zombie.IsSelected)
+                {
+                    zombie.IsHovered = true;
+                    hoveredZombies.Add(zombie);
+                }
+            }
+        }
     }
 
     private void SetDestinationForSelectedZombies()
@@ -148,7 +168,7 @@ public class ZombieControls : MonoBehaviour
     private void UpdateSelectedZombies(IEnumerable<ZombieController> zombies)
     {
         ClearSelectedZombies();
-        foreach(var zombie in zombies)
+        foreach (var zombie in zombies)
         {
             zombie.IsSelected = true;
         }
