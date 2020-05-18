@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -110,5 +111,7 @@ public class MainMenuController : MonoBehaviour
         bool activateMenu = !container.activeSelf;
         Time.timeScale = activateMenu ? 0.0f : 1.0f;
         container.SetActive(activateMenu);
+        // Reset UI selection so that highlight works on the 'show menu' button.
+        EventSystem.current.SetSelectedGameObject(null);
     }
 }
