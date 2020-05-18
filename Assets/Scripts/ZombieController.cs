@@ -52,6 +52,13 @@ public class ZombieController : MonoBehaviour
     }
     private bool _isSelected = false;
 
+    /// <summary>
+    /// True if the mouse cursor is over the zombie. When true, the selection marker is
+    /// displayed, but with a lower alpha than when the zombie is actually selected.
+    /// Setting this property shows or hides the selection marker.
+    /// 
+    /// The detection of zombies under the mouse cursor is done in <c href="ZombieControls"/>.
+    /// </summary>
     public bool IsHovered
     {
         get => _isHovered;
