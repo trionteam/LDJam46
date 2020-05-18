@@ -77,6 +77,13 @@ public class CloudScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Destroy the cloud if it hit a barrier.
+        if (collision.gameObject.layer == Layers.SprayBarrier)
+        {
+            Destroy(gameObject);
+            return; 
+        }
+
         var zombifiable = collision.GetComponentInChildren<Zombifiable>() ?? collision.GetComponentInParent<Zombifiable>();
         if (zombifiable != null && zombifiable.gameObject != source)
         {
