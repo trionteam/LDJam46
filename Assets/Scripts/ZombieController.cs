@@ -31,16 +31,16 @@ public class ZombieController : MonoBehaviour
     public float movementSpeed = 1.0f;
 
     public bool coughEnabled = true;
-	public GameObject CloudPrefab;
-	public int numCoughs = 4;
-	public float coughTimeout = 5.0f;
-	private float coughLeft = 0;
+    public GameObject CloudPrefab;
+    public int numCoughs = 4;
+    public float coughTimeout = 5.0f;
+    private float coughLeft = 0;
 
-	/// <summary>
-	/// True if the zombie is selected for control. When true, the selection marker is
-	/// displayed. Setting this property shows or hides the selection marker.
-	/// </summary>
-	public bool IsSelected
+    /// <summary>
+    /// True if the zombie is selected for control. When true, the selection marker is
+    /// displayed. Setting this property shows or hides the selection marker.
+    /// </summary>
+    public bool IsSelected
     {
         get => _isSelected;
         set
@@ -70,8 +70,14 @@ public class ZombieController : MonoBehaviour
     }
     private bool _isHovered = false;
 
-    private GameObject selectionMarker;
-    private GameObject destinationMarker;
+    /// <summary>
+    /// The marker displayed when the zombie is selected or the mouse is hovering over it.
+    /// </summary>
+    public MarkerController selectionMarker;
+    /// <summary>
+    /// The marker displayed at the destination of the zombie.
+    /// </summary>
+    public MarkerController destinationMarker;
 
     private Rigidbody2D rigidBody;
 
@@ -99,33 +105,41 @@ public class ZombieController : MonoBehaviour
 
     private void UpdateMarkers()
     {
-        selectionMarker.SetActive(enabled && (IsSelected || IsHovered));
-        destinationMarker.SetActive(enabled && HasAssignedDestination);
+        if (IsSelected)
+        {
+            selectionMarker.CurrentState = MarkerController.State.Active;
+        }
+        else if (IsHovered)
+        {
+            selectionMarker.CurrentState = MarkerController.State.Transparent;
+        }
+        else
+        {
+            selectionMarker.CurrentState = MarkerController.State.Hidden;
+        }
 
-        var destinationMarkerSprite = destinationMarker.GetComponent<SpriteRenderer>();
-        var destinationMarkerColor = destinationMarkerSprite.color;
-        destinationMarkerColor.a = destinationMarker.activeSelf && IsSelected ? 1.0f : 0.5f;
-        destinationMarkerSprite.color = destinationMarkerColor;
-
-        var selectionMarkerSprite = selectionMarker.GetComponent<SpriteRenderer>();
-        var selectionMarkerColor = selectionMarkerSprite.color;
-        selectionMarkerColor.a = IsSelected ? 1.0f : 0.2f;
-        selectionMarkerSprite.color = selectionMarkerColor;
+        if (enabled && HasAssignedDestination)
+        {
+            destinationMarker.CurrentState =
+                IsSelected ? MarkerController.State.Active : MarkerController.State.Transparent;
+        }
+        else
+        {
+            destinationMarker.CurrentState = MarkerController.State.Hidden;
+        }
     }
 
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         Debug.Assert(rigidBody != null);
-		Debug.Assert(CloudPrefab != null);
+        Debug.Assert(CloudPrefab != null);
 
         zombieControls = GameObject.FindObjectOfType<ZombieControls>();
         Debug.Assert(zombieControls != null);
 
-        // Asserts are not needed - this will raise an exception if the objects
-        // are not found.
-        selectionMarker = transform.Find("SelectionMarker").gameObject;
-        destinationMarker = transform.Find("DestinationMarker").gameObject;
+        Debug.Assert(selectionMarker != null);
+        Debug.Assert(destinationMarker != null);
     }
 
     private void Update()
@@ -137,8 +151,8 @@ public class ZombieController : MonoBehaviour
             destinationMarker.transform.position = destination;
         }
 
-		Cough();
-	}
+        Cough();
+    }
 
     void FixedUpdate()
     {
@@ -173,30 +187,30 @@ public class ZombieController : MonoBehaviour
         }
     }
 
-	private void Cough()
-	{
+    private void Cough()
+    {
         if (!coughEnabled) return;
 
-		coughLeft -= Time.deltaTime;
-		if (coughLeft <= 0)
-		{
-			for (int i = 0; i < numCoughs; ++i)
-			{
-				GameObject cough = GameObject.Instantiate(CloudPrefab, transform.position, Quaternion.identity);
-				// cough direction is in the general movement direction
-				Vector2 directionToDestination = (destination - rigidBody.position).normalized;
-				Vector2 rndDir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized * 0.1f + directionToDestination;
-				rndDir = rndDir.normalized * Random.Range(0.8f, 1.2f);
-				Debug.DrawLine(rigidBody.position, rigidBody.position + rndDir);
-				var cloud = cough.GetComponent<CloudScript>();
+        coughLeft -= Time.deltaTime;
+        if (coughLeft <= 0)
+        {
+            for (int i = 0; i < numCoughs; ++i)
+            {
+                GameObject cough = GameObject.Instantiate(CloudPrefab, transform.position, Quaternion.identity);
+                // cough direction is in the general movement direction
+                Vector2 directionToDestination = (destination - rigidBody.position).normalized;
+                Vector2 rndDir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized * 0.1f + directionToDestination;
+                rndDir = rndDir.normalized * Random.Range(0.8f, 1.2f);
+                Debug.DrawLine(rigidBody.position, rigidBody.position + rndDir);
+                var cloud = cough.GetComponent<CloudScript>();
                 cloud.Init(rndDir);
                 cloud.SetSourceZombie(gameObject);
-			}
+            }
 
-			// TODO - sound wildcards
-			SoundMgr.Instance?.Play($"cough_{Random.Range(0, 5)}");
+            // TODO - sound wildcards
+            SoundMgr.Instance?.Play($"cough_{Random.Range(0, 5)}");
 
-			coughLeft = coughTimeout + Random.Range(-0.1f, 1.0f);
-		}
-	}
+            coughLeft = coughTimeout + Random.Range(-0.1f, 1.0f);
+        }
+    }
 }
