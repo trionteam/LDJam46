@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 2742108568675436939}
   - component: {fileID: 2742108568675436940}
   - component: {fileID: 5483605531552729536}
-  m_Layer: 9
+  - component: {fileID: 16166998776182493}
+  - component: {fileID: 6800239564557560297}
+  m_Layer: 10
   m_Name: SprayCureFixed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,11 +101,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudPrefab: {fileID: 301755780573216639, guid: 6dc5e91c84f624948a3296cc9e2d8309, type: 3}
   Cone: {fileID: 2742108570499925741}
-  controlArea: {fileID: 0}
+  controlPlate: {fileID: 0}
   SpraySpeed: 2
   SprayPeriod: 5
   BurstSize: 10
   BurstSpreadDegrees: 45
+--- !u!50 &16166998776182493
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2742108568675436942}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &6800239564557560297
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2742108568675436942}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.17153811, y: 0.7158756}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.47794116, y: 0.09411745}
+    oldSize: {x: 6.84, y: 3.46}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.688535, y: 1.972888}
+  m_EdgeRadius: 0
 --- !u!1 &2742108570499925743
 GameObject:
   m_ObjectHideFlags: 0

@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3742839543229237576}
   - component: {fileID: 6477723970766620930}
   - component: {fileID: 6477723970766620928}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SprayCureControlled
   m_TagString: Untagged
   m_Icon: {fileID: 0}

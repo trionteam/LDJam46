@@ -126,7 +126,7 @@ SpriteRenderer:
   m_Size: {x: 1.61, y: 0.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1139982754452414674
@@ -139,7 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1522548596387118005}
   - component: {fileID: 2767104660242934631}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MovementCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,6 +479,6 @@ SpriteRenderer:
   m_Size: {x: 1.46, y: 0.74}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

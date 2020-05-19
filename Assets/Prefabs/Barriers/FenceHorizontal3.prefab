@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 266983535250394763}
   - component: {fileID: 266983535250394762}
   - component: {fileID: 266983535250394773}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FenceHorizontal3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4950466, y: 0.09485106}
-    oldSize: {x: 1.66, y: 1.38}
+    oldSize: {x: 1.53, y: 1.33}
     newSize: {x: 7.67, y: 3.53}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

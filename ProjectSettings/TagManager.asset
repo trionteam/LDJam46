@@ -21,7 +21,7 @@ TagManager:
   - 
   - 0x8 - zombies
   - 0x9 - sprays
-  - 0xA - buildings
+  - 0xA - GroundMovement
   - 0xB - SprayBarrier
   - 0xC - SprayCloud
   - 0xD - ZombieDetection
