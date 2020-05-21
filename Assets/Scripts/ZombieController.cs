@@ -93,6 +93,8 @@ public class ZombieController : MonoBehaviour
     {
         UpdateMarkers();
         UpdateDestination();
+        // Zombies should not cough immediately after getting infected.
+        coughLeft = Random.Range(0.0f, coughTimeout);
     }
 
     private void OnDisable()
