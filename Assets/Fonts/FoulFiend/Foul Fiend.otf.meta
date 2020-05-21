@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 7b36dfb7518a6884582d853c37010477
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Foul Fiend
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5791c23f91d9ce54386b3c3c7ed0a577, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
