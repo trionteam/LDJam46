@@ -1818,7 +1818,7 @@ Transform:
   - {fileID: 1201989324}
   - {fileID: 260035962}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &415596974 stripped
 Transform:
@@ -2086,6 +2086,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1873700093}
     m_Modifications:
+    - target: {fileID: -2036268742105978513, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
+      propertyPath: hasBasePosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2036268742105978513, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
+      propertyPath: basePositionRadius
+      value: 0.58592796
+      objectReference: {fileID: 0}
+    - target: {fileID: -2036268742105978513, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
+      propertyPath: basePosition.x
+      value: -0.9486394
+      objectReference: {fileID: 0}
+    - target: {fileID: -2036268742105978513, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
+      propertyPath: basePosition.y
+      value: 0.05928999
+      objectReference: {fileID: 0}
     - target: {fileID: 8292648429311309811, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
       propertyPath: m_Name
       value: Oink

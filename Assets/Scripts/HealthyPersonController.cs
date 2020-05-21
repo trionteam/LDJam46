@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif  // UNITY_EDITOR
 
 public class HealthyPersonController : MonoBehaviour
 {
@@ -8,6 +11,10 @@ public class HealthyPersonController : MonoBehaviour
     /// The destination towards which the zombie is moving.
     /// </summary>
     public Vector2 destination;
+
+    public bool hasBasePosition;
+    public Vector2 basePosition;
+    public float basePositionRadius = 1.0f;
 
     public float randomMovementDestinationRadius = 1.0f;
 
@@ -61,8 +68,16 @@ public class HealthyPersonController : MonoBehaviour
 
     private void UpdateDestination()
     {
-        var destinationDelta = randomMovementDestinationRadius * Random.insideUnitCircle;
-        destination = rigidBody.position + destinationDelta;
+        if (hasBasePosition)
+        {
+            var destinationDelta = basePositionRadius * Random.insideUnitCircle;
+            destination = basePosition + destinationDelta;
+        }
+        else
+        {
+            var destinationDelta = randomMovementDestinationRadius * Random.insideUnitCircle;
+            destination = rigidBody.position + destinationDelta;
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -70,3 +85,28 @@ public class HealthyPersonController : MonoBehaviour
         UpdateDestination();
     }
 }
+
+#if UNITY_EDITOR
+
+[CustomEditor(typeof(HealthyPersonController))]
+public class HealthyPersonEditor : Editor
+{
+    public void OnSceneGUI()
+    {
+        HealthyPersonController person = target as HealthyPersonController;
+        if (person == null || !person.hasBasePosition) return;
+
+        EditorGUI.BeginChangeCheck();
+        var position = new Vector3(person.basePosition.x, person.basePosition.y);
+        float radius = Handles.RadiusHandle(Quaternion.identity, position, person.basePositionRadius);
+        position = Handles.PositionHandle(position, Quaternion.identity);
+        if (EditorGUI.EndChangeCheck())
+        {
+            Undo.RecordObject(target, "Changed base area radius and position");
+            person.basePositionRadius = radius;
+            person.basePosition = new Vector2(position.x, position.y);
+        }
+    }
+}
+
+#endif  // UNITY_EDITOR
