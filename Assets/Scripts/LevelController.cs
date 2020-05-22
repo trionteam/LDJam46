@@ -3,6 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[CreateAssetMenu(menuName = "Levels/Level metadata", fileName = "Level0")]
+public class LevelMetadata : ScriptableObject
+{
+    public string LevelName;
+
+    public string SceneName;
+}
+
+[CreateAssetMenu(menuName = "Levels/Level list", fileName = "LevelList")]
+public class LevelList : ScriptableObject
+{
+    public LevelMetadata[] Levels;
+}
+
 public class LevelController : MonoBehaviour
 {
     public GameObject victoryScreen = null;
