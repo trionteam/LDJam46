@@ -37,11 +37,10 @@ public class PressurePlate : MonoBehaviour
         IsPressed = false;
         var candidates = new Collider2D[64];
         var filter = new ContactFilter2D();
-        filter.SetLayerMask(1 << Layers.Default);
+        filter.SetLayerMask(1 << gameObject.layer);
         var numCandidates = plateCollider.OverlapCollider(filter, candidates);
         for (int i = 0; i < numCandidates; ++i)
         {
-            if (candidates[i].gameObject.layer != Layers.Default) continue;
             // TODO(ondrasej): We need a better component for characters that can press the plate.
             var candidate = candidates[i].GetComponentInParent<ZombieController>();
             if (candidate != null)
