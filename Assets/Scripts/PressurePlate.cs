@@ -34,21 +34,15 @@ public class PressurePlate : MonoBehaviour
 
     void Update()
     {
-        IsPressed = false;
-        var candidates = new Collider2D[64];
+        var candidates = new Collider2D[1];
         var filter = new ContactFilter2D();
+        // We're looking for contacts only in the same collision layer as the pressure
+        // plate (which is by default the ground collisions layer). Any colliders in this
+        // layer are assumed to be moving on the ground, and should thus be able to
+        // press the plate.
         filter.SetLayerMask(1 << gameObject.layer);
         var numCandidates = plateCollider.OverlapCollider(filter, candidates);
-        for (int i = 0; i < numCandidates; ++i)
-        {
-            // TODO(ondrasej): We need a better component for characters that can press the plate.
-            var candidate = candidates[i].GetComponentInParent<ZombieController>();
-            if (candidate != null)
-            {
-                IsPressed = true;
-                break;
-            }
-        }
+        IsPressed = numCandidates > 0;
         renderer.sprite = IsPressed ? pressedSprite : depressedSprite;
     }
 }
