@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -36,31 +35,65 @@ public class Zombifiable : MonoBehaviour
 
     private float currentStateTimestamp;
 
-    public MonoBehaviour normalBehaviour;
-    public Color normalColor = Color.white;
+    [SerializeField]
+    [FormerlySerializedAs("normalBehaviour")]
+    private MonoBehaviour _normalBehaviour = null;
 
-    public MonoBehaviour zombieBehaviour;
+    [SerializeField]
+    [FormerlySerializedAs("normalColor")]
+    private Color _normalColor = Color.white;
 
-    public Color zombieColor = Color.green;
-    public float zombieStateDuration = 5.0f;
-    public Color zombieColorWeaker = Color.green;
-    public float zombieColorWeakerTime = 5.0f;
-    public Color zombieColorWeakest = Color.green;
-    public float zombieColorWeakestTime = 1.0f;
+    [SerializeField]
+    [FormerlySerializedAs("_zombieBehaviour")]
+    private MonoBehaviour zombieBehaviour = null;
 
-    public MonoBehaviour immuneBehaviour;
-    public Color immuneColor = Color.blue;
-    public float immuneStateDuration = 5.0f;
+    [SerializeField]
+    [FormerlySerializedAs("zombieColor")]
+    private Color _zombieColor = Color.green;
 
-    public SpriteRenderer[] coloredSprites;
+    [SerializeField]
+    [FormerlySerializedAs("zombieStateDuration")]
+    private float _zombieStateDuration = 5.0f;
 
-    public bool switchingLocked = false;
+    [SerializeField]
+    [FormerlySerializedAs("zombieColorWeaker")]
+    private Color _zombieColorWeaker = Color.green;
+
+    [SerializeField]
+    [FormerlySerializedAs("zombieColorWeakerTime")]
+    private float _zombieColorWeakerTime = 5.0f;
+
+    [SerializeField]
+    [FormerlySerializedAs("zombieColorWeakest")]
+    private Color _zombieColorWeakest = Color.green;
+
+    [SerializeField]
+    [FormerlySerializedAs("zombieColorWeakestTime")]
+    private float _zombieColorWeakestTime = 1.0f;
+
+    [SerializeField]
+    [FormerlySerializedAs("immuneBehaviour")]
+    private MonoBehaviour _immuneBehaviour = null;
+
+    [SerializeField]
+    [FormerlySerializedAs("immuneColor")]
+    private Color _immuneColor = Color.blue;
+
+    [SerializeField]
+    [FormerlySerializedAs("immuneStateDuration")]
+    private float _immuneStateDuration = 5.0f;
+
+    [SerializeField, Tooltip("The list of sprite renderers that need to be colored when the current state changes.")]
+    [FormerlySerializedAs("coloredSprites")]
+    private SpriteRenderer[] _coloredSprites = null;
+
+    public bool SwitchingLocked = false;
 
     private void Awake()
     {
-        Debug.Assert(normalBehaviour != null);
+        Debug.Assert(_normalBehaviour != null);
         Debug.Assert(zombieBehaviour != null);
-        Debug.Assert(immuneBehaviour != null);
+        Debug.Assert(_immuneBehaviour != null);
     }
 
     private void Start()
@@ -77,10 +110,10 @@ public class Zombifiable : MonoBehaviour
         switch (CurrentState)
         {
             case State.Immune:
-                stateDuration = immuneStateDuration;
+                stateDuration = _immuneStateDuration;
                 break;
             case State.Zombie:
-                stateDuration = zombieStateDuration;
+                stateDuration = _zombieStateDuration;
                 break;
         }
         float endStateTime = currentStateTimestamp + stateDuration;
@@ -102,28 +135,28 @@ public class Zombifiable : MonoBehaviour
         switch (CurrentState)
         {
             case State.Immune:
-                newColor = immuneColor;
+                newColor = _immuneColor;
                 break;
             case State.Normal:
-                newColor = normalColor;
+                newColor = _normalColor;
                 break;
             case State.Zombie:
                 float elapsedTime = Time.time - currentStateTimestamp;
-                if (elapsedTime >= zombieColorWeakestTime)
+                if (elapsedTime >= _zombieColorWeakestTime)
                 {
-                    newColor = zombieColorWeakest;
+                    newColor = _zombieColorWeakest;
                 }
-                else if (elapsedTime >= zombieColorWeakerTime)
+                else if (elapsedTime >= _zombieColorWeakerTime)
                 {
-                    newColor = zombieColorWeaker;
+                    newColor = _zombieColorWeaker;
                 } 
                 else
                 {
-                    newColor = zombieColor;
+                    newColor = _zombieColor;
                 }
                 break;
         }
-        foreach (var sprite in coloredSprites)
+        foreach (var sprite in _coloredSprites)
         {
             sprite.color = newColor;
         }
@@ -136,17 +169,17 @@ public class Zombifiable : MonoBehaviour
 
         if (Application.isPlaying)
         {
-            normalBehaviour.enabled = false;
+            _normalBehaviour.enabled = false;
             zombieBehaviour.enabled = false;
-            immuneBehaviour.enabled = false;
+            _immuneBehaviour.enabled = false;
         }
         switch (CurrentState)
         {
             case State.Immune:
-                immuneBehaviour.enabled = true;
+                _immuneBehaviour.enabled = true;
                 break;
             case State.Normal:
-                normalBehaviour.enabled = true;
+                _normalBehaviour.enabled = true;
                 break;
             case State.Zombie:
                 zombieBehaviour.enabled = true;

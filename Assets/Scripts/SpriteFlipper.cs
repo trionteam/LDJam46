@@ -1,45 +1,49 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SpriteFlipper : MonoBehaviour
 {
-    public Rigidbody2D rigidBody;
-    public SpriteRenderer sprite;
+    [SerializeField]
+    [FormerlySerializedAs("rigidBody")]
+    public Rigidbody2D _rigidBody;
 
-    private float previousX;
+    [SerializeField]
+    [FormerlySerializedAs("sprite")]
+    public SpriteRenderer _sprite;
+
+    private float _previousX;
 
     private void Awake()
     {
-        if (rigidBody == null)
+        if (_rigidBody == null)
         {
-            rigidBody = GetComponent<Rigidbody2D>();
+            _rigidBody = GetComponent<Rigidbody2D>();
         }
-        Debug.Assert(rigidBody != null);
+        Debug.Assert(_rigidBody != null);
 
-        if (sprite == null)
+        if (_sprite == null)
         {
-            sprite = GetComponent<SpriteRenderer>();
+            _sprite = GetComponent<SpriteRenderer>();
         }
-        Debug.Assert(sprite != null);
+        Debug.Assert(_sprite != null);
     }
 
     private void Start()
     {
-        previousX = transform.position.x;
+        _previousX = transform.position.x;
     }
 
     void Update()
     {
-        var delta = transform.position.x - previousX;
+        var delta = transform.position.x - _previousX;
         if (delta < 0.0f)
         {
-            sprite.flipX = false;
+            _sprite.flipX = false;
         }
         else if (delta > 0.0f)
         {
-            sprite.flipX = true;
+            _sprite.flipX = true;
         }
-        previousX = transform.position.x;
+        _previousX = transform.position.x;
     }
 }

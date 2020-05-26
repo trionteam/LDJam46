@@ -1,13 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class RotatingScript : MonoBehaviour
 {
-	public float RotSpeed = 10;
+    [SerializeField]
+    [FormerlySerializedAs("RotSpeed")]
+	public float _rotSpeed = 10;
 
     void Update()
     {
-		transform.Rotate(Vector3.forward, Time.deltaTime * RotSpeed);
+		transform.Rotate(Vector3.forward, Time.deltaTime * _rotSpeed);
     }
 }

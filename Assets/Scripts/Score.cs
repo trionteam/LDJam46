@@ -1,12 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
 	public static Score Instance = null;
-	public Text NumZombiesText;
+
+    [SerializeField]
+    [FormerlySerializedAs("NumZombiesText")]
+	private Text _numZombiesText;
 
 	private HashSet<Zombifiable> zombifiables = new HashSet<Zombifiable>();
 
@@ -17,16 +20,16 @@ public class Score : MonoBehaviour
 
 	void Start()
     {
-		if (null == NumZombiesText)
+		if (null == _numZombiesText)
 		{
-			NumZombiesText = GameObject.Find("TextNumZombies").GetComponent<Text>();
+			_numZombiesText = GameObject.Find("TextNumZombies").GetComponent<Text>();
 		}
-		Debug.Assert(NumZombiesText != null);
+		Debug.Assert(_numZombiesText != null);
 	}
 
 	public void UpdateUI()
 	{
-		if (null == NumZombiesText)
+		if (null == _numZombiesText)
 		{
 			return;
 		}
@@ -42,7 +45,7 @@ public class Score : MonoBehaviour
 				case Zombifiable.State.Immune: numI++; break;
 			}
 		}
-		NumZombiesText.text = $"Z: {numZ} N: {numN}";
+		_numZombiesText.text = $"Z: {numZ} N: {numN}";
 	}
 
 	public void RegisterActor(Zombifiable z)

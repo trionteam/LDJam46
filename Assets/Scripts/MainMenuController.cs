@@ -1,18 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
-    public GameObject container;
-    public Button exitToMenuButton;
-    public Button exitGameButton;
-    public Button backToGameButton;
-    public Button showMenuButton;
-    public Button restartLevelButton;
+    [SerializeField]
+    [FormerlySerializedAs("container")]
+    private GameObject _container;
+
+    [SerializeField]
+    [FormerlySerializedAs("exitToMenuButton")]
+    private Button _exitToMenuButton;
+
+    [SerializeField]
+    [FormerlySerializedAs("exitGameButton")]
+    private Button _exitGameButton;
+
+    [SerializeField]
+    [FormerlySerializedAs("backToGameButton")]
+    private Button _backToGameButton;
+
+    [SerializeField]
+    [FormerlySerializedAs("showMenuButton")]
+    private Button _showMenuButton;
+
+    [SerializeField]
+    [FormerlySerializedAs("restartLevelButton")]
+    private Button _restartLevelButton;
 
     private bool IsInMainMenu
     {
@@ -21,57 +37,57 @@ public class MainMenuController : MonoBehaviour
 
     private void Awake()
     {
-        if (container == null)
+        if (_container == null)
         {
-            container = transform.Find("Container").gameObject;
+            _container = transform.Find("Container").gameObject;
         }
-        Debug.Assert(container != null);
+        Debug.Assert(_container != null);
 
-        if (exitToMenuButton == null)
+        if (_exitToMenuButton == null)
         {
-            exitToMenuButton = transform.Find("Container/BackgroundImage/ExitToMenuButton").GetComponent<Button>();
+            _exitToMenuButton = transform.Find("Container/BackgroundImage/ExitToMenuButton").GetComponent<Button>();
         }
-        Debug.Assert(exitToMenuButton != null);
+        Debug.Assert(_exitToMenuButton != null);
 
-        if (exitGameButton == null)
+        if (_exitGameButton == null)
         {
-            exitGameButton = transform.Find("Container/BackgroundImage/ExitButton").GetComponent<Button>();
+            _exitGameButton = transform.Find("Container/BackgroundImage/ExitButton").GetComponent<Button>();
         }
-        Debug.Assert(exitGameButton != null);
+        Debug.Assert(_exitGameButton != null);
 
-        if (backToGameButton == null)
+        if (_backToGameButton == null)
         {
-            backToGameButton = transform.Find("Container/BackgroundImage/BackToGameButton").GetComponent<Button>();
+            _backToGameButton = transform.Find("Container/BackgroundImage/BackToGameButton").GetComponent<Button>();
         }
-        Debug.Assert(backToGameButton != null);
+        Debug.Assert(_backToGameButton != null);
 
-        if (showMenuButton == null)
+        if (_showMenuButton == null)
         {
-            showMenuButton = transform.Find("ShowMenuButton").GetComponent<Button>();
+            _showMenuButton = transform.Find("ShowMenuButton").GetComponent<Button>();
         }
-        Debug.Assert(showMenuButton != null);
+        Debug.Assert(_showMenuButton != null);
 
-        if (restartLevelButton == null)
+        if (_restartLevelButton == null)
         {
-            restartLevelButton = transform.Find("Container/BackgroundImage/RestartLevelButton").GetComponent<Button>();
+            _restartLevelButton = transform.Find("Container/BackgroundImage/RestartLevelButton").GetComponent<Button>();
         }
-        Debug.Assert(restartLevelButton != null);
+        Debug.Assert(_restartLevelButton != null);
     }
 
     private void Start()
     {
         bool isInMainMenu = IsInMainMenu;
-        exitToMenuButton.gameObject.SetActive(!isInMainMenu);
-        exitGameButton.gameObject.SetActive(isInMainMenu);
+        _exitToMenuButton.gameObject.SetActive(!isInMainMenu);
+        _exitGameButton.gameObject.SetActive(isInMainMenu);
         if (Application.platform == RuntimePlatform.WebGLPlayer)
         {
-            exitGameButton.interactable = false;
+            _exitGameButton.interactable = false;
         }
-        backToGameButton.gameObject.SetActive(!IsInMainMenu);
-        showMenuButton.gameObject.SetActive(!IsInMainMenu);
-        restartLevelButton.gameObject.SetActive(!IsInMainMenu);
+        _backToGameButton.gameObject.SetActive(!IsInMainMenu);
+        _showMenuButton.gameObject.SetActive(!IsInMainMenu);
+        _restartLevelButton.gameObject.SetActive(!IsInMainMenu);
 
-        container.SetActive(isInMainMenu);
+        _container.SetActive(isInMainMenu);
     }
 
     private void Update()
@@ -108,9 +124,9 @@ public class MainMenuController : MonoBehaviour
     public void ToggleMainMenu()
     {
         // If playing a level, escape shows/hides the menu and pauses the game.
-        bool activateMenu = !container.activeSelf;
+        bool activateMenu = !_container.activeSelf;
         Time.timeScale = activateMenu ? 0.0f : 1.0f;
-        container.SetActive(activateMenu);
+        _container.SetActive(activateMenu);
         // Reset UI selection so that highlight works on the 'show menu' button.
         EventSystem.current.SetSelectedGameObject(null);
     }

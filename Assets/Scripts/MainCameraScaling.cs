@@ -1,36 +1,48 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MainCameraScaling : MonoBehaviour
 {
-    static readonly float TargetAspectRatio = 16.0f / 9.0f;
+    public static readonly float TargetAspectRatio = 16.0f / 9.0f;
 
-    public Transform blockerUp;
-    public Transform blockerDown;
-    public Transform blockerLeft;
-    public Transform blockerRight;
+    [SerializeField]
+    [FormerlySerializedAs("blockerUp")]
+    private Transform _blockerUp = null;
 
-    new Camera camera = null;
+    [SerializeField]
+    [FormerlySerializedAs("blockerDown")]
+    private Transform _blockerDown = null;
 
-    public float originalCameraSize = 0.0f;
+    [SerializeField]
+    [FormerlySerializedAs("blockerLeft")]
+    private Transform _blockerLeft = null;
+
+    [SerializeField]
+    [FormerlySerializedAs("blockerRight")]
+    private Transform _blockerRight = null;
+
+    private Camera _camera = null;
+
+    [SerializeField]
+    [FormerlySerializedAs("originalCameraSize")]
+    public float _originalCameraSize = 0.0f;
 
     private void Awake()
     {
-        camera = GetComponent<Camera>();
-        Debug.Assert(camera != null);
+        _camera = GetComponent<Camera>();
+        Debug.Assert(_camera != null);
 
-        Debug.Assert(blockerUp != null);
-        Debug.Assert(blockerDown != null);
-        Debug.Assert(blockerLeft != null);
-        Debug.Assert(blockerRight != null);
+        Debug.Assert(_blockerUp != null);
+        Debug.Assert(_blockerDown != null);
+        Debug.Assert(_blockerLeft != null);
+        Debug.Assert(_blockerRight != null);
     }
 
     private void Start()
     {
-        if (originalCameraSize == 0.0f)
+        if (_originalCameraSize == 0.0f)
         {
-            originalCameraSize = camera.orthographicSize;
+            _originalCameraSize = _camera.orthographicSize;
         }
     }
 
@@ -41,17 +53,17 @@ public class MainCameraScaling : MonoBehaviour
         // Screen is wider than we want. We're fine.
         if (screenAspect >= TargetAspectRatio)
         {
-            camera.orthographicSize = originalCameraSize;
+            _camera.orthographicSize = _originalCameraSize;
         }
         else
         {
             var scaling = TargetAspectRatio / screenAspect;
-            camera.orthographicSize = scaling * originalCameraSize;
+            _camera.orthographicSize = scaling * _originalCameraSize;
         }
 
-        blockerUp.position = new Vector3(0.0f, originalCameraSize + blockerUp.localScale.y / 2.0f, blockerUp.position.z);
-        blockerDown.position = new Vector3(0.0f, -originalCameraSize - blockerDown.localScale.y / 2.0f, blockerDown.position.z);
-        blockerLeft.position = new Vector3(-originalCameraSize * TargetAspectRatio - blockerLeft.localScale.x / 2.0f, 0.0f, blockerLeft.position.z);
-        blockerRight.position = new Vector3(originalCameraSize * TargetAspectRatio + blockerRight.localScale.x / 2.0f, 0.0f, blockerRight.position.z);
+        _blockerUp.position = new Vector3(0.0f, _originalCameraSize + _blockerUp.localScale.y / 2.0f, _blockerUp.position.z);
+        _blockerDown.position = new Vector3(0.0f, -_originalCameraSize - _blockerDown.localScale.y / 2.0f, _blockerDown.position.z);
+        _blockerLeft.position = new Vector3(-_originalCameraSize * TargetAspectRatio - _blockerLeft.localScale.x / 2.0f, 0.0f, _blockerLeft.position.z);
+        _blockerRight.position = new Vector3(_originalCameraSize * TargetAspectRatio + _blockerRight.localScale.x / 2.0f, 0.0f, _blockerRight.position.z);
     }
 }

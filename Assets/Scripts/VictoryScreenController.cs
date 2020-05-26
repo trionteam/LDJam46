@@ -1,22 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class VictoryScreenController : MonoBehaviour
 {
-    public LevelController levelController;
+    private LevelController _levelController;
 
     private void Awake()
     {
-        if (levelController == null)
-        {
-            levelController = GameObject.FindGameObjectWithTag("Managers")?.GetComponent<LevelController>();
-        }
-        Debug.Assert(levelController != null);
+        _levelController = GameObject.FindGameObjectWithTag("Managers")?.GetComponent<LevelController>();
+        Debug.Assert(_levelController != null);
     }
 
     public void OnNextLevelClicked()
     {
-        levelController.LoadNextLevel();
+        _levelController.LoadNextLevel();
     }
 }

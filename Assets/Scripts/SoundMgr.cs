@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 
@@ -18,6 +17,7 @@ public class SoundMgr : MonoBehaviour
     };
     private static Dictionary<string, CachedAudio> Clips = new Dictionary<string, CachedAudio>();
     private static AudioSource music = null;
+
     public static string SoundsRoot = "Sounds";
     public static string MusicClip = "Plague_of_Zombies";
     public float MusicVolume = 0.2f;

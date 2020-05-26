@@ -57,7 +57,7 @@ namespace Tests
             // In the next frames, the pressure plate should be pressed.
             for (int i = 0; i < 10; ++i)
             {
-                Assert.AreEqual(pressurePlate.IsPressed, isExpectedToTrigger);
+                Assert.AreEqual(isExpectedToTrigger, pressurePlate.IsPressed);
                 yield return null;
             }
 

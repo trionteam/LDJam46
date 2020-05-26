@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MarkerController : MonoBehaviour
 {
@@ -26,12 +25,16 @@ public class MarkerController : MonoBehaviour
     /// <summary>
     /// The alpha of the marker when it is in the active state.
     /// </summary>
-    public float activeAlpha = 1.0f;
+    [SerializeField]
+    [FormerlySerializedAs("activeAlpha")]
+    private float _activeAlpha = 1.0f;
 
     /// <summary>
     /// The alpha of the marker when it is in the transparent state.
     /// </summary>
-    public float transparentAlpha = 0.5f;
+    [SerializeField]
+    [FormerlySerializedAs("transparentAlpha")]
+    private float _transparentAlpha = 0.5f;
 
     /// <summary>
     /// The current state of the marker.
@@ -66,7 +69,7 @@ public class MarkerController : MonoBehaviour
                 {
                     _renderer.enabled = true;
                     var color = _renderer.color;
-                    color.a = transparentAlpha;
+                    color.a = _transparentAlpha;
                     _renderer.color = color;
                 }
                 break;
@@ -74,7 +77,7 @@ public class MarkerController : MonoBehaviour
                 {
                     _renderer.enabled = true;
                     var color = _renderer.color;
-                    color.a = activeAlpha;
+                    color.a = _activeAlpha;
                     _renderer.color = color;
                 }
                 break;

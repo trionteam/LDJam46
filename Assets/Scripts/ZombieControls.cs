@@ -1,18 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ZombieControls : MonoBehaviour
 {
-    public Camera mainCamera;
-    public MainMenuController mainMenu;
+    [SerializeField]
+    [FormerlySerializedAs("mainCamera")]
+    private Camera _mainCamera;
 
-    public HashSet<ZombieController> selectedZombies = new HashSet<ZombieController>();
+    [SerializeField]
+    [FormerlySerializedAs("mainMenu")]
+    private MainMenuController _mainMenu;
+
+    private HashSet<ZombieController> selectedZombies = new HashSet<ZombieController>();
     private bool selectedZombiesUpdating = false;
 
     private List<ZombieController> hoveredZombies = new List<ZombieController>();
 
-    public Transform dragDropMask;
+    [SerializeField]
+    [FormerlySerializedAs("dragDropMask")]
+    private Transform _dragDropMask;
+
     private bool isDragging = false;
     private bool maybeStartedDragging = false;
     private Vector2 dragStartPosition;
@@ -21,29 +29,29 @@ public class ZombieControls : MonoBehaviour
     {
         get
         {
-            var mousePosition3d = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            var mousePosition3d = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
             return new Vector2(mousePosition3d.x, mousePosition3d.y);
         }
     }
 
     private void Awake()
     {
-        if (mainCamera == null)
+        if (_mainCamera == null)
         {
-            mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+            _mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         }
-        Debug.Assert(mainCamera != null);
+        Debug.Assert(_mainCamera != null);
 
-        if (mainMenu == null)
+        if (_mainMenu == null)
         {
-            mainMenu = GameObject.FindGameObjectWithTag("MainMenu").GetComponent<MainMenuController>();
+            _mainMenu = GameObject.FindGameObjectWithTag("MainMenu").GetComponent<MainMenuController>();
         }
 
-        if (dragDropMask == null)
+        if (_dragDropMask == null)
         {
-            dragDropMask = transform.Find("Selector");
+            _dragDropMask = transform.Find("Selector");
         }
-        Debug.Assert(dragDropMask != null);
+        Debug.Assert(_dragDropMask != null);
     }
 
     public void SelectedZombie(ZombieController zombie, bool selected)
@@ -106,7 +114,7 @@ public class ZombieControls : MonoBehaviour
             SetDestinationForSelectedZombies();
         }
 
-        dragDropMask.gameObject.SetActive(isDragging);
+        _dragDropMask.gameObject.SetActive(isDragging);
         if (isDragging)
         {
             var currentPosition = MousePosition2d;
@@ -116,8 +124,8 @@ public class ZombieControls : MonoBehaviour
             var size = new Vector3(Mathf.Abs(currentPosition.x - dragStartPosition.x),
                                    Mathf.Abs(currentPosition.y - dragStartPosition.y),
                                    1.0f);
-            dragDropMask.position = center;
-            dragDropMask.localScale = size;
+            _dragDropMask.position = center;
+            _dragDropMask.localScale = size;
         }
 
         foreach (var zombie in hoveredZombies)

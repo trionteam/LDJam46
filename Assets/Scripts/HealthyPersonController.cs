@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif  // UNITY_EDITOR
@@ -10,26 +9,42 @@ public class HealthyPersonController : MonoBehaviour
     /// <summary>
     /// The destination towards which the zombie is moving.
     /// </summary>
-    public Vector2 destination;
+    private Vector2 destination;
 
-    public bool hasBasePosition;
-    public Vector2 basePosition;
-    public float basePositionRadius = 1.0f;
+    [SerializeField]
+    [FormerlySerializedAs("hasBasePosition")]
+    private bool _hasBasePosition = false;
 
-    public float randomMovementDestinationRadius = 1.0f;
+    [SerializeField]
+    [FormerlySerializedAs("basePosition")]
+    private Vector2 _basePosition;
 
-    public float movementSpeed = 1.0f;
+    [SerializeField]
+    [FormerlySerializedAs("basePositionRadius")]
+    private float _basePositionRadius = 1.0f;
 
-    public float destinationResetRadius = 0.01f;
+    [SerializeField]
+    [FormerlySerializedAs("randomMovementDestinationRadius")]
+    private float _randomMovementDestinationRadius = 1.0f;
 
-    public ZombieDetection zombieDetection;
+    [SerializeField]
+    [FormerlySerializedAs("movementSpeed")]
+    private float _movementSpeed = 1.0f;
 
-    private Rigidbody2D rigidBody;
+    [SerializeField]
+    [FormerlySerializedAs("destinationResetRadius")]
+    private float _destinationResetRadius = 0.01f;
+
+    [SerializeField]
+    [FormerlySerializedAs("zombieDetection")]
+    private ZombieDetection _zombieDetection = null;
+
+    private Rigidbody2D _rigidBody;
 
     private void Awake()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
-        Debug.Assert(rigidBody != null);
+        _rigidBody = GetComponent<Rigidbody2D>();
+        Debug.Assert(_rigidBody != null);
     }
 
     private void Start()
@@ -40,9 +55,9 @@ public class HealthyPersonController : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 directionToDestination;
-        if (zombieDetection != null && zombieDetection.zombiesInSight.Count > 0)
+        if (_zombieDetection != null && _zombieDetection.HasZombiesInSight)
         {
-            directionToDestination = zombieDetection.EscapeDirection();
+            directionToDestination = _zombieDetection.EscapeDirection();
             // Reset destination, so that the person starts moving randomly when they
             // lose sight of the zombies.
             UpdateDestination();
@@ -53,30 +68,30 @@ public class HealthyPersonController : MonoBehaviour
             {
                 UpdateDestination();
             }
-            directionToDestination = (destination - rigidBody.position).normalized;
+            directionToDestination = (destination - _rigidBody.position).normalized;
         }
 
-        var desiredPositionInFrame = rigidBody.position + movementSpeed * Time.fixedDeltaTime * directionToDestination;
-        rigidBody.MovePosition(desiredPositionInFrame);
+        var desiredPositionInFrame = _rigidBody.position + _movementSpeed * Time.fixedDeltaTime * directionToDestination;
+        _rigidBody.MovePosition(desiredPositionInFrame);
     }
 
     private bool IsAtDestination()
     {
-        var distance = (rigidBody.position - destination).magnitude;
-        return distance <= destinationResetRadius;
+        var distance = (_rigidBody.position - destination).magnitude;
+        return distance <= _destinationResetRadius;
     }
 
     private void UpdateDestination()
     {
-        if (hasBasePosition)
+        if (_hasBasePosition)
         {
-            var destinationDelta = basePositionRadius * Random.insideUnitCircle;
-            destination = basePosition + destinationDelta;
+            var destinationDelta = _basePositionRadius * Random.insideUnitCircle;
+            destination = _basePosition + destinationDelta;
         }
         else
         {
-            var destinationDelta = randomMovementDestinationRadius * Random.insideUnitCircle;
-            destination = rigidBody.position + destinationDelta;
+            var destinationDelta = _randomMovementDestinationRadius * Random.insideUnitCircle;
+            destination = _rigidBody.position + destinationDelta;
         }
     }
 
@@ -84,29 +99,29 @@ public class HealthyPersonController : MonoBehaviour
     {
         UpdateDestination();
     }
-}
 
 #if UNITY_EDITOR
 
-[CustomEditor(typeof(HealthyPersonController))]
-public class HealthyPersonEditor : Editor
-{
-    public void OnSceneGUI()
+    [CustomEditor(typeof(HealthyPersonController))]
+    public class HealthyPersonEditor : Editor
     {
-        HealthyPersonController person = target as HealthyPersonController;
-        if (person == null || !person.hasBasePosition) return;
-
-        EditorGUI.BeginChangeCheck();
-        var position = new Vector3(person.basePosition.x, person.basePosition.y);
-        float radius = Handles.RadiusHandle(Quaternion.identity, position, person.basePositionRadius);
-        position = Handles.PositionHandle(position, Quaternion.identity);
-        if (EditorGUI.EndChangeCheck())
+        public void OnSceneGUI()
         {
-            Undo.RecordObject(target, "Changed base area radius and position");
-            person.basePositionRadius = radius;
-            person.basePosition = new Vector2(position.x, position.y);
+            HealthyPersonController person = target as HealthyPersonController;
+            if (person == null || !person._hasBasePosition) return;
+
+            EditorGUI.BeginChangeCheck();
+            var position = new Vector3(person._basePosition.x, person._basePosition.y);
+            float radius = Handles.RadiusHandle(Quaternion.identity, position, person._basePositionRadius);
+            position = Handles.PositionHandle(position, Quaternion.identity);
+            if (EditorGUI.EndChangeCheck())
+            {
+                Undo.RecordObject(target, "Changed base area radius and position");
+                person._basePositionRadius = radius;
+                person._basePosition = new Vector2(position.x, position.y);
+            }
         }
     }
-}
 
 #endif  // UNITY_EDITOR
+}

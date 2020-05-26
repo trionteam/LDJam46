@@ -1,30 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PressurePlate : MonoBehaviour
 {
-    public Sprite pressedSprite;
-    public Sprite depressedSprite;
+    [SerializeField]
+    [FormerlySerializedAs("pressedSprite")]
+    private Sprite _pressedSprite = null;
+
+    [SerializeField]
+    [FormerlySerializedAs("depressedSprite")]
+    private Sprite _depressedSprite = null;
 
     public bool IsPressed
     {
         get; private set;
     }
 
-    private Collider2D plateCollider;
-    new private SpriteRenderer renderer;
+    private Collider2D _plateCollider;
+    private SpriteRenderer _renderer;
 
     private void Awake()
     {
-        plateCollider = GetComponent<Collider2D>();
-        Debug.Assert(plateCollider != null);
+        _plateCollider = GetComponent<Collider2D>();
+        Debug.Assert(_plateCollider != null);
 
-        renderer = GetComponent<SpriteRenderer>();
-        Debug.Assert(renderer != null);
+        _renderer = GetComponent<SpriteRenderer>();
+        Debug.Assert(_renderer != null);
 
-        Debug.Assert(pressedSprite != null);
-        Debug.Assert(depressedSprite != null);
+        Debug.Assert(_pressedSprite != null);
+        Debug.Assert(_depressedSprite != null);
     }
 
     private void Start()
@@ -41,8 +45,8 @@ public class PressurePlate : MonoBehaviour
         // layer are assumed to be moving on the ground, and should thus be able to
         // press the plate.
         filter.SetLayerMask(1 << gameObject.layer);
-        var numCandidates = plateCollider.OverlapCollider(filter, candidates);
+        var numCandidates = _plateCollider.OverlapCollider(filter, candidates);
         IsPressed = numCandidates > 0;
-        renderer.sprite = IsPressed ? pressedSprite : depressedSprite;
+        _renderer.sprite = IsPressed ? _pressedSprite : _depressedSprite;
     }
 }

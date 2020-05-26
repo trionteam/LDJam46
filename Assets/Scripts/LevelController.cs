@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(menuName = "Levels/Level metadata", fileName = "Level0")]
 public class LevelMetadata : ScriptableObject
@@ -19,39 +18,46 @@ public class LevelList : ScriptableObject
 
 public class LevelController : MonoBehaviour
 {
-    public GameObject victoryScreen = null;
-    public ZombieControls zombieControls = null;
+    [SerializeField]
+    [FormerlySerializedAs("victoryScreen")]
+    private GameObject _victoryScreen = null;
 
-    public string nextLevelSceneName = null;
+    [SerializeField]
+    [FormerlySerializedAs("zombieControls")]
+    private ZombieControls _zombieControls = null;
+
+    [SerializeField]
+    [FormerlySerializedAs("nextLevelSceneName")]
+    private string _nextLevelSceneName = null;
 
     private void Awake()
     {
-        if (victoryScreen == null)
+        if (_victoryScreen == null)
         {
-            victoryScreen = GameObject.FindGameObjectWithTag("VictoryScreen");
+            _victoryScreen = GameObject.FindGameObjectWithTag("VictoryScreen");
         }
-        Debug.Assert(victoryScreen != null);
-        victoryScreen.SetActive(false);
+        Debug.Assert(_victoryScreen != null);
+        _victoryScreen.SetActive(false);
 
-        if (zombieControls == null)
+        if (_zombieControls == null)
         {
-            zombieControls = GetComponent<ZombieControls>();
+            _zombieControls = GetComponent<ZombieControls>();
         }
-        Debug.Assert(zombieControls != null);
+        Debug.Assert(_zombieControls != null);
     }
 
     public void GoalAreaReached()
     {
-        victoryScreen.SetActive(true);
+        _victoryScreen.SetActive(true);
         // Disable zombie controls.
-        zombieControls.enabled = false;
+        _zombieControls.enabled = false;
     }
 
     public void LoadNextLevel()
     {
-        if (!string.IsNullOrEmpty(nextLevelSceneName))
+        if (!string.IsNullOrEmpty(_nextLevelSceneName))
         {
-            SceneManager.LoadScene(nextLevelSceneName);
+            SceneManager.LoadScene(_nextLevelSceneName);
         }
     }
 }

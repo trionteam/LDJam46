@@ -1,23 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class HealthBar : MonoBehaviour
 {
-	public GameObject Bar;
+    [SerializeField]
+    [FormerlySerializedAs("Bar")]
+	private GameObject _bar = null;
 
-	public float health = 1;
+    [SerializeField]
+    [FormerlySerializedAs("health")]
+	private float _health = 1;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-		Debug.Assert(null != Bar);
+		Debug.Assert(null != _bar);
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
 		// TODO - don't do every frame
-		Bar.transform.localScale = new Vector3(health, 1);
+		_bar.transform.localScale = new Vector3(_health, 1);
 	}
 }
