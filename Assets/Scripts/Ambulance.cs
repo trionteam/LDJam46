@@ -12,7 +12,6 @@ public class Ambulance : MonoBehaviour
 	private float _speed = 1;
 
     [SerializeField]
-    [FormerlySerializedAs("CloudPrefab")]
 	private GameObject _cloudPrefab = null;
 
 	private int _n = 0;

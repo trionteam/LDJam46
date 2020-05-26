@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee8f05385025634caa48ef9e4a25dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CloudPrefab: {fileID: 301755780573216639, guid: 6dc5e91c84f624948a3296cc9e2d8309, type: 3}
-  Cone: {fileID: 2742108570499925741}
+  _cloudPrefab: {fileID: 301755780573216639, guid: 6dc5e91c84f624948a3296cc9e2d8309, type: 3}
+  _cone: {fileID: 2742108570499925741}
   controlPlate: {fileID: 0}
   SpraySpeed: 2
   SprayPeriod: 5

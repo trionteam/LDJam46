@@ -4,11 +4,9 @@ using UnityEngine.Serialization;
 public class FixedSpray : MonoBehaviour
 {
     [SerializeField]
-    [FormerlySerializedAs("CloudPrefab")]
     private GameObject _cloudPrefab = null;
 
     [SerializeField]
-    [FormerlySerializedAs("Cone")]
     private Transform _cone = null;
 
     [SerializeField]

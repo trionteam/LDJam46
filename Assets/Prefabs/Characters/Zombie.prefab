@@ -370,7 +370,7 @@ MonoBehaviour:
   destinationResetRadius: 0.1
   movementSpeed: 0.3
   coughEnabled: 1
-  CloudPrefab: {fileID: 301755780573216639, guid: 26275f6a16014e943843173f08302937, type: 3}
+  _cloudPrefab: {fileID: 301755780573216639, guid: 26275f6a16014e943843173f08302937, type: 3}
   numCoughs: 4
   coughTimeout: 5
   selectionMarker: {fileID: 6313659049180494686}

@@ -97,12 +97,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1157555f6e8a4414aa848e3ebb645390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CausedState: 1
-  AcceptedStates: 00000000
-  LifeTime: 3
-  LifeLengthRandomness: 0.25
+  _causedState: 1
+  _acceptedStates: 00000000
+  _lifeTime: 3
+  _lifeLengthRandomness: 0.25
   FadeLastSeconds: 0.5
-  RotationSpeed: 100
+  _rotationSpeed: 100
 --- !u!58 &7718585214473376149
 CircleCollider2D:
   m_ObjectHideFlags: 0

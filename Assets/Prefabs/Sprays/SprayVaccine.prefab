@@ -96,9 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90d5a52f566b034da64b15d46f75a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cone: {fileID: 2742108570499925743}
-  CloudPrefab: {fileID: 301755780573216639, guid: 82bee5632c0afe74dbd5b6dd877e3086, type: 3}
-  RotationSpeed: 100
+  _cone: {fileID: 2742108570499925743}
+  _cloudPrefab: {fileID: 301755780573216639, guid: 82bee5632c0afe74dbd5b6dd877e3086, type: 3}
+  _rotationSpeed: 100
   SpraySpeed: 2
   Radius: 3
   BurstSize: 10

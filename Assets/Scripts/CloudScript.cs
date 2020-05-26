@@ -5,25 +5,20 @@ using UnityEngine.Serialization;
 public class CloudScript : MonoBehaviour
 {
     [SerializeField]
-    [FormerlySerializedAs("CausedState")]
     private Zombifiable.State _causedState = Zombifiable.State.Zombie;
 
     [SerializeField]
-    [FormerlySerializedAs("AcceptedStates")]
     private List<Zombifiable.State> _acceptedStates = null;
 
     private GameObject _source;
 
     [SerializeField]
-    [FormerlySerializedAs("LifeTime")]
 	private float _lifeTime = 5;  // seconds
 
     [SerializeField]
-    [FormerlySerializedAs("LifeLengthRandomness")]
 	private float _lifeLengthRandomness = 0.25f;
 
     [SerializeField]
-    [FormerlySerializedAs("RotationSpeed")]
 	private float _rotationSpeed = 100;
 
 	private Vector3 _velocity = Vector3.zero;

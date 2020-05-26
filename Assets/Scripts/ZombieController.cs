@@ -40,7 +40,6 @@ public class ZombieController : MonoBehaviour
     private bool _coughEnabled = true;
 
     [SerializeField]
-    [FormerlySerializedAs("CloudPrefab")]
     private GameObject _cloudPrefab = null;
 
     [SerializeField]

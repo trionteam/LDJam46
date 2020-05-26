@@ -5,15 +5,12 @@ using UnityEngine.Serialization;
 public class RotatingSpray : MonoBehaviour
 {
     [SerializeField]
-    [FormerlySerializedAs("Cone")]
 	private GameObject _cone = null;
 
     [SerializeField]
-    [FormerlySerializedAs("CloudPrefab")]
     private GameObject _cloudPrefab = null;
 
     [SerializeField]
-    [FormerlySerializedAs("RotationSpeed")]
     private float _rotationSpeed = 100;   // rotation speed in degrees per second
 
     [SerializeField]
