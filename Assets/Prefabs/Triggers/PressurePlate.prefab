@@ -122,5 +122,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83ef115671147454887c165cd46b5859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressedSprite: {fileID: -6783360536836447401, guid: 3e5046f864be37b48b608732bbdd80ed, type: 3}
-  depressedSprite: {fileID: -4999494032166364458, guid: 3e5046f864be37b48b608732bbdd80ed, type: 3}
+  _pressedSprite: {fileID: -6783360536836447401, guid: 3e5046f864be37b48b608732bbdd80ed, type: 3}
+  _depressedSprite: {fileID: -4999494032166364458, guid: 3e5046f864be37b48b608732bbdd80ed, type: 3}

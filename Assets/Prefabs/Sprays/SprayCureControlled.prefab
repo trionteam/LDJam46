@@ -185,11 +185,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cloudPrefab: {fileID: 301755780573216639, guid: 6dc5e91c84f624948a3296cc9e2d8309, type: 3}
   _cone: {fileID: 6477723972633118309}
-  controlPlate: {fileID: 8689963627935894159}
-  SpraySpeed: 1
-  SprayPeriod: 0.2
-  BurstSize: 3
-  BurstSpreadDegrees: 30
+  _controlPlate: {fileID: 8689963627935894159}
+  _spraySpeed: 1
+  _sprayPeriod: 0.2
+  _burstSize: 3
+  _burstSpreadDegrees: 30
 --- !u!50 &6477723970766620930
 Rigidbody2D:
   serializedVersion: 4
@@ -440,7 +440,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 6477723970766620931}
     m_Modifications:
     - target: {fileID: -2036268742105978513, guid: abee3ac441bc07b42af57857875963b6, type: 3}
-      propertyPath: movementSpeed
+      propertyPath: _movementSpeed
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1213966104932174698, guid: abee3ac441bc07b42af57857875963b6, type: 3}

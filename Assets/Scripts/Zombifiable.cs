@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -36,55 +35,42 @@ public class Zombifiable : MonoBehaviour
     private float currentStateTimestamp;
 
     [SerializeField]
-    [FormerlySerializedAs("normalBehaviour")]
     private MonoBehaviour _normalBehaviour = null;
 
     [SerializeField]
-    [FormerlySerializedAs("normalColor")]
     private Color _normalColor = Color.white;
 
     [SerializeField]
-    [FormerlySerializedAs("_zombieBehaviour")]
-    private MonoBehaviour zombieBehaviour = null;
+    private MonoBehaviour _zombieBehaviour = null;
 
     [SerializeField]
-    [FormerlySerializedAs("zombieColor")]
     private Color _zombieColor = Color.green;
 
     [SerializeField]
-    [FormerlySerializedAs("zombieStateDuration")]
     private float _zombieStateDuration = 5.0f;
 
     [SerializeField]
-    [FormerlySerializedAs("zombieColorWeaker")]
     private Color _zombieColorWeaker = Color.green;
 
     [SerializeField]
-    [FormerlySerializedAs("zombieColorWeakerTime")]
     private float _zombieColorWeakerTime = 5.0f;
 
     [SerializeField]
-    [FormerlySerializedAs("zombieColorWeakest")]
     private Color _zombieColorWeakest = Color.green;
 
     [SerializeField]
-    [FormerlySerializedAs("zombieColorWeakestTime")]
     private float _zombieColorWeakestTime = 1.0f;
 
     [SerializeField]
-    [FormerlySerializedAs("immuneBehaviour")]
     private MonoBehaviour _immuneBehaviour = null;
 
     [SerializeField]
-    [FormerlySerializedAs("immuneColor")]
     private Color _immuneColor = Color.blue;
 
     [SerializeField]
-    [FormerlySerializedAs("immuneStateDuration")]
     private float _immuneStateDuration = 5.0f;
 
     [SerializeField, Tooltip("The list of sprite renderers that need to be colored when the current state changes.")]
-    [FormerlySerializedAs("coloredSprites")]
     private SpriteRenderer[] _coloredSprites = null;
 
     public bool SwitchingLocked = false;
@@ -92,7 +78,7 @@ public class Zombifiable : MonoBehaviour
     private void Awake()
     {
         Debug.Assert(_normalBehaviour != null);
-        Debug.Assert(zombieBehaviour != null);
+        Debug.Assert(_zombieBehaviour != null);
         Debug.Assert(_immuneBehaviour != null);
     }
 
@@ -170,7 +156,7 @@ public class Zombifiable : MonoBehaviour
         if (Application.isPlaying)
         {
             _normalBehaviour.enabled = false;
-            zombieBehaviour.enabled = false;
+            _zombieBehaviour.enabled = false;
             _immuneBehaviour.enabled = false;
         }
         switch (CurrentState)
@@ -182,7 +168,7 @@ public class Zombifiable : MonoBehaviour
                 _normalBehaviour.enabled = true;
                 break;
             case State.Zombie:
-                zombieBehaviour.enabled = true;
+                _zombieBehaviour.enabled = true;
                 ShakeMgr.Instance?.Shake();
                 break;
         }

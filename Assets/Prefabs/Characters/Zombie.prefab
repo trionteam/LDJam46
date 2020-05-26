@@ -366,15 +366,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 0}
   _assignedDestination: 0
-  randomMovementDestinationRadius: 0.5
-  destinationResetRadius: 0.1
-  movementSpeed: 0.3
-  coughEnabled: 1
+  _randomMovementDestinationRadius: 0.5
+  _destinationResetRadius: 0.1
+  _movementSpeed: 0.3
+  _coughEnabled: 1
   _cloudPrefab: {fileID: 301755780573216639, guid: 26275f6a16014e943843173f08302937, type: 3}
-  numCoughs: 4
-  coughTimeout: 5
-  selectionMarker: {fileID: 6313659049180494686}
-  destinationMarker: {fileID: 8181371622512956977}
+  _numCoughs: 4
+  _coughTimeout: 5
+  _selectionMarker: {fileID: 6313659049180494686}
+  _destinationMarker: {fileID: 8181371622512956977}
 --- !u!114 &-2036268742105978513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,10 +388,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 0}
-  randomMovementDestinationRadius: 1
-  movementSpeed: 0.3
-  destinationResetRadius: 0.01
-  zombieDetection: {fileID: 2440152830255973449}
+  _randomMovementDestinationRadius: 1
+  _movementSpeed: 0.3
+  _destinationResetRadius: 0.01
+  _zombieDetection: {fileID: 2440152830255973449}
 --- !u!114 &7910750625208280116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,19 +405,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentState: 0
-  normalBehaviour: {fileID: -2036268742105978513}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  zombieBehaviour: {fileID: 8292648429311309814}
-  zombieColor: {r: 0.40744036, g: 0.7924528, b: 0.40744036, a: 1}
-  zombieStateDuration: 20
-  zombieColorWeaker: {r: 0.6483624, g: 0.8867924, b: 0.6483624, a: 1}
-  zombieColorWeakerTime: 15
-  zombieColorWeakest: {r: 0.84617484, g: 0.9150943, b: 0.7985493, a: 1}
-  zombieColorWeakestTime: 18
-  immuneBehaviour: {fileID: -2036268742105978513}
-  immuneColor: {r: 0.38812745, g: 0.82710993, b: 0.9245283, a: 1}
-  immuneStateDuration: 5
-  coloredSprites:
+  _normalBehaviour: {fileID: -2036268742105978513}
+  _normalColor: {r: 1, g: 1, b: 1, a: 1}
+  _zombieBehaviour: {fileID: 8292648429311309814}
+  _zombieColor: {r: 0.40744036, g: 0.7924528, b: 0.40744036, a: 1}
+  _zombieStateDuration: 20
+  _zombieColorWeaker: {r: 0.6483624, g: 0.8867924, b: 0.6483624, a: 1}
+  _zombieColorWeakerTime: 15
+  _zombieColorWeakest: {r: 0.84617484, g: 0.9150943, b: 0.7985493, a: 1}
+  _zombieColorWeakestTime: 18
+  _immuneBehaviour: {fileID: -2036268742105978513}
+  _immuneColor: {r: 0.38812745, g: 0.82710993, b: 0.9245283, a: 1}
+  _immuneStateDuration: 5
+  _coloredSprites:
   - {fileID: 1213966104932174698}
   switchingLocked: 0
 --- !u!114 &-4425926623520026851
@@ -432,8 +432,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f8849d5307aa43831735253d2ef08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 0}
-  sprite: {fileID: 0}
+  _rigidBody: {fileID: 0}
+  _sprite: {fileID: 0}
 --- !u!95 &3368426390114647396
 Animator:
   serializedVersion: 3

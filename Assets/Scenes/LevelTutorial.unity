@@ -4556,11 +4556,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1634026503214446515, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}
-      propertyPath: NumZombiesText
+      propertyPath: _numZombiesText
       value: 
       objectReference: {fileID: 1890019352}
     - target: {fileID: 2246343891152739744, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}
-      propertyPath: nextLevelSceneName
+      propertyPath: _nextLevelSceneName
       value: Scenes/Level00
       objectReference: {fileID: 0}
     - target: {fileID: 2373268666580808032, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}

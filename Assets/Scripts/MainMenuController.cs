@@ -1,33 +1,26 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
     [SerializeField]
-    [FormerlySerializedAs("container")]
     private GameObject _container;
 
     [SerializeField]
-    [FormerlySerializedAs("exitToMenuButton")]
     private Button _exitToMenuButton;
 
     [SerializeField]
-    [FormerlySerializedAs("exitGameButton")]
     private Button _exitGameButton;
 
     [SerializeField]
-    [FormerlySerializedAs("backToGameButton")]
     private Button _backToGameButton;
 
     [SerializeField]
-    [FormerlySerializedAs("showMenuButton")]
     private Button _showMenuButton;
 
     [SerializeField]
-    [FormerlySerializedAs("restartLevelButton")]
     private Button _restartLevelButton;
 
     private bool IsInMainMenu

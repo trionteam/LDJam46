@@ -4335,7 +4335,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2036268742105978513, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
-      propertyPath: movementSpeed
+      propertyPath: _movementSpeed
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8292648429311309811, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
@@ -5007,7 +5007,7 @@ PrefabInstance:
       value: -6.97
       objectReference: {fileID: 0}
     - target: {fileID: 4191122494035066573, guid: f0a6237935f5a434fb048b99fa02cb9d, type: 3}
-      propertyPath: movementSpeed
+      propertyPath: _movementSpeed
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6477723970766620931, guid: f0a6237935f5a434fb048b99fa02cb9d, type: 3}
@@ -7130,11 +7130,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1634026503214446515, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}
-      propertyPath: NumZombiesText
+      propertyPath: _numZombiesText
       value: 
       objectReference: {fileID: 1890019352}
     - target: {fileID: 2246343891152739744, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}
-      propertyPath: nextLevelSceneName
+      propertyPath: _nextLevelSceneName
       value: Scenes/FinalScene
       objectReference: {fileID: 0}
     - target: {fileID: 2373268666580808032, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}

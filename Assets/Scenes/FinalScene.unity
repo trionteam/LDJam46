@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b43d457b27c27a4ba7221b4536470e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotSpeed: 10
+  _rotSpeed: 10
 --- !u!1 &132366398
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,9 +272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02870e2fe345f6d4a8d55f7ad9373392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatAmp: 7
-  FloatSpeed: 5
-  SpeedRnd: 0.25
+  _floatAmp: 7
+  _floatSpeed: 5
+  _speedRnd: 0.25
 --- !u!1 &134995896
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,9 +325,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02870e2fe345f6d4a8d55f7ad9373392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatAmp: 7
-  FloatSpeed: 5
-  SpeedRnd: 0.25
+  _floatAmp: 7
+  _floatSpeed: 5
+  _speedRnd: 0.25
 --- !u!114 &134995899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,9 +749,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02870e2fe345f6d4a8d55f7ad9373392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatAmp: 7
-  FloatSpeed: 5
-  SpeedRnd: 0.25
+  _floatAmp: 7
+  _floatSpeed: 5
+  _speedRnd: 0.25
 --- !u!114 &453350208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,9 +954,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02870e2fe345f6d4a8d55f7ad9373392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatAmp: 7
-  FloatSpeed: 5
-  SpeedRnd: 0.25
+  _floatAmp: 7
+  _floatSpeed: 5
+  _speedRnd: 0.25
 --- !u!1 &501675057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,9 +1007,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02870e2fe345f6d4a8d55f7ad9373392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatAmp: 7
-  FloatSpeed: 5
-  SpeedRnd: 0.25
+  _floatAmp: 7
+  _floatSpeed: 5
+  _speedRnd: 0.25
 --- !u!114 &501675060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,9 +1134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02870e2fe345f6d4a8d55f7ad9373392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatAmp: 7
-  FloatSpeed: 5
-  SpeedRnd: 0.25
+  _floatAmp: 7
+  _floatSpeed: 5
+  _speedRnd: 0.25
 --- !u!1 &904199045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,9 +1223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02870e2fe345f6d4a8d55f7ad9373392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatAmp: 7
-  FloatSpeed: 5
-  SpeedRnd: 0.25
+  _floatAmp: 7
+  _floatSpeed: 5
+  _speedRnd: 0.25
 --- !u!114 &947274296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1929,9 +1929,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02870e2fe345f6d4a8d55f7ad9373392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatAmp: 7
-  FloatSpeed: 5
-  SpeedRnd: 0.25
+  _floatAmp: 7
+  _floatSpeed: 5
+  _speedRnd: 0.25
 --- !u!1 &1802782655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,9 +2092,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02870e2fe345f6d4a8d55f7ad9373392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatAmp: 7
-  FloatSpeed: 5
-  SpeedRnd: 0.25
+  _floatAmp: 7
+  _floatSpeed: 5
+  _speedRnd: 0.25
 --- !u!114 &1990260348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2341,9 +2341,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02870e2fe345f6d4a8d55f7ad9373392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatAmp: 7
-  FloatSpeed: 5
-  SpeedRnd: 0.25
+  _floatAmp: 7
+  _floatSpeed: 5
+  _speedRnd: 0.25
 --- !u!1 &2072110639
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,9 +2394,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02870e2fe345f6d4a8d55f7ad9373392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatAmp: 7
-  FloatSpeed: 5
-  SpeedRnd: 0.25
+  _floatAmp: 7
+  _floatSpeed: 5
+  _speedRnd: 0.25
 --- !u!114 &2072110642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2521,9 +2521,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02870e2fe345f6d4a8d55f7ad9373392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloatAmp: 7
-  FloatSpeed: 5
-  SpeedRnd: 0.25
+  _floatAmp: 7
+  _floatSpeed: 5
+  _speedRnd: 0.25
 --- !u!1 &2090915535
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class RotatingSpray : MonoBehaviour
 {
@@ -14,23 +13,18 @@ public class RotatingSpray : MonoBehaviour
     private float _rotationSpeed = 100;   // rotation speed in degrees per second
 
     [SerializeField]
-    [FormerlySerializedAs("SpraySpeed")]
     private float _spraySpeed = 2;
 
     [SerializeField]
-    [FormerlySerializedAs("Radius")]
     private float _radius = 3;    // radius in units
 
     [SerializeField]
-    [FormerlySerializedAs("BurstSize")]
     private int _burstSize = 10;
 
     [SerializeField]
-    [FormerlySerializedAs("BurstSpreadDegrees")]
     private float _burstSpreadDegrees = 45.0f;
 
     [SerializeField]
-    [FormerlySerializedAs("SprayCooldownTime")]
 	private float _sprayCooldownTime = 1;
 
 	private float _sprayCooldown = 1;

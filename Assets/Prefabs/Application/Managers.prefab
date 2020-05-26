@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138095750b487df4590e0a42288a5ebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumZombiesText: {fileID: 0}
+  _numZombiesText: {fileID: 0}
 --- !u!114 &1992639761133854245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,9 +318,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e36780ad3f465c43a175c2dc7e2dc36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
-  mainMenu: {fileID: 0}
-  dragDropMask: {fileID: 5682313127573469217}
+  _mainCamera: {fileID: 0}
+  _mainMenu: {fileID: 0}
+  _dragDropMask: {fileID: 5682313127573469217}
 --- !u!114 &2246343891152739744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,6 +333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5cf3bbf41b914341a0f5ae50681f1bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victoryScreen: {fileID: 0}
-  zombieControls: {fileID: 0}
-  nextLevelSceneName: 
+  _victoryScreen: {fileID: 0}
+  _zombieControls: {fileID: 0}
+  _nextLevelSceneName: 

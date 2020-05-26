@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 public class SpriteFlipper : MonoBehaviour
 {
     [SerializeField]
-    [FormerlySerializedAs("rigidBody")]
     public Rigidbody2D _rigidBody;
 
     [SerializeField]
-    [FormerlySerializedAs("sprite")]
     public SpriteRenderer _sprite;
 
     private float _previousX;

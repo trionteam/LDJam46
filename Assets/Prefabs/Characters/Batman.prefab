@@ -302,15 +302,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 0}
   _assignedDestination: 0
-  randomMovementDestinationRadius: 0.5
-  destinationResetRadius: 0.1
-  movementSpeed: 0.3
-  coughEnabled: 1
+  _randomMovementDestinationRadius: 0.5
+  _destinationResetRadius: 0.1
+  _movementSpeed: 0.3
+  _coughEnabled: 1
   _cloudPrefab: {fileID: 301755780573216639, guid: 26275f6a16014e943843173f08302937, type: 3}
-  numCoughs: 4
-  coughTimeout: 5
-  selectionMarker: {fileID: 1824161192486946691}
-  destinationMarker: {fileID: 8217447662160605381}
+  _numCoughs: 4
+  _coughTimeout: 5
+  _selectionMarker: {fileID: 1824161192486946691}
+  _destinationMarker: {fileID: 8217447662160605381}
 --- !u!114 &5350987272952145632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,8 +323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f8849d5307aa43831735253d2ef08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 0}
-  sprite: {fileID: 0}
+  _rigidBody: {fileID: 0}
+  _sprite: {fileID: 0}
 --- !u!95 &1934990187659626208
 Animator:
   serializedVersion: 3

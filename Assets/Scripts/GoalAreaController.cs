@@ -1,15 +1,12 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 public class GoalAreaController : MonoBehaviour
 {
     [SerializeField]
-    [FormerlySerializedAs("levelController")]
     private LevelController _levelController = null;
 
     // All zombies that get to the goal area will move towards this place.
     [SerializeField]
-    [FormerlySerializedAs("zombieDestination")]
     private Transform _zombieDestination = null;
 
     private void Awake()

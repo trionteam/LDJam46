@@ -135,9 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9a932a2d65d5242a822d39b25e0971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amplitude: 2
-  WobbleSpeed: 0.8
-  SpeedRnd: 0.2
+  _amplitude: 2
+  _wobbleSpeed: 0.8
+  _speedRnd: 0.2
 --- !u!1 &3887752330963109403
 GameObject:
   m_ObjectHideFlags: 0

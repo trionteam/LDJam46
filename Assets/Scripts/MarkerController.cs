@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 public class MarkerController : MonoBehaviour
 {
@@ -26,14 +25,12 @@ public class MarkerController : MonoBehaviour
     /// The alpha of the marker when it is in the active state.
     /// </summary>
     [SerializeField]
-    [FormerlySerializedAs("activeAlpha")]
     private float _activeAlpha = 1.0f;
 
     /// <summary>
     /// The alpha of the marker when it is in the transparent state.
     /// </summary>
     [SerializeField]
-    [FormerlySerializedAs("transparentAlpha")]
     private float _transparentAlpha = 0.5f;
 
     /// <summary>

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 [CreateAssetMenu(menuName = "Levels/Level metadata", fileName = "Level0")]
 public class LevelMetadata : ScriptableObject
@@ -19,15 +18,12 @@ public class LevelList : ScriptableObject
 public class LevelController : MonoBehaviour
 {
     [SerializeField]
-    [FormerlySerializedAs("victoryScreen")]
     private GameObject _victoryScreen = null;
 
     [SerializeField]
-    [FormerlySerializedAs("zombieControls")]
     private ZombieControls _zombieControls = null;
 
     [SerializeField]
-    [FormerlySerializedAs("nextLevelSceneName")]
     private string _nextLevelSceneName = null;
 
     private void Awake()

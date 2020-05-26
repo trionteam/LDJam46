@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc6f20d2d24df64ca4de45bddfeb246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bar: {fileID: 785704649}
-  health: 1
+  _bar: {fileID: 785704649}
+  _health: 1
 --- !u!212 &347608673
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -468,7 +468,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1634026503214446515, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}
-      propertyPath: NumZombiesText
+      propertyPath: _numZombiesText
       value: 
       objectReference: {fileID: 8611521831112588230}
     - target: {fileID: 2373268666580808032, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}
@@ -601,7 +601,7 @@ PrefabInstance:
       value: Ambulance
       objectReference: {fileID: 0}
     - target: {fileID: 1304160832499052951, guid: 51ddddc0b9d6e8740b1a3d6c15fee2bc, type: 3}
-      propertyPath: waypoints
+      propertyPath: _waypoints
       value: 
       objectReference: {fileID: 1214165229}
     - target: {fileID: 1304160832499052953, guid: 51ddddc0b9d6e8740b1a3d6c15fee2bc, type: 3}

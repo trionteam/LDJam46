@@ -1,18 +1,14 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 public class FinalBatmanFloat : MonoBehaviour
 {
     [SerializeField]
-    [FormerlySerializedAs("FloatAmp")]
 	private float _floatAmp = 5;
 
     [SerializeField]
-    [FormerlySerializedAs("FloatSpeed")]
 	private float _floatSpeed = 5;
 
     [SerializeField]
-    [FormerlySerializedAs("SpeedRnd")]
 	private float _speedRnd = 0.5f;
 
     private float _baseY = 0.0f;

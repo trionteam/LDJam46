@@ -484,8 +484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74381a41d97c5ae42bb4dcf6d12d91e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockerUp: {fileID: 652024910}
-  blockerDown: {fileID: 731945225}
-  blockerLeft: {fileID: 1467431668}
-  blockerRight: {fileID: 224433571}
-  originalCameraSize: 0
+  _blockerUp: {fileID: 652024910}
+  _blockerDown: {fileID: 731945225}
+  _blockerLeft: {fileID: 1467431668}
+  _blockerRight: {fileID: 224433571}
+  _originalCameraSize: 0

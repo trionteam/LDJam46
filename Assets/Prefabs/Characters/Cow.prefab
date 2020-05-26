@@ -382,10 +382,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 0}
-  randomMovementDestinationRadius: 1
-  movementSpeed: 0.3
-  destinationResetRadius: 0.01
-  zombieDetection: {fileID: 0}
+  _randomMovementDestinationRadius: 1
+  _movementSpeed: 0.3
+  _destinationResetRadius: 0.01
+  _zombieDetection: {fileID: 0}
 --- !u!114 &6759690940330066067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,8 +398,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f8849d5307aa43831735253d2ef08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 0}
-  sprite: {fileID: 0}
+  _rigidBody: {fileID: 0}
+  _sprite: {fileID: 0}
 --- !u!1 &8549864639980755791
 GameObject:
   m_ObjectHideFlags: 0

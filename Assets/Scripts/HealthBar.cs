@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 public class HealthBar : MonoBehaviour
 {
     [SerializeField]
-    [FormerlySerializedAs("Bar")]
 	private GameObject _bar = null;
 
     [SerializeField]
-    [FormerlySerializedAs("health")]
 	private float _health = 1;
 
     // Start is called before the first frame update

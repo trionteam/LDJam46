@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 public class FixedSpray : MonoBehaviour
 {
@@ -10,23 +9,18 @@ public class FixedSpray : MonoBehaviour
     private Transform _cone = null;
 
     [SerializeField]
-    [FormerlySerializedAs("controlPlate")]
     private PressurePlate _controlPlate = null;
 
     [SerializeField]
-    [FormerlySerializedAs("SpraySpeed")]
     private float _spraySpeed = 2.0f;
 
     [SerializeField]
-    [FormerlySerializedAs("SprayPeriod")]
     private float _sprayPeriod = 5.0f;
 
     [SerializeField]
-    [FormerlySerializedAs("BurstSize")]
     private int _burstSize = 10;
 
     [SerializeField]
-    [FormerlySerializedAs("BurstSpreadDegrees")]
     private float _burstSpreadDegrees = 45.0f;
 
     private float _lastBurstTime;

@@ -71,8 +71,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd1f04ec3a864d47b955b2665e0fb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelController: {fileID: 0}
-  zombieDestination: {fileID: 7909507171536529201}
+  _levelController: {fileID: 0}
+  _zombieDestination: {fileID: 7909507171536529201}
 --- !u!1 &5122539878709595061
 GameObject:
   m_ObjectHideFlags: 0

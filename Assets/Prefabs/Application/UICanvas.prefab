@@ -413,12 +413,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d1f59eeadc8a047af6f44845c9c286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  container: {fileID: 0}
-  exitToMenuButton: {fileID: 0}
-  exitGameButton: {fileID: 0}
-  backToGameButton: {fileID: 0}
-  showMenuButton: {fileID: 0}
-  restartLevelButton: {fileID: 0}
+  _container: {fileID: 0}
+  _exitToMenuButton: {fileID: 0}
+  _exitGameButton: {fileID: 0}
+  _backToGameButton: {fileID: 0}
+  _showMenuButton: {fileID: 0}
+  _restartLevelButton: {fileID: 0}
 --- !u!1 &938426484701830715
 GameObject:
   m_ObjectHideFlags: 0
@@ -2017,7 +2017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ead7eb88ff0b24c43bd3ec451ba055ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelController: {fileID: 0}
+  _levelController: {fileID: 0}
 --- !u!1 &6824061726265574849
 GameObject:
   m_ObjectHideFlags: 0

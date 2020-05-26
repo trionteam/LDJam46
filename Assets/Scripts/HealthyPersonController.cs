@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif  // UNITY_EDITOR
@@ -12,31 +11,24 @@ public class HealthyPersonController : MonoBehaviour
     private Vector2 destination;
 
     [SerializeField]
-    [FormerlySerializedAs("hasBasePosition")]
     private bool _hasBasePosition = false;
 
     [SerializeField]
-    [FormerlySerializedAs("basePosition")]
     private Vector2 _basePosition;
 
     [SerializeField]
-    [FormerlySerializedAs("basePositionRadius")]
     private float _basePositionRadius = 1.0f;
 
     [SerializeField]
-    [FormerlySerializedAs("randomMovementDestinationRadius")]
     private float _randomMovementDestinationRadius = 1.0f;
 
     [SerializeField]
-    [FormerlySerializedAs("movementSpeed")]
     private float _movementSpeed = 1.0f;
 
     [SerializeField]
-    [FormerlySerializedAs("destinationResetRadius")]
     private float _destinationResetRadius = 0.01f;
 
     [SerializeField]
-    [FormerlySerializedAs("zombieDetection")]
     private ZombieDetection _zombieDetection = null;
 
     private Rigidbody2D _rigidBody;

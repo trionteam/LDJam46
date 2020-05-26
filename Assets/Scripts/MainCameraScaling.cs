@@ -1,30 +1,24 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 public class MainCameraScaling : MonoBehaviour
 {
     public static readonly float TargetAspectRatio = 16.0f / 9.0f;
 
     [SerializeField]
-    [FormerlySerializedAs("blockerUp")]
     private Transform _blockerUp = null;
 
     [SerializeField]
-    [FormerlySerializedAs("blockerDown")]
     private Transform _blockerDown = null;
 
     [SerializeField]
-    [FormerlySerializedAs("blockerLeft")]
     private Transform _blockerLeft = null;
 
     [SerializeField]
-    [FormerlySerializedAs("blockerRight")]
     private Transform _blockerRight = null;
 
     private Camera _camera = null;
 
     [SerializeField]
-    [FormerlySerializedAs("originalCameraSize")]
     public float _originalCameraSize = 0.0f;
 
     private void Awake()

@@ -101,11 +101,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cloudPrefab: {fileID: 301755780573216639, guid: 6dc5e91c84f624948a3296cc9e2d8309, type: 3}
   _cone: {fileID: 2742108570499925741}
-  controlPlate: {fileID: 0}
-  SpraySpeed: 2
-  SprayPeriod: 5
-  BurstSize: 10
-  BurstSpreadDegrees: 45
+  _controlPlate: {fileID: 0}
+  _spraySpeed: 2
+  _sprayPeriod: 5
+  _burstSize: 10
+  _burstSpreadDegrees: 45
 --- !u!50 &16166998776182493
 Rigidbody2D:
   serializedVersion: 4

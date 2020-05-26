@@ -97,13 +97,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718a6826363aa494496c5c4ae76a8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: {fileID: 0}
-  Speed: 1
+  _waypoints: {fileID: 0}
+  _speed: 1
   _cloudPrefab: {fileID: 301755780573216639, guid: 6dc5e91c84f624948a3296cc9e2d8309, type: 3}
-  SprayCooldownTime: 3
-  SpraySpeed: 2
-  BurstSize: 30
-  BurstSpreadDegrees: 30
+  _sprayCooldownTime: 3
+  _spraySpeed: 2
+  _burstSize: 30
+  _burstSpreadDegrees: 30
 --- !u!61 &1304160832499052948
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -99,11 +99,11 @@ MonoBehaviour:
   _cone: {fileID: 2742108570499925743}
   _cloudPrefab: {fileID: 301755780573216639, guid: 26275f6a16014e943843173f08302937, type: 3}
   _rotationSpeed: 50
-  SpraySpeed: 2
-  Radius: 4
-  BurstSize: 10
-  BurstSpreadDegrees: 45
-  SprayCooldownTime: 2
+  _spraySpeed: 2
+  _radius: 4
+  _burstSize: 10
+  _burstSpreadDegrees: 45
+  _sprayCooldownTime: 2
 --- !u!1 &2742108570499925743
 GameObject:
   m_ObjectHideFlags: 0

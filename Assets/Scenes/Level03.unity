@@ -8172,11 +8172,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1634026503214446515, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}
-      propertyPath: NumZombiesText
+      propertyPath: _numZombiesText
       value: 
       objectReference: {fileID: 1890019352}
     - target: {fileID: 2246343891152739744, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}
-      propertyPath: nextLevelSceneName
+      propertyPath: _nextLevelSceneName
       value: Scenes/Level04
       objectReference: {fileID: 0}
     - target: {fileID: 2373268666580808032, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}
@@ -17056,23 +17056,23 @@ PrefabInstance:
       value: Ambulance
       objectReference: {fileID: 0}
     - target: {fileID: 1304160832499052951, guid: 51ddddc0b9d6e8740b1a3d6c15fee2bc, type: 3}
-      propertyPath: waypoints
+      propertyPath: _waypoints
       value: 
       objectReference: {fileID: 660989124}
     - target: {fileID: 1304160832499052951, guid: 51ddddc0b9d6e8740b1a3d6c15fee2bc, type: 3}
-      propertyPath: SpraySpeed
+      propertyPath: _spraySpeed
       value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1304160832499052951, guid: 51ddddc0b9d6e8740b1a3d6c15fee2bc, type: 3}
-      propertyPath: SprayCooldownTime
+      propertyPath: _sprayCooldownTime
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1304160832499052951, guid: 51ddddc0b9d6e8740b1a3d6c15fee2bc, type: 3}
-      propertyPath: Speed
+      propertyPath: _speed
       value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 1304160832499052951, guid: 51ddddc0b9d6e8740b1a3d6c15fee2bc, type: 3}
-      propertyPath: BurstSize
+      propertyPath: _burstSize
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1304160832499052953, guid: 51ddddc0b9d6e8740b1a3d6c15fee2bc, type: 3}

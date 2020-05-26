@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Ambulance : MonoBehaviour
 {
     [SerializeField]
-    [FormerlySerializedAs("waypoints")]
 	private Waypoints _waypoints;
 
     [SerializeField]
-    [FormerlySerializedAs("Speed")]
 	private float _speed = 1;
 
     [SerializeField]
@@ -18,21 +15,17 @@ public class Ambulance : MonoBehaviour
 	private Rigidbody2D _rigidBody;
 
     [SerializeField]
-    [FormerlySerializedAs("SprayCooldownTime")]
 	private float _sprayCooldownTime = 3;
 
 	private float _sprayCooldown = 1;
 
     [SerializeField]
-    [FormerlySerializedAs("SpraySpeed")]
 	private float _spraySpeed = 2;
 
     [SerializeField]
-    [FormerlySerializedAs("BurstSize")]
 	private int _burstSize = 20;
 
     [SerializeField]
-    [FormerlySerializedAs("BurstSpreadDegrees")]
 	private float _burstSpreadDegrees = 30.0f;
 
 	// Start is called before the first frame update

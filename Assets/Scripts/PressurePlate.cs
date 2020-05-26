@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PressurePlate : MonoBehaviour
 {
     [SerializeField]
-    [FormerlySerializedAs("pressedSprite")]
     private Sprite _pressedSprite = null;
 
     [SerializeField]
-    [FormerlySerializedAs("depressedSprite")]
     private Sprite _depressedSprite = null;
 
     public bool IsPressed

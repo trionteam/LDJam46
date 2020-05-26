@@ -131,7 +131,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1634026503214446515, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}
-      propertyPath: NumZombiesText
+      propertyPath: _numZombiesText
       value: 
       objectReference: {fileID: 7025885786117566285}
     - target: {fileID: 2373268666580808032, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}

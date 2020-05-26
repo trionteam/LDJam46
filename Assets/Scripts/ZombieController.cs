@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 public class ZombieController : MonoBehaviour
 {
@@ -24,30 +23,24 @@ public class ZombieController : MonoBehaviour
     private bool _assignedDestination = false;
 
     [SerializeField]
-    [FormerlySerializedAs("randomMovementDestinationRadius")]
     private float _randomMovementDestinationRadius = 1.0f;
 
     [SerializeField]
-    [FormerlySerializedAs("destinationResetRadius")]
     private float _destinationResetRadius = 0.01f;
 
     [SerializeField]
-    [FormerlySerializedAs("movementSpeed")]
     private float _movementSpeed = 1.0f;
 
     [SerializeField]
-    [FormerlySerializedAs("coughEnabled")]
     private bool _coughEnabled = true;
 
     [SerializeField]
     private GameObject _cloudPrefab = null;
 
     [SerializeField]
-    [FormerlySerializedAs("numCoughs")]
     private int _numCoughs = 4;
 
     [SerializeField]
-    [FormerlySerializedAs("coughTimeout")]
     private float _coughTimeout = 5.0f;
 
     private float coughLeft = 0;
@@ -90,13 +83,11 @@ public class ZombieController : MonoBehaviour
     /// The marker displayed when the zombie is selected or the mouse is hovering over it.
     /// </summary>
     [SerializeField]
-    [FormerlySerializedAs("selectionMarker")]
     private MarkerController _selectionMarker = null;
     /// <summary>
     /// The marker displayed at the destination of the zombie.
     /// </summary>
     [SerializeField]
-    [FormerlySerializedAs("destinationMarker")]
     private MarkerController _destinationMarker = null;
 
     private Rigidbody2D _rigidBody;

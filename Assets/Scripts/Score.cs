@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Score : MonoBehaviour
@@ -8,7 +7,6 @@ public class Score : MonoBehaviour
 	public static Score Instance = null;
 
     [SerializeField]
-    [FormerlySerializedAs("NumZombiesText")]
 	private Text _numZombiesText;
 
 	private HashSet<Zombifiable> zombifiables = new HashSet<Zombifiable>();

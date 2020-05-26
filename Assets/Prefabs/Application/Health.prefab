@@ -102,8 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc6f20d2d24df64ca4de45bddfeb246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bar: {fileID: 5247814164443087674}
-  health: 1
+  _bar: {fileID: 5247814164443087674}
+  _health: 1
 --- !u!223 &5247814164000813969
 Canvas:
   m_ObjectHideFlags: 0

@@ -1,15 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class ZombieControls : MonoBehaviour
 {
     [SerializeField]
-    [FormerlySerializedAs("mainCamera")]
     private Camera _mainCamera;
 
     [SerializeField]
-    [FormerlySerializedAs("mainMenu")]
     private MainMenuController _mainMenu;
 
     private HashSet<ZombieController> selectedZombies = new HashSet<ZombieController>();
@@ -18,7 +15,6 @@ public class ZombieControls : MonoBehaviour
     private List<ZombieController> hoveredZombies = new List<ZombieController>();
 
     [SerializeField]
-    [FormerlySerializedAs("dragDropMask")]
     private Transform _dragDropMask;
 
     private bool isDragging = false;

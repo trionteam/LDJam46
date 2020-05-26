@@ -1,22 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Serialization;
+﻿using UnityEngine;
 
 public class WobbleController : MonoBehaviour
 {
     private Quaternion originalRotation;
 
     [SerializeField]
-    [FormerlySerializedAs("Amplitude")]
     private float _amplitude = 0.05f;
 
     [SerializeField]
-    [FormerlySerializedAs("WobbleSpeed")]
     private float _wobbleSpeed = 5;
 
     [SerializeField]
-    [FormerlySerializedAs("SpeedRnd")]
     private float _speedRnd = 0.25f;
 
     private float actualSpeed = 1;

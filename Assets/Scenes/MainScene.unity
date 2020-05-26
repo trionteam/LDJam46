@@ -744,15 +744,15 @@ PrefabInstance:
       value: 0.18222678
       objectReference: {fileID: 0}
     - target: {fileID: 7910750625208280116, guid: abee3ac441bc07b42af57857875963b6, type: 3}
-      propertyPath: immuneColor.r
+      propertyPath: _immuneColor.r
       value: 0.24705882
       objectReference: {fileID: 0}
     - target: {fileID: 7910750625208280116, guid: abee3ac441bc07b42af57857875963b6, type: 3}
-      propertyPath: immuneColor.g
+      propertyPath: _immuneColor.g
       value: 0.6392157
       objectReference: {fileID: 0}
     - target: {fileID: 7910750625208280116, guid: abee3ac441bc07b42af57857875963b6, type: 3}
-      propertyPath: immuneColor.b
+      propertyPath: _immuneColor.b
       value: 0.83137256
       objectReference: {fileID: 0}
     - target: {fileID: 7910750625208280116, guid: abee3ac441bc07b42af57857875963b6, type: 3}
@@ -760,15 +760,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7910750625208280116, guid: abee3ac441bc07b42af57857875963b6, type: 3}
-      propertyPath: zombieColor.r
+      propertyPath: _zombieColor.r
       value: 0.36862746
       objectReference: {fileID: 0}
     - target: {fileID: 7910750625208280116, guid: abee3ac441bc07b42af57857875963b6, type: 3}
-      propertyPath: zombieColor.g
+      propertyPath: _zombieColor.g
       value: 0.6117647
       objectReference: {fileID: 0}
     - target: {fileID: 7910750625208280116, guid: abee3ac441bc07b42af57857875963b6, type: 3}
-      propertyPath: zombieColor.b
+      propertyPath: _zombieColor.b
       value: 0.18039216
       objectReference: {fileID: 0}
     - target: {fileID: 8292648429311309811, guid: abee3ac441bc07b42af57857875963b6, type: 3}
@@ -1961,7 +1961,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1634026503214446515, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}
-      propertyPath: NumZombiesText
+      propertyPath: _numZombiesText
       value: 
       objectReference: {fileID: 535495572}
     - target: {fileID: 2373268666580808032, guid: b4b41f3afa5cff24389eb6b40678d750, type: 3}
