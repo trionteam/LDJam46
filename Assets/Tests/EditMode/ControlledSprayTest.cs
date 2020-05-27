@@ -23,7 +23,9 @@ namespace Tests
             Assert.IsNotNull(_controlledZombieSprayPrefab);
 
             yield return new EnterPlayMode();
-            SceneManager.LoadScene("Tests/EditMode/UnitTestScene");
+            EditorSceneManager.LoadSceneInPlayMode("Tests/EditMode/UnitTestScene", new LoadSceneParameters(LoadSceneMode.Single));
+            yield return null;
+            
             Time.timeScale = 10.0f;
         }
 

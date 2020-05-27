@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using NUnit.Framework;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
@@ -27,7 +28,7 @@ namespace Tests
             Assert.IsNotNull(_zombiePrefab);
 
             yield return new EnterPlayMode();
-            SceneManager.LoadScene("Tests/EditMode/UnitTestScene");
+            EditorSceneManager.LoadSceneInPlayMode("Tests/EditMode/UnitTestScene", new LoadSceneParameters(LoadSceneMode.Single));
             Time.timeScale = 10.0f;
         }
 
