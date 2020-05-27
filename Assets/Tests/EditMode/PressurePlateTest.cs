@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 
 namespace Tests
@@ -13,8 +14,8 @@ namespace Tests
         private GameObject pressurePlatePrefab;
         private GameObject zombiePrefab;
 
-        [SetUp]
-        public void SetUpTest()
+        [UnitySetUp]
+        public IEnumerator SetUpTest()
         {
             cloudPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(Prefabs.Sprays.Cloud);
             Assert.IsNotNull(cloudPrefab);
@@ -24,6 +25,17 @@ namespace Tests
             Assert.IsNotNull(pressurePlatePrefab);
             zombiePrefab = AssetDatabase.LoadAssetAtPath<GameObject>(Prefabs.Characters.Zombie);
             Assert.IsNotNull(zombiePrefab);
+
+            yield return new EnterPlayMode();
+            SceneManager.LoadScene("Tests/EditMode/UnitTestScene");
+            Time.timeScale = 10.0f;
+        }
+
+        [UnityTearDown]
+        public IEnumerator TearDownTest()
+        {
+            Time.timeScale = 1.0f;
+            yield return new ExitPlayMode();
         }
 
         /// <summary>
@@ -41,8 +53,6 @@ namespace Tests
                                            bool isExpectedToTrigger,
                                            Vector3 prefabPosition = new Vector3())
         {
-            yield return new EnterPlayMode();
-
             // Instantiate a pressure plate.
             var pressurePlate = GameObject.Instantiate(pressurePlatePrefab).GetComponent<PressurePlate>();
             Assert.IsNotNull(pressurePlate);
@@ -70,8 +80,6 @@ namespace Tests
 
             GameObject.Destroy(pressurePlate);
             GameObject.Destroy(triggeringObject);
-
-            yield return new ExitPlayMode();
         }
 
         /// <summary>

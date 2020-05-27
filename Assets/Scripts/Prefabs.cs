@@ -4,6 +4,12 @@ using UnityEngine;
 
 public static class Prefabs
 {
+    public static class Application
+    {
+        public static readonly string Managers = "Assets/Prefabs/Application/Managers.prefab";
+        public static readonly string UICanvas = "Assets/Prefabs/Application/UICanvas.prefab";
+    }
+
     public static class Characters
     {
         public static readonly string Batman = "Assets/Prefabs/Characters/Batman.prefab";
@@ -15,6 +21,7 @@ public static class Prefabs
     public static class Sprays
     {
         public static readonly string Cloud = "Assets/Prefabs/Sprays/Cloud.prefab";
+        public static readonly string ControlledCureSpray = "Assets/Prefabs/Sprays/SprayCureControlled.prefab";
     }
 
     public static class Triggers
