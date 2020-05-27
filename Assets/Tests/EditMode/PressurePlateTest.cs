@@ -9,22 +9,22 @@ namespace Tests
 {
     public class TestPressurePlate
     {
-        private GameObject cloudPrefab;
-        private GameObject cowPrefab;
-        private GameObject pressurePlatePrefab;
-        private GameObject zombiePrefab;
+        private GameObject _cloudPrefab;
+        private GameObject _cowPrefab;
+        private GameObject _pressurePlatePrefab;
+        private GameObject _zombiePrefab;
 
         [UnitySetUp]
         public IEnumerator SetUpTest()
         {
-            cloudPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(Prefabs.Sprays.Cloud);
-            Assert.IsNotNull(cloudPrefab);
-            cowPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(Prefabs.Characters.Cow);
-            Assert.IsNotNull(cowPrefab);
-            pressurePlatePrefab = AssetDatabase.LoadAssetAtPath<GameObject>(Prefabs.Triggers.PressurePlate);
-            Assert.IsNotNull(pressurePlatePrefab);
-            zombiePrefab = AssetDatabase.LoadAssetAtPath<GameObject>(Prefabs.Characters.Zombie);
-            Assert.IsNotNull(zombiePrefab);
+            _cloudPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(Prefabs.Sprays.Cloud);
+            Assert.IsNotNull(_cloudPrefab);
+            _cowPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(Prefabs.Characters.Cow);
+            Assert.IsNotNull(_cowPrefab);
+            _pressurePlatePrefab = AssetDatabase.LoadAssetAtPath<GameObject>(Prefabs.Triggers.PressurePlate);
+            Assert.IsNotNull(_pressurePlatePrefab);
+            _zombiePrefab = AssetDatabase.LoadAssetAtPath<GameObject>(Prefabs.Characters.Zombie);
+            Assert.IsNotNull(_zombiePrefab);
 
             yield return new EnterPlayMode();
             SceneManager.LoadScene("Tests/EditMode/UnitTestScene");
@@ -54,7 +54,7 @@ namespace Tests
                                            Vector3 prefabPosition = new Vector3())
         {
             // Instantiate a pressure plate.
-            var pressurePlate = GameObject.Instantiate(pressurePlatePrefab).GetComponent<PressurePlate>();
+            var pressurePlate = GameObject.Instantiate(_pressurePlatePrefab).GetComponent<PressurePlate>();
             Assert.IsNotNull(pressurePlate);
             // The pressure plate should be unpressed (there is nothing to press it).
             Assert.IsFalse(pressurePlate.IsPressed);
@@ -88,7 +88,7 @@ namespace Tests
         [UnityTest]
         public IEnumerator RespondsToCows()
         {
-            return TestWithPrefab(cowPrefab, true);
+            return TestWithPrefab(_cowPrefab, true);
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Tests
         [UnityTest]
         public IEnumerator RespondsToZombies()
         {
-            return TestWithPrefab(zombiePrefab, true);
+            return TestWithPrefab(_zombiePrefab, true);
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Tests
         [UnityTest]
         public IEnumerator DoesNotRespondToZombieDetection()
         {
-            return TestWithPrefab(zombiePrefab, false, new Vector3(0.0f, -0.265f, 0.0f));
+            return TestWithPrefab(_zombiePrefab, false, new Vector3(0.0f, -0.265f, 0.0f));
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Tests
         [UnityTest]
         public IEnumerator DoesNotRespondToCloud()
         {
-            return TestWithPrefab(cloudPrefab, false);
+            return TestWithPrefab(_cloudPrefab, false);
         }
     }
 }
