@@ -10,15 +10,17 @@ namespace Tests
 {
     public class ControlledSprayTest
     {
-        private GameObject _controlledSprayPrefab;
-        private GameObject _managersPrefab;
-        private GameObject _uiCanvasPrefab;
+        private GameObject _controlledCureSprayPrefab;
+        private GameObject _controlledVaccineSprayPrefab;
+        private GameObject _controlledZombieSprayPrefab;
 
         [UnitySetUp]
         public IEnumerator SetUpTest()
         {
-            _controlledSprayPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(Prefabs.Sprays.ControlledCureSpray);
-            Assert.IsNotNull(_controlledSprayPrefab);
+            _controlledCureSprayPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(Prefabs.Sprays.ControlledCureSpray);
+            Assert.IsNotNull(_controlledCureSprayPrefab);
+            _controlledZombieSprayPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(Prefabs.Sprays.ControlledZombieSpray);
+            Assert.IsNotNull(_controlledZombieSprayPrefab);
 
             yield return new EnterPlayMode();
             SceneManager.LoadScene("Tests/EditMode/UnitTestScene");
@@ -32,10 +34,9 @@ namespace Tests
             yield return new ExitPlayMode();
         }
 
-        [UnityTest]
-        public IEnumerator IsActivatedByDefault()
+        private IEnumerator TestActivatedByDefaultWithPrefab(GameObject prefab)
         {
-            var spray = GameObject.Instantiate(_controlledSprayPrefab);
+            var spray = GameObject.Instantiate(prefab);
             var controllerZombie = spray.transform.Find("ControllerZombie");
             Assert.IsNotNull(controllerZombie);
 
@@ -45,7 +46,7 @@ namespace Tests
             Assert.IsNotNull(pressurePlate);
             Assert.IsTrue(pressurePlate.IsPressed);
 
-            for (var startTime = Time.time; Time.time < startTime + 0.5f; )
+            for (var startTime = Time.time; Time.time < startTime + 0.5f;)
             {
                 yield return null;
             }
@@ -54,9 +55,20 @@ namespace Tests
         }
 
         [UnityTest]
-        public IEnumerator IsNotActiveWhenControllerZombieMoves()
+        public IEnumerator CureSprayIsActivatedByDefault()
         {
-            var spray = GameObject.Instantiate(_controlledSprayPrefab);
+            return TestActivatedByDefaultWithPrefab(_controlledCureSprayPrefab);
+        }
+
+        [UnityTest]
+        public IEnumerator ZombieSprayIsActivatedByDefault()
+        {
+            return TestActivatedByDefaultWithPrefab(_controlledZombieSprayPrefab);
+        }
+
+        private IEnumerator TestIsNotActiveWhenControllerZombieMovesWithPrefab(GameObject prefab)
+        {
+            var spray = GameObject.Instantiate(_controlledCureSprayPrefab);
             var controllerZombie = spray.transform.Find("ControllerZombie");
             // Move the zombie to the side before calling update for the first time. This should
             // be enough to deactivate the pressure plate before the spray starts spraying.
@@ -75,6 +87,18 @@ namespace Tests
             }
 
             Assert.IsEmpty(GameObject.FindObjectsOfType<CloudScript>());
+        }
+
+        [UnityTest]
+        public IEnumerator CureSprayIsNotActiveWhenControllerZombieMoves()
+        {
+            return TestIsNotActiveWhenControllerZombieMovesWithPrefab(_controlledCureSprayPrefab);
+        }
+
+        [UnityTest]
+        public IEnumerator ZombieSprayIsNotActiveWhenControllerZombieMoves()
+        {
+            return TestIsNotActiveWhenControllerZombieMovesWithPrefab(_controlledZombieSprayPrefab);
         }
     }
 }

@@ -22,6 +22,7 @@ public static class Prefabs
     {
         public static readonly string Cloud = "Assets/Prefabs/Sprays/Cloud.prefab";
         public static readonly string ControlledCureSpray = "Assets/Prefabs/Sprays/SprayCureControlled.prefab";
+        public static readonly string ControlledZombieSpray = "Assets/Prefabs/Sprays/SprayZombieControlled.prefab";
     }
 
     public static class Triggers
