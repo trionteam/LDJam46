@@ -36,6 +36,12 @@ namespace Tests
             yield return new ExitPlayMode();
         }
 
+        /// <summary>
+        /// Tests that by default, the spray is activated (i.e. the pressure plate that controls it
+        /// is pressed). This method is a generic test that works with all controlled spray prefabs.
+        /// </summary>
+        /// <param name="prefab">The controlled spray prefab to test with.</param>
+        /// <returns>A coroutine that runs the test.</returns>
         private IEnumerator TestActivatedByDefaultWithPrefab(GameObject prefab)
         {
             var spray = GameObject.Instantiate(prefab);
@@ -68,6 +74,13 @@ namespace Tests
             return TestActivatedByDefaultWithPrefab(_controlledZombieSprayPrefab);
         }
 
+        /// <summary>
+        /// Tests that the spray gets deactivated when the controlling zombie is moved away from its
+        /// initial position (and it releases the pressure plate). This method is a generic test that
+        /// works with all the controlled spray prefabs.
+        /// </summary>
+        /// <param name="prefab">The controlled spray prefab to test with.</param>
+        /// <returns>A coroutine that runs the test.</returns>
         private IEnumerator TestIsNotActiveWhenControllerZombieMovesWithPrefab(GameObject prefab)
         {
             var spray = GameObject.Instantiate(_controlledCureSprayPrefab);
