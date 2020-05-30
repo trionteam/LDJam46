@@ -117,6 +117,7 @@ public class HealthyPersonController : MonoBehaviour
 #if UNITY_EDITOR
 
     [CustomEditor(typeof(HealthyPersonController))]
+    [CanEditMultipleObjects]
     public class HealthyPersonEditor : Editor
     {
         public void OnSceneGUI()
