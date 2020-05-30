@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1304160832499052953}
   - component: {fileID: 1304160832499052950}
   - component: {fileID: 1304160832499052951}
-  - component: {fileID: 1304160832499052948}
   - component: {fileID: 1304160832499052949}
+  - component: {fileID: 503147816}
   m_Layer: 10
   m_Name: Ambulance
   m_TagString: Untagged
@@ -98,38 +98,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waypoints: {fileID: 0}
-  _speed: 2
+  _speed: 0.9
   _cloudPrefab: {fileID: 301755780573216639, guid: 6dc5e91c84f624948a3296cc9e2d8309, type: 3}
-  _sprayCooldownTime: 3
-  _spraySpeed: 2
+  _sprayCooldownTime: 1
+  _spraySpeed: 0.7
   _burstSize: 30
   _burstSpreadDegrees: 30
---- !u!61 &1304160832499052948
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1304160832499052946}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.03, y: 3.47}
-    newSize: {x: 2.03, y: 3.47}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.03, y: 3.47}
-  m_EdgeRadius: 0
 --- !u!50 &1304160832499052949
 Rigidbody2D:
   serializedVersion: 4
@@ -151,3 +125,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &503147816
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304160832499052946}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.03, y: 3.47}
+    newSize: {x: 2.03, y: 3.47}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.0056065, y: -1.3468207}
+      - {x: 0.99586284, y: 1.085773}
+      - {x: 0.8874283, y: 1.564233}
+      - {x: 0.017875291, y: 1.8058939}
+      - {x: -0.875, y: 1.545}
+      - {x: -1.015, y: 1.115}
+      - {x: -0.995, y: -1.415}
+      - {x: -0.825, y: -1.685}
+      - {x: 0.805, y: -1.655}
