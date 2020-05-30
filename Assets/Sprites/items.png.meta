@@ -167,6 +167,12 @@ TextureImporter:
   - first:
       213: -6908172973349932775
     second: VerticalFenceWall3
+  - first:
+      213: 7535710990807795011
+    second: Goose1
+  - first:
+      213: 8147073653350522361
+    second: Goose2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -536,7 +542,7 @@ TextureImporter:
         x: 3750
         y: 991
         width: 34
-        height: 289
+        height: 280
       alignment: 9
       pivot: {x: 0.5483686, y: 0.056174837}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1302,6 +1308,48 @@ TextureImporter:
       bones: []
       spriteID: 911f584284d3120a0800000000000000
       internalID: -6908172973349932775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose1
+      rect:
+        serializedVersion: 2
+        x: 3661
+        y: 1272
+        width: 86
+        height: 90
+      alignment: 9
+      pivot: {x: 0.42, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3450b116839349860800000000000000
+      internalID: 7535710990807795011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose2
+      rect:
+        serializedVersion: 2
+        x: 3749
+        y: 1272
+        width: 86
+        height: 90
+      alignment: 9
+      pivot: {x: 0.47828853, y: 0.13732775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fdd6ea9258301170800000000000000
+      internalID: 8147073653350522361
       vertices: []
       indices: 
       edges: []
