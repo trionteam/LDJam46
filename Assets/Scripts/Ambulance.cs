@@ -40,7 +40,7 @@ public class Ambulance : MonoBehaviour
 
 	}
 
-	void Update()
+	private void FixedUpdate()
     {
 		_sprayCooldown -= Time.deltaTime;
 		if (_sprayCooldown <= 0)
