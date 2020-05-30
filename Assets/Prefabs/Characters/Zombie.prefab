@@ -107,7 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a659529bdf9c6674ba43555da493c06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombiesInSight: []
 --- !u!1 &1139982754452414674
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,11 +363,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab757e3d03720674daae4b5d8b7afa26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {x: 0, y: 0}
-  _assignedDestination: 0
   _randomMovementDestinationRadius: 0.5
   _destinationResetRadius: 0.1
-  _movementSpeed: 0.3
+  _movementSpeed: 0.4
+  _roamingSpeed: 0.1
+  _movementAnimationSpeed: 1.3
+  _roamingAnimationSpeed: 0.5
   _coughEnabled: 1
   _cloudPrefab: {fileID: 301755780573216639, guid: 26275f6a16014e943843173f08302937, type: 3}
   _numCoughs: 4
@@ -387,9 +387,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8809097d42ed8d84994a0d0214873a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {x: 0, y: 0}
+  _hasBasePosition: 0
+  _basePosition: {x: 0, y: 0}
+  _basePositionRadius: 1
   _randomMovementDestinationRadius: 1
-  _movementSpeed: 0.3
+  _movementSpeed: 0.1
+  _movementAnimationSpeed: 0.5
   _destinationResetRadius: 0.01
   _zombieDetection: {fileID: 2440152830255973449}
 --- !u!114 &7910750625208280116
@@ -419,7 +422,7 @@ MonoBehaviour:
   _immuneStateDuration: 5
   _coloredSprites:
   - {fileID: 1213966104932174698}
-  switchingLocked: 0
+  SwitchingLocked: 0
 --- !u!114 &-4425926623520026851
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,6 +26,10 @@ public class HealthyPersonController : MonoBehaviour
     private float _movementSpeed = 1.0f;
 
     [SerializeField]
+    [Tooltip("The value assigned to Animator.speed on this object when the character is moving around.")]
+    private float _movementAnimationSpeed = 1.0f;
+
+    [SerializeField]
     private float _destinationResetRadius = 0.01f;
 
     [SerializeField]
@@ -33,15 +37,33 @@ public class HealthyPersonController : MonoBehaviour
 
     private Rigidbody2D _rigidBody;
 
+    private Animator _spriteAnimation;
+
     private void Awake()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         Debug.Assert(_rigidBody != null);
+
+        _spriteAnimation = GetComponent<Animator>();
     }
 
     private void Start()
     {
         UpdateDestination();
+        UpdateAnimation();
+    }
+
+    private void OnEnable()
+    {
+        UpdateAnimation();
+    }
+
+    private void UpdateAnimation()
+    {
+        if (_spriteAnimation != null)
+        {
+            _spriteAnimation.speed = _movementAnimationSpeed;
+        }
     }
 
     private void FixedUpdate()

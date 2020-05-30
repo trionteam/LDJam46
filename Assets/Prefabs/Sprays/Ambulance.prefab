@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waypoints: {fileID: 0}
-  _speed: 1
+  _speed: 2
   _cloudPrefab: {fileID: 301755780573216639, guid: 6dc5e91c84f624948a3296cc9e2d8309, type: 3}
   _sprayCooldownTime: 3
   _spraySpeed: 2

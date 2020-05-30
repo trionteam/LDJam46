@@ -17,6 +17,7 @@ public class ZombieController : MonoBehaviour
         set
         {
             _assignedDestination = value;
+            UpdateAnimation();
             UpdateMarkers();
         }
     }
@@ -29,7 +30,20 @@ public class ZombieController : MonoBehaviour
     private float _destinationResetRadius = 0.01f;
 
     [SerializeField]
+    [Tooltip("The movement speed when the zombie has an assigned desination.")]
     private float _movementSpeed = 1.0f;
+
+    [SerializeField]
+    [Tooltip("The movement speed when the zombie is just moving around without a destination.")]
+    private float _roamingSpeed = 0.1f;
+
+    [SerializeField]
+    [Tooltip("The value assigned to Animator.speed on this object when the character is moving towards an assigned destination.")]
+    private float _movementAnimationSpeed = 1.0f;
+
+    [SerializeField]
+    [Tooltip("The value assigned to Animator.speed on this object when the character is just moving around without a destination.")]
+    private float _roamingAnimationSpeed = 0.2f;
 
     [SerializeField]
     private bool _coughEnabled = true;
@@ -92,6 +106,8 @@ public class ZombieController : MonoBehaviour
 
     private Rigidbody2D _rigidBody;
 
+    private Animator _spriteAnimation;
+
     private ZombieControls _zombieControls;
 
     public void AssignDestination(Vector2 destination)
@@ -104,6 +120,7 @@ public class ZombieController : MonoBehaviour
     {
         UpdateMarkers();
         UpdateDestination();
+        UpdateAnimation();
         // Zombies should not cough immediately after getting infected.
         coughLeft = Random.Range(0.0f, _coughTimeout);
     }
@@ -142,6 +159,14 @@ public class ZombieController : MonoBehaviour
         }
     }
 
+    private void UpdateAnimation()
+    {
+        if (_spriteAnimation != null)
+        {
+            _spriteAnimation.speed = HasAssignedDestination ? _movementAnimationSpeed : _roamingAnimationSpeed;
+        }
+    }
+
     private void Awake()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
@@ -153,6 +178,8 @@ public class ZombieController : MonoBehaviour
 
         Debug.Assert(_selectionMarker != null);
         Debug.Assert(_destinationMarker != null);
+
+        _spriteAnimation = GetComponent<Animator>();
     }
 
     private void Update()
@@ -174,8 +201,9 @@ public class ZombieController : MonoBehaviour
             UpdateDestination();
         }
 
+        var speed = HasAssignedDestination ? _movementSpeed : _roamingSpeed;
         var directionToDestination = (destination - _rigidBody.position).normalized;
-        var desiredPositionInFrame = _rigidBody.position + _movementSpeed * Time.fixedDeltaTime * directionToDestination;
+        var desiredPositionInFrame = _rigidBody.position + speed * Time.fixedDeltaTime * directionToDestination;
         _rigidBody.MovePosition(desiredPositionInFrame);
     }
 
