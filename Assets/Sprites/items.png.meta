@@ -173,6 +173,9 @@ TextureImporter:
   - first:
       213: 8147073653350522361
     second: Goose2
+  - first:
+      213: -3469547528200125539
+    second: SayNoToGreen
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1350,6 +1353,27 @@ TextureImporter:
       bones: []
       spriteID: 9fdd6ea9258301170800000000000000
       internalID: 8147073653350522361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SayNoToGreen
+      rect:
+        serializedVersion: 2
+        x: 3268
+        y: 985
+        width: 261
+        height: 273
+      alignment: 9
+      pivot: {x: 0.6594874, y: 0.07553693}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d930c42d7e0b9dfc0800000000000000
+      internalID: -3469547528200125539
       vertices: []
       indices: 
       edges: []
