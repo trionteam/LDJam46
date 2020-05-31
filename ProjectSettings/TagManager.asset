@@ -21,12 +21,12 @@ TagManager:
   - 
   - 0x8 - zombies
   - 0x9 - sprays
-  - 0xA - GroundMovement
+  - 0xA - GroundMovementSolid
   - 0xB - SprayBarrier
   - 0xC - SprayCloud
   - 0xD - ZombieDetection
-  - 
-  - 
+  - 0xE - GroundMovementPartial
+  - 0xF - GroundMovementUnlimited
   - 
   - 
   - 

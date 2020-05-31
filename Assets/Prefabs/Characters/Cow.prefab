@@ -139,7 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1522548596387118005}
   - component: {fileID: 2767104660242934631}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: MovementCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,9 +381,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8809097d42ed8d84994a0d0214873a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {x: 0, y: 0}
+  _hasBasePosition: 0
+  _basePosition: {x: 0, y: 0}
+  _basePositionRadius: 1
   _randomMovementDestinationRadius: 1
   _movementSpeed: 0.3
+  _movementAnimationSpeed: 1
   _destinationResetRadius: 0.01
   _zombieDetection: {fileID: 0}
 --- !u!114 &6759690940330066067
