@@ -41,7 +41,9 @@ public class PressurePlate : MonoBehaviour
         // plate (which is by default the ground collisions layer). Any colliders in this
         // layer are assumed to be moving on the ground, and should thus be able to
         // press the plate.
-        filter.SetLayerMask(1 << gameObject.layer);
+        filter.SetLayerMask((1 << Layers.GroundMovementPartial) |
+                            (1 << Layers.GroundMovementSolid) |
+                            (1 << Layers.GroundMovementUnlimited));
         var numCandidates = _plateCollider.OverlapCollider(filter, candidates);
         IsPressed = numCandidates > 0;
         _renderer.sprite = IsPressed ? _pressedSprite : _depressedSprite;
