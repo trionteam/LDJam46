@@ -1718,6 +1718,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1873700093}
     m_Modifications:
+    - target: {fileID: -2036268742105978513, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
+      propertyPath: _hasBasePosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2036268742105978513, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
+      propertyPath: _basePosition.x
+      value: -2.1828632
+      objectReference: {fileID: 0}
+    - target: {fileID: -2036268742105978513, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
+      propertyPath: _basePosition.y
+      value: 0.31985402
+      objectReference: {fileID: 0}
+    - target: {fileID: -2036268742105978513, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
+      propertyPath: _basePositionRadius
+      value: 0.59597385
+      objectReference: {fileID: 0}
     - target: {fileID: 8292648429311309811, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
       propertyPath: m_Name
       value: Oink
@@ -2367,6 +2383,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1929821904}
     m_Modifications:
+    - target: {fileID: -2036268742105978513, guid: abee3ac441bc07b42af57857875963b6, type: 3}
+      propertyPath: _hasBasePosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2036268742105978513, guid: abee3ac441bc07b42af57857875963b6, type: 3}
+      propertyPath: _basePosition.y
+      value: 0.3535228
+      objectReference: {fileID: 0}
+    - target: {fileID: -2036268742105978513, guid: abee3ac441bc07b42af57857875963b6, type: 3}
+      propertyPath: _basePosition.x
+      value: 0.2469055
+      objectReference: {fileID: 0}
+    - target: {fileID: -2036268742105978513, guid: abee3ac441bc07b42af57857875963b6, type: 3}
+      propertyPath: _basePositionRadius
+      value: 0.5174129
+      objectReference: {fileID: 0}
     - target: {fileID: 8292648429311309811, guid: abee3ac441bc07b42af57857875963b6, type: 3}
       propertyPath: m_Name
       value: Zombie (1)
@@ -8210,6 +8242,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 469444395}
     m_Modifications:
+    - target: {fileID: -2036268742105978513, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
+      propertyPath: _hasBasePosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2036268742105978513, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
+      propertyPath: _basePosition.y
+      value: 0.4433065
+      objectReference: {fileID: 0}
+    - target: {fileID: -2036268742105978513, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
+      propertyPath: _basePosition.x
+      value: 3.787746
+      objectReference: {fileID: 0}
+    - target: {fileID: -2036268742105978513, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
+      propertyPath: _basePositionRadius
+      value: 0.65208817
+      objectReference: {fileID: 0}
     - target: {fileID: 8292648429311309811, guid: 7e2374705c3e0b44fb5369deb6d295e0, type: 3}
       propertyPath: m_Name
       value: Oink
