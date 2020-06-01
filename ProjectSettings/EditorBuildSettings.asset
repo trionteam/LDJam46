@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalScene.unity
     guid: 2b6b09e3d1ac9294997570a100f96db2
+  - enabled: 1
+    path: Assets/Levels/HerdImmunity/HerdImmunity.unity
+    guid: 2baf558b5041f674889f3ffaa2f67b4b
   m_configObjects: {}
