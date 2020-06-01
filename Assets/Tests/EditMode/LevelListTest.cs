@@ -14,7 +14,7 @@ namespace Tests
         public void SetUpTest()
         {
             _levelList = AssetDatabase.LoadAssetAtPath<LevelList>("Assets/Levels/LevelList.asset");
-            Assert.IsNotNull(_levelList);
+            Assert.IsNotNull(_levelList, "Could not load the level list asset.");
         }
 
         [Test]
@@ -35,9 +35,9 @@ namespace Tests
             Assert.IsNotEmpty(_levelList.Levels);
             foreach(var level in _levelList.Levels)
             {
-                Assert.IsNotNull(level);
-                Assert.IsNotEmpty(level.LevelName);
-                Assert.IsTrue(sceneNames.Contains(level.SceneName));
+                Assert.IsNotNull(level, "An entry in the level list is empty");
+                Assert.IsNotEmpty(level.LevelName, "Empty level name for: {0}", level.name);
+                Assert.IsTrue(sceneNames.Contains(level.SceneName), "Scene not found for level: {0}", level.name);
             }
         }
     }
