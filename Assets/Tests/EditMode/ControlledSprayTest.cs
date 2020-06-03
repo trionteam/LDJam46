@@ -17,14 +17,20 @@ namespace Tests
         [UnitySetUp]
         public IEnumerator SetUpTest()
         {
+            yield return new EnterPlayMode();
+
+            var scene = EditorSceneManager.LoadSceneInPlayMode(
+                "Tests/EditMode/UnitTestScene", new LoadSceneParameters(LoadSceneMode.Single));
+            while (!scene.isLoaded)
+            {
+                Debug.Log("Waiting for scene to load");
+                yield return null;
+            }
+
             _controlledCureSprayPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(Prefabs.Sprays.ControlledCureSpray);
             Assert.IsNotNull(_controlledCureSprayPrefab);
             _controlledZombieSprayPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(Prefabs.Sprays.ControlledZombieSpray);
             Assert.IsNotNull(_controlledZombieSprayPrefab);
-
-            yield return new EnterPlayMode();
-            EditorSceneManager.LoadSceneInPlayMode("Tests/EditMode/UnitTestScene", new LoadSceneParameters(LoadSceneMode.Single));
-            yield return null;
             
             Time.timeScale = 10.0f;
         }
@@ -84,6 +90,7 @@ namespace Tests
         private IEnumerator TestIsNotActiveWhenControllerZombieMovesWithPrefab(GameObject prefab)
         {
             var spray = GameObject.Instantiate(_controlledCureSprayPrefab);
+            Assert.IsNotNull(spray, "Could not instantiate the spray");
             var controllerZombie = spray.transform.Find("ControllerZombie");
             // Move the zombie to the side before calling update for the first time. This should
             // be enough to deactivate the pressure plate before the spray starts spraying.
@@ -92,7 +99,9 @@ namespace Tests
 
             yield return null;
 
-            var pressurePlate = spray.transform.Find("PressurePlate").GetComponent<PressurePlate>();
+            var pressurePlateObject = spray.transform.Find("PressurePlate");
+            Assert.IsNotNull(pressurePlateObject, "The pressure plate game object was not found");
+            var pressurePlate = pressurePlateObject.GetComponent<PressurePlate>();
             Assert.IsNotNull(pressurePlate);
             Assert.IsFalse(pressurePlate.IsPressed);
 
