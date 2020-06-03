@@ -8,7 +8,12 @@ public class SpriteFlipper : MonoBehaviour
     [SerializeField]
     public SpriteRenderer _sprite;
 
+    [SerializeField]
+    public float _minTimeBetweenFlips = 0.3f;
+
     private float _previousX;
+
+    private float _earliestNextFlipTime;
 
     private void Awake()
     {
@@ -28,10 +33,14 @@ public class SpriteFlipper : MonoBehaviour
     private void Start()
     {
         _previousX = transform.position.x;
+        _earliestNextFlipTime = Mathf.NegativeInfinity;
     }
 
     void Update()
     {
+        if (_earliestNextFlipTime > Time.time) return;
+
+        _earliestNextFlipTime = Time.time + _minTimeBetweenFlips;
         var delta = transform.position.x - _previousX;
         if (delta < 0.0f)
         {
