@@ -23,11 +23,21 @@ public class HealthyPersonController : MonoBehaviour
     private float _randomMovementDestinationRadius = 1.0f;
 
     [SerializeField]
+    [Tooltip("Movement speed when randomly roaming within the base position or when no base position is assigned.")]
     private float _movementSpeed = 1.0f;
 
     [SerializeField]
     [Tooltip("The value assigned to Animator.speed on this object when the character is moving around.")]
     private float _movementAnimationSpeed = 1.0f;
+
+    [SerializeField]
+    [Tooltip("Movement speed when base position is assigned and moving outside of the base position.")]
+    private float _movementTowardsBasePositionSpeed = 1.0f;
+
+    [SerializeField]
+    [Tooltip("The value assigned to Animator.speed on this object when the character has " +
+             "a base position and it is moving outside of the base position.")]
+    private float _movementTowardsBasePositionAnimationSpeed = 1.0f;
 
     [SerializeField]
     private float _destinationResetRadius = 0.01f;
@@ -38,6 +48,11 @@ public class HealthyPersonController : MonoBehaviour
     private Rigidbody2D _rigidBody;
 
     private Animator _spriteAnimation;
+
+    private bool IsMovingTowardsBasePosition
+    {
+        get => _hasBasePosition && Vector2.Distance(_basePosition, _rigidBody.position) > _basePositionRadius;
+    }
 
     private void Awake()
     {
@@ -68,8 +83,15 @@ public class HealthyPersonController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        bool isMovingToBase = IsMovingTowardsBasePosition;
+        var movementSpeed = isMovingToBase ? _movementTowardsBasePositionSpeed : _movementSpeed;
+        if (_spriteAnimation != null)
+        {
+            _spriteAnimation.speed =
+                isMovingToBase ? _movementTowardsBasePositionAnimationSpeed : _movementAnimationSpeed;
+        }
         Vector2 directionToDestination;
-        if (_zombieDetection != null && _zombieDetection.HasZombiesInSight)
+        if (!isMovingToBase && _zombieDetection != null && _zombieDetection.HasZombiesInSight)
         {
             directionToDestination = _zombieDetection.EscapeDirection();
             // Reset destination, so that the person starts moving randomly when they
@@ -85,7 +107,7 @@ public class HealthyPersonController : MonoBehaviour
             directionToDestination = (destination - _rigidBody.position).normalized;
         }
 
-        var desiredPositionInFrame = _rigidBody.position + _movementSpeed * Time.fixedDeltaTime * directionToDestination;
+        var desiredPositionInFrame = _rigidBody.position + movementSpeed * Time.fixedDeltaTime * directionToDestination;
         _rigidBody.MovePosition(desiredPositionInFrame);
     }
 

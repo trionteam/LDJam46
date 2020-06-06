@@ -387,6 +387,8 @@ MonoBehaviour:
   _randomMovementDestinationRadius: 1
   _movementSpeed: 0.3
   _movementAnimationSpeed: 1
+  _movementTowardsBasePositionSpeed: 0.3
+  _movementTowardsBasePositionAnimationSpeed: 1
   _destinationResetRadius: 0.01
   _zombieDetection: {fileID: 0}
 --- !u!114 &6759690940330066067
@@ -403,6 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 0}
   _sprite: {fileID: 0}
+  _minTimeBetweenFlips: 0.3
 --- !u!1 &8549864639980755791
 GameObject:
   m_ObjectHideFlags: 0

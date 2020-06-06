@@ -364,6 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _randomMovementDestinationRadius: 0.5
   _destinationResetRadius: 0.1
+  _desiredTargetDistance: 0.5
   _movementSpeed: 0.4
   _roamingSpeed: 0.1
   _movementAnimationSpeed: 1.3
@@ -392,6 +393,8 @@ MonoBehaviour:
   _randomMovementDestinationRadius: 1
   _movementSpeed: 0.1
   _movementAnimationSpeed: 0.5
+  _movementTowardsBasePositionSpeed: 0.3
+  _movementTowardsBasePositionAnimationSpeed: 1
   _destinationResetRadius: 0.01
   _zombieDetection: {fileID: 4066125476476927471}
 --- !u!114 &7910750625208280116
@@ -436,6 +439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 0}
   _sprite: {fileID: 0}
+  _minTimeBetweenFlips: 0.3
 --- !u!1001 &5766984733959806167
 PrefabInstance:
   m_ObjectHideFlags: 0
