@@ -145,16 +145,46 @@ public class ZombieControls : MonoBehaviour
 
     private void SetDestinationForSelectedZombies()
     {
+        var mousePosition = MousePosition2d;
+        // Try to find a target at the click position.
+        var target = GetTargetAtPosition(mousePosition);
+
         // Clicked somewhere in the space. Tell selected zombies to go there.
         foreach (var zombie in selectedZombies)
         {
-            zombie.AssignDestination(MousePosition2d);
+            if (target != null)
+            {
+                zombie.AssignTarget(target);
+            }
+            else
+            {
+                zombie.AssignDestination(mousePosition);
+            }
         }
         if (selectedZombies.Count > 0)
         {
             // TODO - sound wildcards
             SoundMgr.Instance?.Play($"go_{Random.Range(0, 3)}");
         }
+    }
+
+    /// <summary>
+    /// Finds a healthy person (that can be a target of a zombie) at a given position.
+    /// </summary>
+    /// <param name="position">The position, at which the healthy person is looked for.</param>
+    /// <returns>The healthy person at the given position. Returns <c>null</c> if no
+    /// healthy person is found at that position.</returns>
+    private HealthyPersonController GetTargetAtPosition(Vector2 position)
+    {
+        Collider2D[] objectsAtPosition = Physics2D.OverlapCircleAll(position, 0.01f, 1 << Layers.Zombies);
+        Debug.LogFormat("Found {0} possible targets.", objectsAtPosition.Length);
+        foreach (var possibleHealthyPerson in objectsAtPosition)
+        {
+            var healthyPerson = possibleHealthyPerson.GetComponentInParent<HealthyPersonController>();
+            if (healthyPerson != null && healthyPerson.isActiveAndEnabled) return healthyPerson;
+            Debug.Log("Meh, not healthy");
+        }
+        return null;
     }
 
     private List<ZombieController> GetSelectedZombies(Vector2 corner1, Vector2 corner2)

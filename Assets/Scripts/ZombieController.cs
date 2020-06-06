@@ -5,7 +5,13 @@ public class ZombieController : MonoBehaviour
     /// <summary>
     /// The destination towards which the zombie is moving.
     /// </summary>
-    private Vector2 destination;
+    private Vector2 _destination;
+
+    /// <summary>
+    /// A healthy person that is the target of the zombie. When set, the zombie follows
+    /// the target and coughs at it, even if the target moves.
+    /// </summary>
+    private HealthyPersonController _target;
 
     /// <summary>
     /// True if the destination was assigned by the player. When true, the destination
@@ -28,6 +34,13 @@ public class ZombieController : MonoBehaviour
 
     [SerializeField]
     private float _destinationResetRadius = 0.01f;
+
+    /// <summary>
+    /// When the zombie has a healthy person as a target, it will not get closer than
+    /// this distance. Below this distance, the zombie will only cough at the target.
+    /// </summary>
+    [SerializeField]
+    private float _desiredTargetDistance = 0.5f;
 
     [SerializeField]
     [Tooltip("The movement speed when the zombie has an assigned desination.")]
@@ -110,10 +123,30 @@ public class ZombieController : MonoBehaviour
 
     private ZombieControls _zombieControls;
 
+    /// <summary>
+    /// Assigns a destination to the zombie. The destination is a fixed position towards
+    /// which the zombie is supposed to move. Setting a destination resets any previous
+    /// destination or target assigned to the zombie.
+    /// </summary>
+    /// <param name="destination">The destination position for the zombie.</param>
     public void AssignDestination(Vector2 destination)
     {
         HasAssignedDestination = true;
-        this.destination = destination;
+        this._destination = destination;
+        this._target = null;
+    }
+
+    /// <summary>
+    /// Assigns a target to the zombie. The target is a healthy person the zombie is
+    /// supposed to follow. Setting a target resets any previous targets or destinations
+    /// assigned to the zombie.
+    /// </summary>
+    /// <param name="target">The healthy person the zombie is supposed to follow.</param>
+    public void AssignTarget(HealthyPersonController target)
+    {
+        HasAssignedDestination = true;
+        this._target = target;
+        this._destination = target.transform.position;
     }
 
     private void OnEnable()
@@ -188,7 +221,7 @@ public class ZombieController : MonoBehaviour
         {
             // The destination marker is a child of the zombie object. We need to prevent it from moving
             // with the zombie object.
-            _destinationMarker.transform.position = destination;
+            _destinationMarker.transform.position = _destination;
         }
 
         Cough();
@@ -196,20 +229,43 @@ public class ZombieController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (IsAtDestination())
+        if (_target != null)
         {
+            if (!_target.enabled)
+            {
+                // The target is no longer healthy, let's move back to wandering around.
+                _target = null;
+                UpdateDestination();
+            }
+            else
+            {
+                // Update the actual destination coordinates based on the current position
+                // of the target.
+                _destination = _target.transform.position;
+            }
+        }
+        else if (IsAtDestination())
+        {
+            // This is called only when the target is not assigned - we do not want to reset
+            // the target if the zombie gets too close, but the target is not yet infected.
             UpdateDestination();
         }
 
-        var speed = HasAssignedDestination ? _movementSpeed : _roamingSpeed;
-        var directionToDestination = (destination - _rigidBody.position).normalized;
-        var desiredPositionInFrame = _rigidBody.position + speed * Time.fixedDeltaTime * directionToDestination;
-        _rigidBody.MovePosition(desiredPositionInFrame);
+        // Move towards the destination. When following a target, do not move if the target is
+        // too close.
+        if (_target == null ||
+            Vector3.Distance(transform.position, _target.transform.position) > _desiredTargetDistance)
+        {
+            var speed = HasAssignedDestination ? _movementSpeed : _roamingSpeed;
+            var directionToDestination = (_destination - _rigidBody.position).normalized;
+            var desiredPositionInFrame = _rigidBody.position + speed * Time.fixedDeltaTime * directionToDestination;
+            _rigidBody.MovePosition(desiredPositionInFrame);
+        }
     }
 
     private bool IsAtDestination()
     {
-        var distance = (_rigidBody.position - destination).magnitude;
+        var distance = (_rigidBody.position - _destination).magnitude;
         return distance <= _destinationResetRadius;
     }
 
@@ -217,7 +273,7 @@ public class ZombieController : MonoBehaviour
     {
         var destinationDelta = _randomMovementDestinationRadius * Random.insideUnitCircle;
         HasAssignedDestination = false;
-        destination = _rigidBody.position + destinationDelta;
+        _destination = _rigidBody.position + destinationDelta;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -239,7 +295,7 @@ public class ZombieController : MonoBehaviour
             {
                 GameObject cough = GameObject.Instantiate(_cloudPrefab, transform.position, Quaternion.identity);
                 // cough direction is in the general movement direction
-                Vector2 directionToDestination = (destination - _rigidBody.position).normalized;
+                Vector2 directionToDestination = (_destination - _rigidBody.position).normalized;
                 Vector2 rndDir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized * 0.1f + directionToDestination;
                 rndDir = rndDir.normalized * Random.Range(0.8f, 1.2f);
                 Debug.DrawLine(_rigidBody.position, _rigidBody.position + rndDir);
