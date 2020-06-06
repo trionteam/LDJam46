@@ -177,12 +177,10 @@ public class ZombieControls : MonoBehaviour
     private HealthyPersonController GetTargetAtPosition(Vector2 position)
     {
         Collider2D[] objectsAtPosition = Physics2D.OverlapCircleAll(position, 0.01f, 1 << Layers.Zombies);
-        Debug.LogFormat("Found {0} possible targets.", objectsAtPosition.Length);
         foreach (var possibleHealthyPerson in objectsAtPosition)
         {
             var healthyPerson = possibleHealthyPerson.GetComponentInParent<HealthyPersonController>();
             if (healthyPerson != null && healthyPerson.isActiveAndEnabled) return healthyPerson;
-            Debug.Log("Meh, not healthy");
         }
         return null;
     }
