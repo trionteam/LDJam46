@@ -364,7 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _randomMovementDestinationRadius: 0.5
   _destinationResetRadius: 0.1
-  _desiredTargetDistance: 0.5
+  _desiredTargetDistance: 1
   _movementSpeed: 0.4
   _roamingSpeed: 0.1
   _movementAnimationSpeed: 1.3

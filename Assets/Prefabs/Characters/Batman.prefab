@@ -302,6 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _randomMovementDestinationRadius: 0.5
   _destinationResetRadius: 0.1
+  _desiredTargetDistance: 1
   _movementSpeed: 0.4
   _roamingSpeed: 0.1
   _movementAnimationSpeed: 1.3
@@ -326,6 +327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 0}
   _sprite: {fileID: 0}
+  _minTimeBetweenFlips: 0.3
 --- !u!95 &1934990187659626208
 Animator:
   serializedVersion: 3
