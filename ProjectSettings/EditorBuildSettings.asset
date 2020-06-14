@@ -27,9 +27,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Level04.unity
     guid: 2294a04b99db5b0418330f217f702463
   - enabled: 1
-    path: Assets/Scenes/FinalScene.unity
-    guid: 2b6b09e3d1ac9294997570a100f96db2
+    path: Assets/Levels/Disinfection2/Disinfection2.unity
+    guid: 23601efbde60c41ce90ae1a9b8e7a858
+  - enabled: 1
+    path: Assets/Levels/Disinfection3/Disinfection3.unity
+    guid: 7ee04f354e35042a8b85478cfa811944
   - enabled: 1
     path: Assets/Levels/HerdImmunity/HerdImmunity.unity
     guid: 2baf558b5041f674889f3ffaa2f67b4b
+  - enabled: 1
+    path: Assets/Scenes/FinalScene.unity
+    guid: 2b6b09e3d1ac9294997570a100f96db2
   m_configObjects: {}
