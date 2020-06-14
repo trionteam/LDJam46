@@ -23,6 +23,14 @@ public class MainMenuController : MonoBehaviour
     [SerializeField]
     private Button _restartLevelButton;
 
+    /// <summary>
+    /// Returns <c>true</c> if the main menu is active.
+    /// </summary>
+    public bool IsActive
+    {
+        get => _container.activeSelf;
+    }
+
     private bool IsInMainMenu
     {
         get => SceneManager.GetActiveScene().name == "MainMenu";

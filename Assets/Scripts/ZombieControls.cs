@@ -42,6 +42,7 @@ public class ZombieControls : MonoBehaviour
         {
             _mainMenu = GameObject.FindGameObjectWithTag("MainMenu").GetComponent<MainMenuController>();
         }
+        Debug.Assert(_mainMenu != null);
 
         if (_dragDropMask == null)
         {
@@ -65,49 +66,56 @@ public class ZombieControls : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !Input.GetMouseButtonUp(0))
-        {
-            maybeStartedDragging = true;
-            dragStartPosition = MousePosition2d;
-        }
-        else if (maybeStartedDragging && Input.GetMouseButton(0))
-        {
-            if (dragStartPosition != MousePosition2d)
-            {
-                isDragging = true;
-                maybeStartedDragging = false;
-            }
-        }
-        else if (isDragging && Input.GetMouseButtonUp(0))
+        if (_mainMenu.IsActive)
         {
             isDragging = false;
-            var zombies = GetSelectedZombies(dragStartPosition, MousePosition2d);
-            // Interpret this as a click when the drag is small enough and no zombies were selected.
-            if (zombies.Count > 0 || (MousePosition2d - dragStartPosition).magnitude > 0.2f)
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(0) && !Input.GetMouseButtonUp(0))
             {
-                UpdateSelectedZombies(zombies);
+                maybeStartedDragging = true;
+                dragStartPosition = MousePosition2d;
             }
-            else if (selectedZombies.Count > 0)
+            else if (maybeStartedDragging && Input.GetMouseButton(0))
+            {
+                if (dragStartPosition != MousePosition2d)
+                {
+                    isDragging = true;
+                    maybeStartedDragging = false;
+                }
+            }
+            else if (isDragging && Input.GetMouseButtonUp(0))
+            {
+                isDragging = false;
+                var zombies = GetSelectedZombies(dragStartPosition, MousePosition2d);
+                // Interpret this as a click when the drag is small enough and no zombies were selected.
+                if (zombies.Count > 0 || (MousePosition2d - dragStartPosition).magnitude > 0.2f)
+                {
+                    UpdateSelectedZombies(zombies);
+                }
+                else if (selectedZombies.Count > 0)
+                {
+                    SetDestinationForSelectedZombies();
+                }
+            }
+            else if (!isDragging && Input.GetMouseButtonUp(0))
+            {
+                // First look for zombies under the mouse cursor.
+                var zombies = GetSelectedZombies(MousePosition2d, MousePosition2d);
+                if (zombies.Count > 0)
+                {
+                    UpdateSelectedZombies(zombies);
+                }
+                else
+                {
+                    SetDestinationForSelectedZombies();
+                }
+            }
+            else if (Input.GetMouseButtonUp(1))
             {
                 SetDestinationForSelectedZombies();
             }
-        }
-        else if (!isDragging && Input.GetMouseButtonUp(0))
-        {
-            // First look for zombies under the mouse cursor.
-            var zombies = GetSelectedZombies(MousePosition2d, MousePosition2d);
-            if (zombies.Count > 0)
-            {
-                UpdateSelectedZombies(zombies);
-            }
-            else
-            {
-                SetDestinationForSelectedZombies();
-            }
-        }
-        else if (Input.GetMouseButtonUp(1))
-        {
-            SetDestinationForSelectedZombies();
         }
 
         _dragDropMask.gameObject.SetActive(isDragging);
@@ -129,7 +137,7 @@ public class ZombieControls : MonoBehaviour
             zombie.IsHovered = false;
         }
         hoveredZombies.Clear();
-        if (!isDragging)
+        if (!isDragging && !_mainMenu.IsActive)
         {
             var zombies = GetSelectedZombies(MousePosition2d, MousePosition2d);
             foreach (var zombie in zombies)
