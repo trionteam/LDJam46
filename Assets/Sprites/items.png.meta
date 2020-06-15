@@ -176,6 +176,18 @@ TextureImporter:
   - first:
       213: -3469547528200125539
     second: SayNoToGreen
+  - first:
+      213: 2501429276422068772
+    second: Plant2
+  - first:
+      213: 1269798563945732371
+    second: items_1
+  - first:
+      213: -2052908955469723492
+    second: Plant2
+  - first:
+      213: 2176613807612701488
+    second: Plant3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -959,13 +971,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass1
+      name: items_1
       rect:
         serializedVersion: 2
-        x: 3757
-        y: 23
-        width: 31
-        height: 15
+        x: 3568
+        y: 901
+        width: 54
+        height: 297
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -988,7 +1000,7 @@ TextureImporter:
         width: 100
         height: 124
       alignment: 9
-      pivot: {x: 0.57621825, y: 0.22384496}
+      pivot: {x: 0.5556714, y: 0.22170676}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1374,6 +1386,69 @@ TextureImporter:
       bones: []
       spriteID: d930c42d7e0b9dfc0800000000000000
       internalID: -3469547528200125539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant2
+      rect:
+        serializedVersion: 2
+        x: 3456
+        y: 1263
+        width: 91
+        height: 102
+      alignment: 9
+      pivot: {x: 0.4343503, y: 0.26038077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a56eb7cacd6b220800000000000000
+      internalID: 2501429276422068772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SelectionMarker
+      rect:
+        serializedVersion: 2
+        x: 3345
+        y: 1446
+        width: 63
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5040303, y: 0.12787075}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9842098e2a9283e0800000000000000
+      internalID: -2052908955469723492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant3
+      rect:
+        serializedVersion: 2
+        x: 3336
+        y: 1260
+        width: 109
+        height: 109
+      alignment: 9
+      pivot: {x: 0.6470824, y: 0.24211806}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b27ffc9b2e43e10800000000000000
+      internalID: 2176613807612701488
       vertices: []
       indices: 
       edges: []
