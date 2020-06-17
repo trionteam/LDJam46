@@ -511,6 +511,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4611152679805507607, guid: 801105a5897044d4d8c3083d662704e4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7340058443122010186, guid: 801105a5897044d4d8c3083d662704e4, type: 3}
       propertyPath: m_Name
       value: DestinationMarker
@@ -558,7 +562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7092480754957011092, guid: 5bd55081a2096254e99b750ab5e30962, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.01
+      value: 1.003
       objectReference: {fileID: 0}
     - target: {fileID: 7092480754957011092, guid: 5bd55081a2096254e99b750ab5e30962, type: 3}
       propertyPath: m_LocalPosition.z
@@ -597,20 +601,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9097305817510048410, guid: 5bd55081a2096254e99b750ab5e30962, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -6798379113180071877, guid: 3e5046f864be37b48b608732bbdd80ed, type: 3}
-    - target: {fileID: 9097305817510048410, guid: 5bd55081a2096254e99b750ab5e30962, type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9097305817510048410, guid: 5bd55081a2096254e99b750ab5e30962, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -389118305
-      objectReference: {fileID: 0}
-    - target: {fileID: 9097305817510048410, guid: 5bd55081a2096254e99b750ab5e30962, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bd55081a2096254e99b750ab5e30962, type: 3}

@@ -188,6 +188,18 @@ TextureImporter:
   - first:
       213: 2176613807612701488
     second: Plant3
+  - first:
+      213: -2052908955469723492
+    second: items_0
+  - first:
+      213: 5996691655536054272
+    second: DestinationMarker
+  - first:
+      213: 1650241114967258587
+    second: SelectionMarker
+  - first:
+      213: -9045676570766727535
+    second: SelectionMarker2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1412,15 +1424,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SelectionMarker
+      name: items_0
       rect:
         serializedVersion: 2
-        x: 3345
-        y: 1446
-        width: 63
-        height: 58
-      alignment: 9
-      pivot: {x: 0.5040303, y: 0.12787075}
+        x: 3272
+        y: 1541
+        width: 170
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1449,6 +1461,69 @@ TextureImporter:
       bones: []
       spriteID: 03b27ffc9b2e43e10800000000000000
       internalID: 2176613807612701488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DestinationMarker
+      rect:
+        serializedVersion: 2
+        x: 3287
+        y: 1547
+        width: 149
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00096c3f947883350800000000000000
+      internalID: 5996691655536054272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SelectionMarker
+      rect:
+        serializedVersion: 2
+        x: 3350
+        y: 1407
+        width: 52
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5039767, y: 0.07957938}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd53e5bfc85d6e610800000000000000
+      internalID: 1650241114967258587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SelectionMarker2
+      rect:
+        serializedVersion: 2
+        x: 3345
+        y: 1448
+        width: 63
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5131526, y: 0.032748137}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 196206eb51d477280800000000000000
+      internalID: -9045676570766727535
       vertices: []
       indices: 
       edges: []
