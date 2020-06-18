@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6453840221666788399}
   - component: {fileID: 6306704801548654519}
   - component: {fileID: 7414352625098613107}
+  - component: {fileID: 2972416532124762463}
   m_Layer: 10
   m_Name: Plant
   m_TagString: Untagged
@@ -32,6 +33,7 @@ Transform:
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 2339441184474616622}
+  - {fileID: 2338768620191140432}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -142,6 +144,53 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2972416532124762463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188995893710989118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c0a0880b054492fbe405980cad03d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cloudPrefab: {fileID: 301755780573216639, guid: 6dc5e91c84f624948a3296cc9e2d8309, type: 3}
+  _cone: {fileID: 2338768620191140432}
+  _spraySpeed: 0.9
+  _burstSize: 5
+  _burstSpreadDegrees: 30
+--- !u!1 &2322061329493720788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2338768620191140432}
+  m_Layer: 10
+  m_Name: Cone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2338768620191140432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2322061329493720788}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7152293, w: 0.6988899}
+  m_LocalPosition: {x: -0.555, y: 0.406, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1188995893710989119}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 91.324}
 --- !u!1 &4503797065912708593
 GameObject:
   m_ObjectHideFlags: 0
