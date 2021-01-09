@@ -23,6 +23,9 @@ public class MainMenuController : MonoBehaviour
     [SerializeField]
     private Button _restartLevelButton;
 
+    [SerializeField]
+    private LevelList _levelList;
+
     /// <summary>
     /// Returns <c>true</c> if the main menu is active.
     /// </summary>
@@ -102,7 +105,7 @@ public class MainMenuController : MonoBehaviour
     public void NewGame()
     {
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene("Scenes/LevelTutorial");
+        SceneManager.LoadScene(_levelList.Levels[0].SceneName);
 	}
 
 	public void RestartLevel()

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: GameAssembly::LevelList
   _levels:
   - {fileID: 11400000, guid: fbd7e9d582391c842a082c07b90b5b7d, type: 2}
-  - {fileID: 11400000, guid: 5f573892ec932c24db3d71738bd0fdd1, type: 2}
   - {fileID: 11400000, guid: 1616a493e29a818488fc2a91d7dfe1f1, type: 2}
   - {fileID: 11400000, guid: fad8e260e10445d49a1a879e5db3baf2, type: 2}
   - {fileID: 11400000, guid: 271a1e5868788184dac9f71b436d8bf8, type: 2}
   - {fileID: 11400000, guid: bbb140393a2b31e4db68894cb8dce699, type: 2}
   - {fileID: 11400000, guid: 941ab9d80178a964a91f0d873dca7f06, type: 2}
+  - {fileID: 11400000, guid: 5f573892ec932c24db3d71738bd0fdd1, type: 2}
