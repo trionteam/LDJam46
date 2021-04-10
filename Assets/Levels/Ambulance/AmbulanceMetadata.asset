@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: AmbulanceMetadata
   m_EditorClassIdentifier: GameAssembly::LevelMetadata
   _levelName: Ambulance
-  _sceneName: Scenes/Level03
+  _sceneName: Levels/Ambulance/Ambulance
